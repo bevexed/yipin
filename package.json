@@ -2,7 +2,7 @@
   "name": "demo",
   "version": "1.0.1",
   "scripts": {
-    "compile": "./node_modules/typescript/bin/tsc",
+    "compile": "./node_modules/typescript/bin/tsc -w --pretty",
     "tsc": "node ./node_modules/typescript/lib/tsc.js"
   },
   "devDependencies": {

@@ -3,7 +3,8 @@ import { formatTime } from '../../utils/util'
 
 Page({
   data: {
-    logs: [] as string[]
+    logs: [] as string[],
+    aaa:123
   },
   onLoad() {
     this.setData!({

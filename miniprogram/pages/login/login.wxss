@@ -1,1 +1,21 @@
 /* pages/login/login.wxss */
+
+.login{
+  margin: 118rpx auto;
+  text-align: center;
+}
+
+.login-img {
+  width: 192rpx;
+  height: 192rpx;
+}
+
+
+.button{
+  margin-top: 76rpx;
+  width:610rpx;
+  height:88rpx;
+  background:rgba(68,142,246,1);
+  border-radius:4rpx;
+  color: white;
+}
