@@ -1,70 +1,109 @@
 /* first-trial/first-trial.wxss */
-.header-wrap{
-	padding: 10rpx 0;
-}
-.header{
-	padding: 30rpx;
-	display: flex;
-	justify-content: space-between;
-	border-bottom: 1rpx solid #eee;
+
+.header-wrap {
+  padding: 10rpx 0;
 }
 
-.title{
-	font-size:32rpx;
-	font-family:PingFangSC-Medium;
-	font-weight:500;
-	color:rgba(24,34,49,1);
+.header {
+  padding: 30rpx;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #eee;
 }
 
-.state{
-	font-size:24rpx;
-	font-family:PingFangSC-Regular;
-	font-weight:400;
-	color:rgba(68,142,246,1);
+.title {
+  font-size: 32rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  color: rgba(24, 34, 49, 1);
 }
 
-.detail{
-	padding: 30rpx;
-	font-size:26rpx;
-	font-family:PingFangSC-Regular;
-	font-weight:400;
-	color:rgba(78,86,95,1);
+.state {
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(68, 142, 246, 1);
 }
 
-.num{
-	margin-bottom: 10rpx;
+.detail {
+  padding: 30rpx;
+  font-size: 26rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(78, 86, 95, 1);
 }
 
-.hr{
-	height:20rpx;
-	background:rgba(247,247,247,1);
+.num {
+  margin-bottom: 10rpx;
 }
 
-.bottom{
-	padding: 30rpx;
+.hr {
+  height: 20rpx;
+  background: rgba(247, 247, 247, 1);
 }
 
-.textarea{
-	width:640rpx;
-	background:rgba(247,247,247,1);
-	border-radius:4rpx;
-	font-size:26rpx;
-	font-family:PingFangSC-Regular;
-	font-weight:400;
-	color:rgba(159,167,176,1);
-	padding: 24rpx;
-	margin-top: 30rpx;
-}
-.pic{
-	font-size:26rpx;
-	font-family:PingFangSC-Regular;
-	font-weight:400;
-	color:rgba(78,86,95,1);
-	margin: 30rpx 0;
+.bottom {
+  padding: 30rpx;
 }
 
+.textarea {
+  width: 640rpx;
+  background: rgba(247, 247, 247, 1);
+  border-radius: 4rpx;
+  font-size: 26rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(159, 167, 176, 1);
+  padding: 24rpx;
+  margin-top: 30rpx;
+}
 
-.add{
-	width: 210rpx;
-	height: 210rpx;
+.pic {
+  font-size: 26rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(78, 86, 95, 1);
+  margin: 30rpx 0;
+}
+
+.add {
+  width: 210rpx;
+  height: 210rpx;
+}
+
+.phone {
+  padding: 30rpx;
+}
+
+.phone-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.phone-title {
+  font-size: 30rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  color: rgba(24, 34, 49, 1);
+  margin-bottom: 12rpx;
+}
+
+.phone-price, .phone-state {
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(68, 142, 246, 1);
+}
+
+.phone-price {
+  font-size: 26rpx;
+  margin-bottom: 12rpx;
+}
+
+.phone-class, .phone-imei {
+  font-size: 26rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(78, 86, 95, 1);
+  margin-bottom: 12rpx;
 }

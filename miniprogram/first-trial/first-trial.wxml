@@ -1,40 +1,74 @@
 <!--first-trial/first-trial.wxml-->
 <view class="header-warp">
-	<view class="header">
-		<view class="title">
-			订单信息
-		</view>
+  <view class="header">
+    <view class="title">
+      订单信息
+    </view>
 
-		<!-- <view class="state">
+    <!-- <view class="state">
 			待寄出
 		</view> -->
 
 
-	</view>
+  </view>
 
-	<view class="detail">
-		<view class="num">订单号：839029392939293</view>
-		<view class="num">订单信息：839029392939293</view>
-		<view class="num">数量：839029392939293</view>
-	</view>
+  <view class="detail">
+    <view class="num">订单号：839029392939293</view>
+    <view class="num">订单信息：839029392939293</view>
+    <view class="num">数量：839029392939293</view>
+  </view>
 </view>
 
 <view class="hr"></view>
 
 <view class="bottom">
 
-	<view class="title">
-		备注信息
-	</view>
+  <view class="title">
+    备注信息
+  </view>
 
-	<textarea class='textarea' placeholder='还有其他需要注意的吗？请填写在这里吧~'></textarea>
+  <textarea class='textarea' placeholder='还有其他需要注意的吗？请填写在这里吧~'></textarea>
 
-	<view class="pic">
-		图片（最多上传3张）
-	</view>
+  <view class="pic">
+    图片（最多上传3张）
+  </view>
 
-	<image src="../asset/img/add.jpg" class="add"></image>
+  <image class="add" src="../asset/img/add.jpg"></image>
 
-  <i-button bind:click="handleClick" type="primary">发货</i-button>
 </view>
 
+<view class="phone-warp">
+
+
+  <view class="hr"></view>
+
+  <view class="phone">
+    <view class="phone-photo">
+
+    </view>
+
+    <view class="phone-header">
+      <view class="phone-title">
+        小米 Note3 6G+64G
+      </view>
+
+      <view class="phone-state">
+        待报价
+      </view>
+
+
+    </view>
+
+    <view class="phone-price">
+      报价：价格待定
+    </view>
+
+    <view class="phone-class">
+      等级：B+级
+    </view>
+
+    <view class="phone-imei">
+      IMEI：871287281739878Ò
+    </view>
+  </view>
+</view>

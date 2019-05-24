@@ -42,12 +42,12 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 10,
 			"list": [
 				{
-					"id": -1,
+					"id": 0,
 					"name": "friend",
-					"pathName": "pages/index/index",
+					"pathName": "friend/friend",
 					"query": "",
 					"scene": null
 				},
@@ -56,6 +56,68 @@
 					"name": "today",
 					"pathName": "today/today",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "index",
+					"pathName": "pages/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "asle-after",
+					"pathName": "sale-after/sale-after",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 4,
+					"name": "sale-after-detal",
+					"pathName": "sale-after-detail/sale-after-detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "book-detail",
+					"pathName": "book-detail/book-detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "order",
+					"pathName": "pages/order/order",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "sold-out",
+					"pathName": "sold-out/sold-out",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "person",
+					"pathName": "person/person",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "wait-post",
+					"pathName": "wait-post/wait-post",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "first",
+					"pathName": "first-trial/first-trial",
 					"scene": null
 				}
 			]
