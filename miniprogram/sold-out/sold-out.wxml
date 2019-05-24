@@ -1,0 +1,156 @@
+<i-tabs bindchange="handleChangeScroll" current="{{ current_scroll }}" scroll>
+	<i-tab key="tab1" title="全部"></i-tab>
+	<i-tab key="tab2" title="待寄出"></i-tab>
+	<i-tab key="tab3" title="待收货"></i-tab>
+	<i-tab key="tab4" title="初审"></i-tab>
+	<i-tab key="tab5" title="复审"></i-tab>
+	<i-tab key="tab6" title="已审核"></i-tab>
+</i-tabs>
+
+<view>
+
+
+	<!-- 待机出 -->
+	<!-- 待机出 -->
+	<!-- 待机出 -->
+	<!-- 待机出 -->
+	<!-- 待机出 -->
+	<!-- 待机出 -->
+	<view class="detail">
+		<view class="header">
+			<view class="time">2019-06-21 19:00:23</view>
+			<view class="state">
+				待寄出
+			</view>
+
+		</view>
+
+		<view bindtap='toWaitPost' class="content">
+
+			<image src='https://i.loli.net/2017/08/21/599a521472424.jpg'></image>
+
+			<view class="right">
+				<view class="title">
+					苹果、华为、小米、vivo等24台
+				</view>
+				<view class="bottom">
+					IMEI：待完善…
+				</view>
+			</view>
+		</view>
+
+		<view class="to-left">
+
+			<view bindtap='toFahuo' class="button">
+				发货
+			</view>
+		</view>
+
+		<view class="hr"></view>
+	</view>
+
+
+	<!--	待收货-->
+	<!--	待收货-->
+	<!--	待收货-->
+	<!--	待收货-->
+	<!--	待收货-->
+	<!--	待收货-->
+	<view class="detail">
+		<view class="header">
+			<view class="time">2019-06-21 19:00:23</view>
+			<view class="state">
+				待收货
+			</view>
+
+		</view>
+
+		<view bindtap='toWaitGet' class="content">
+
+			<image src='https://i.loli.net/2017/08/21/599a521472424.jpg'></image>
+
+			<view class="right">
+				<view class="title">
+					苹果、华为、小米、vivo等24台
+				</view>
+				<view class="bottom">
+					IMEI：待完善…
+				</view>
+			</view>
+		</view>
+
+
+		<view class="hr"></view>
+
+	</view>
+
+
+	<!--	初审-->
+	<!--	初审-->
+	<!--	初审-->
+	<!--	初审-->
+	<!--	初审-->
+	<!--	初审-->
+	<view class="detail">
+		<view>
+
+			<view class="header">
+				<view class="time">2019-06-21 19:00:23</view>
+				<view class="state">
+					初审
+				</view>
+
+			</view>
+
+			<view bindtap='toWaitPost' class="content">
+
+				<image src='https://i.loli.net/2017/08/21/599a521472424.jpg'></image>
+
+				<view class="right">
+					<view class="title">
+						苹果、华为、小米、vivo等24台
+					</view>
+					<view class="bottom">
+						IMEI：待完善…
+					</view>
+				</view>
+			</view>
+
+		</view>
+		<view>
+
+			<view class="header">
+				<view class="time">2019-06-21 19:00:23</view>
+				<view class="state">
+					初审
+				</view>
+
+			</view>
+
+			<view bindtap='toWaitPost' class="content">
+
+				<image src='https://i.loli.net/2017/08/21/599a521472424.jpg'></image>
+
+				<view class="right">
+					<view class="title">
+						苹果、华为、小米、vivo等24台
+					</view>
+					<view class="bottom">
+						IMEI：待完善…
+					</view>
+				</view>
+			</view>
+
+		</view>
+
+
+		<view class="to-left">
+
+			<view bindtap='toFirstTrial' class="button">
+				去确认
+			</view>
+		</view>
+
+		<view class="hr"></view>
+	</view>
+</view>

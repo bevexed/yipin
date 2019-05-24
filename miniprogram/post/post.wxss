@@ -1,0 +1,23 @@
+/* post/post.wxss */
+
+.label {
+  display: flex;
+  align-items: center;
+  padding: 30rpx;
+  border-bottom: 1px solid #eee;
+  font-size: 30rpx;
+}
+
+input {
+  font-size: 26rpx;
+  display: inline-block;
+}
+
+label {
+  min-width: 150rpx;
+}
+
+.code {
+  width: 188rpx;
+  height: 80rpx;
+}

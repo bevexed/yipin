@@ -1,0 +1,17 @@
+<!--post/post.wxml-->
+<view>
+	<view>
+		<view class="label">
+			<label for='im'>物流公司</label>
+			<input id='im' placeholder='请选择物流公司' disabled></input>
+		</view>
+
+		<view class="label">
+			<label for='ima'>物流单号 </label>
+			<input id='ima' placeholder='请输入物流单号'></input>
+		</view>
+	</view>
+
+
+  <i-button bind:click="handleClick" type="primary">提交</i-button>
+</view>

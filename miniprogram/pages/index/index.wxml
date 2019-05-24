@@ -37,7 +37,7 @@
 
   <view class='menus'>
 
-    <image src='http://47.97.251.196/miniprogram/asset/img/bg1.svg'></image>
+    <image bindtap='toSaleAfter' src='http://47.97.251.196/miniprogram/asset/img/bg1.svg'></image>
     <image bindtap="toToday" src='http://47.97.251.196/miniprogram/asset/img/bg2.svg'></image>
     <image src='http://47.97.251.196/miniprogram/asset/img/bg3.svg'></image>
 

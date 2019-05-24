@@ -1,0 +1,22 @@
+/* miniprogram/sale-after/sale-after.wxss */
+
+.label{
+	display: flex;
+	align-items: center;
+	padding: 30rpx;
+  border-bottom:1px solid #eee;
+}
+
+input{
+  display: inline-block;
+}
+
+
+label{
+	min-width: 150rpx;
+}
+
+.code{
+	width: 188rpx;
+	height: 80rpx;
+}

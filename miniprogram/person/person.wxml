@@ -1,0 +1,7 @@
+ <i-input disabled title="身份信息" autofocus placeholder="(确认后无法修改)" />
+  <i-input disabled title="身份" autofocus placeholder="普通用户" />
+  <i-input value="{{ value1 }}" title="姓名" autofocus placeholder="名字" />
+  <i-input value="{{ value2 }}" title="身份证号" placeholder="请输入身份证号" />
+  <i-input value="{{ value2 }}" title="身份证照片" disabled />
+
+  <i-button bind:click="handleClick" type="primary">提交</i-button>

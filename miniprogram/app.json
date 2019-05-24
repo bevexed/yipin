@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/login/login",
-    "pages/index/index"
+    "pages/index/index",
+    "pages/order/order"
   ],
   "subpackages": [
     {
@@ -31,6 +32,83 @@
       "pages": [
         "friend"
       ]
+    },
+    {
+      "root": "sale-after",
+      "name": "sale-after",
+      "pages": [
+        "sale-after"
+      ]
+    },
+    {
+      "root": "sale-after-detail",
+      "name": "sale-after-detail",
+      "pages": [
+        "sale-after-detail"
+      ]
+    },
+    {
+      "root": "book-detail",
+      "name": "book-detaill",
+      "pages": [
+        "book-detail"
+      ]
+    },
+    {
+      "root": "sold-out",
+      "name": "sold-out",
+      "pages": [
+        "sold-out"
+      ]
+    },
+    {
+      "root": "person",
+      "name": "person",
+      "pages": [
+        "person"
+      ]
+    },
+    {
+      "root": "cust",
+      "name": "cust",
+      "pages": [
+        "cust"
+      ]
+    },
+    {
+      "root": "collect",
+      "name": "collect",
+      "pages": [
+        "collect"
+      ]
+    },
+    {
+      "root": "post",
+      "name": "post",
+      "pages": [
+        "post"
+      ]
+    },
+    {
+      "root": "wait-post",
+      "name": "wait-post",
+      "pages": [
+        "wait-post"
+      ]
+    },
+    {
+      "root": "wait-get",
+      "name": "wait-get",
+      "pages": [
+        "wait-get"
+      ]
+    },
+    {
+      "root": "first-trial",
+      "name": "first-trial",
+      "pages": [
+        "first-trial"
+      ]
     }
   ],
   "window": {
@@ -48,7 +126,7 @@
         "selectedIconPath": "./asset/img/tab_home_s_s@2x.png"
       },
       {
-        "pagePath": "pages/login/login",
+        "pagePath": "pages/order/order",
         "text": "",
         "iconPath": "./asset/img/tab_order_n@2x.png",
         "selectedIconPath": "./asset/img/tab_order_n_s@2x.png"
