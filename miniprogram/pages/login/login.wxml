@@ -1,10 +1,10 @@
 <view class='login'>
-    <image class='login-img' src='../../asset/img/pic_logo.svg'></image>
+	<image class='login-img' src='../../asset/img/pic_logo.svg'></image>
 
-    <button
-      class='button'
-      bindtap='login'
-    >微信用户一键登录
-    </button>
+	<button
+		class='button'
+		bindtap='login'
+	>微信用户一键登录
+	</button>
 
 </view>

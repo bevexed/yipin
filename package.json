@@ -7,5 +7,8 @@
   },
   "devDependencies": {
     "typescript": "^3.3.3333"
+  },
+  "dependencies": {
+    "iview-weapp": "^2.0.0"
   }
 }

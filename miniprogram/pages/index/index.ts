@@ -1,6 +1,7 @@
 //index.js
 //获取应用实例
 import { IMyApp } from '../../app'
+import { reqBanner} from '../../api/index'
 
 const app = getApp<IMyApp>()
 
@@ -10,11 +11,13 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
+
+
   },
   //事件处理函数
   bindViewTap() {
     wx.navigateTo({
-      url: '../logs/logs'
+      url: 'logs/logs'
     })
   },
   onLoad() {
@@ -44,6 +47,13 @@ Page({
         }
       })
     }
+
+    reqBanner().then(
+      res=>{
+        console.log(res)
+      }
+    )
+
   },
 
   getUserInfo(e: any) {
@@ -53,5 +63,20 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
-  }
+  },
+
+  toToday(){
+    wx.navigateTo({
+      url:'../../today/today'
+    })
+  },
+
+  toFriend() {
+    wx.navigateTo({
+      url: '../../friend/friend'
+    })
+  },
+
+
+
 })

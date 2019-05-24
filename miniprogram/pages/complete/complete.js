@@ -1,5 +1,0 @@
-"use strict";
-Page({
-    data: {}
-});
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiY29tcGxldGUuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJjb21wbGV0ZS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQUEsSUFBSSxDQUFDO0lBQ0QsSUFBSSxFQUFFLEVBQUU7Q0FDWCxDQUFDLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyJQYWdlKHtcbiAgICBkYXRhOiB7fVxufSk7XG4iXX0=

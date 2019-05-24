@@ -1,0 +1,4 @@
+/* miniprogram/pages/friend/friend.wxss */
+.head-img{
+  width: 100%;
+}

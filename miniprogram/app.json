@@ -1,15 +1,59 @@
 {
   "pages": [
     "pages/login/login",
-    "pages/index/index",
-    "pages/logs/logs",
-    "pages/complete/complete"
+    "pages/index/index"
+  ],
+  "subpackages": [
+    {
+      "root": "complete",
+      "name": "complete",
+      "pages": [
+        "complete"
+      ]
+    },
+    {
+      "root": "today",
+      "name": "today",
+      "pages": [
+        "today"
+      ]
+    },
+    {
+      "root": "price-detail",
+      "name": "price-detail",
+      "pages": [
+        "price-detail"
+      ]
+    },
+    {
+      "root": "friend",
+      "name": "friend",
+      "pages": [
+        "friend"
+      ]
+    }
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "",
+        "iconPath": "./asset/img/tab_home_s@2x.png",
+        "selectedIconPath": "./asset/img/tab_home_s_s@2x.png"
+      },
+      {
+        "pagePath": "pages/login/login",
+        "text": "",
+        "iconPath": "./asset/img/tab_order_n@2x.png",
+        "selectedIconPath": "./asset/img/tab_order_n_s@2x.png"
+      }
+    ]
   },
   "sitemapLocation": "sitemap.json"
 }

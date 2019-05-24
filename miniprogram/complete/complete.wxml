@@ -1,0 +1,14 @@
+<!--miniprogram/pages/complete.wxml-->
+<view class="complete">
+  <view class="label">
+    <input placeholder='请输入绑定手机号' value='' bindinput="changePhone" type="number" maxlength="11" placeholder-class="placeholder"></input>
+  </view>
+
+  <view class="label code">
+    <input placeholder='请输入短信验证码' value='' bindinput="changeCode" placeholder-class="placeholder"></input>
+
+    <button class="code-button {{active}}"  bindtap='sendMsg'>{{msgData}}</button>
+  </view>
+
+  <button class="sure" bindtap='toIndex'>确认</button>
+</view>

@@ -1,21 +1,47 @@
 /**index.wxss**/
-.userinfo {
+
+.swiper {
+  height: 330rpx;
+  width: 690rpx;
+  margin: 10rpx auto;
+}
+
+.swiper image {
+  width: 100%;
+}
+
+.swiper_container {
+  margin: 40rpx auto 20rpx;
+  height: 55rpx;
+  width: 690rpx;
+}
+
+.swiper_item {
   display: flex;
-  flex-direction: column;
   align-items: center;
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.detail {
+  font-size: 25rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  letter-spacing: 2px;
 }
 
-.userinfo-nickname {
-  color: #aaa;
+.notice {
+  margin-right: 20rpx;
+  width: 32rpx;
+  height: 32rpx;
 }
 
-.usermotto {
-  margin-top: 200px;
+.menus {
+  margin-top: 10rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.menus image {
+  width: 49%;
+  height: 260rpx;
 }

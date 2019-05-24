@@ -1,4 +1,0 @@
-<!--miniprogram/pages/complete.wxml-->
-<view>
-  <input placeholder='请输入绑定手机号'></input>
-</view>

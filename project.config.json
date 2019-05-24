@@ -42,12 +42,20 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 1,
 			"list": [
 				{
 					"id": -1,
-					"name": "ts",
-					"pathName": "pages/login/login",
+					"name": "friend",
+					"pathName": "pages/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 1,
+					"name": "today",
+					"pathName": "today/today",
+					"query": "",
 					"scene": null
 				}
 			]

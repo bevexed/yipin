@@ -1,0 +1,4 @@
+/* miniprogram/pages/price-detail/price-detail.wxss */
+.detail image{
+width: 100%;
+}
