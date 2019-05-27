@@ -1,4 +1,5 @@
-const base = 'http://admin.tianyue0571.cn/';
+export const base = 'http://admin.tianyue0571.cn/';
+export const baseUrl = 'http://admin.tianyue0571.cn';
 
 let ajax: (url: string, data?: object, method?: ("POST" | "GET")) => Promise<any>;
 

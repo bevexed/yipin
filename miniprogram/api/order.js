@@ -1,0 +1,6 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var ajax_1 = require("./ajax");
+exports.orderAll = function (token) { return ajax_1.ajax('/api/order_list', { token: token }); };
+exports.orderDetail = function (token, id) { return ajax_1.ajax('/api/order_detail', { token: token, id: id }); };
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoib3JkZXIuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJvcmRlci50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLCtCQUE0QjtBQUdmLFFBQUEsUUFBUSxHQUFHLFVBQUMsS0FBWSxJQUFLLE9BQUEsV0FBSSxDQUFDLGlCQUFpQixFQUFFLEVBQUMsS0FBSyxPQUFBLEVBQUMsQ0FBQyxFQUFoQyxDQUFnQyxDQUFDO0FBRzlELFFBQUEsV0FBVyxHQUFHLFVBQUMsS0FBYSxFQUFFLEVBQVUsSUFBSyxPQUFBLFdBQUksQ0FBQyxtQkFBbUIsRUFBQyxFQUFDLEtBQUssT0FBQSxFQUFDLEVBQUUsSUFBQSxFQUFDLENBQUMsRUFBcEMsQ0FBb0MsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7YWpheH0gZnJvbSAnLi9hamF4JztcclxuXHJcbi8vIOWFqOmDqOiuouWNlVxyXG5leHBvcnQgY29uc3Qgb3JkZXJBbGwgPSAodG9rZW46c3RyaW5nKSA9PiBhamF4KCcvYXBpL29yZGVyX2xpc3QnLCB7dG9rZW59KTtcclxuXHJcbi8vIOiuouWNleivpuaDhVxyXG5leHBvcnQgY29uc3Qgb3JkZXJEZXRhaWwgPSAodG9rZW46IHN0cmluZywgaWQ6IHN0cmluZykgPT4gYWpheCgnL2FwaS9vcmRlcl9kZXRhaWwnLHt0b2tlbixpZH0pOyJdfQ==
