@@ -8,9 +8,9 @@ Page({
 	onLoad(): void {
 	},
 
-IMEI(e:any) {
-	console.log(this.data.imei);
-	this.setData!({
+	IMEI(e: any) {
+		console.log(this.data.imei);
+		this.setData!({
 			imei: e.detail.value
 		})
 	},

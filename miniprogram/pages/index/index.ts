@@ -13,7 +13,7 @@ Page({
 		canIUse: wx.canIUse('button.open-type.getUserInfo'),
 
 		bannerList: [],
-		consult: {}
+		consult: ''
 
 	},
 	//事件处理函数
