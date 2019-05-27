@@ -21,12 +21,12 @@ Component({
         // 背景颜色
         backgroundcolor: {
             type: String,
-            value: '#fff'
+            value: '#fefcec'
         },
         // 字体及图标颜色
         color: {
             type: String,
-            value: '#000'
+            value: '#f76a24'
         },
         // 滚动速度
         speed: {
