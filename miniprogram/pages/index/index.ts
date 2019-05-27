@@ -12,6 +12,8 @@ Page({
 		hasUserInfo: false,
 		canIUse: wx.canIUse('button.open-type.getUserInfo'),
 
+		bannerList: [],
+		consult: {}
 
 	},
 	//事件处理函数
@@ -50,14 +52,19 @@ Page({
 
 		reqBanner().then(
 			res => {
-				console.log(res)
+				console.log('banner', res);
+				if (res.code === 1) {
+					this.setData!({
+						bannerList: res.data.banner,
+						consult: res.data.consult[0]
+					})
+				}
 			}
 		)
-
 	},
 
 	getUserInfo(e: any) {
-		console.log(e)
+		console.log(e);
 		app.globalData.userInfo = e.detail.userInfo
 		this.setData!({
 			userInfo: e.detail.userInfo,
@@ -74,6 +81,12 @@ Page({
 	toFriend() {
 		wx.navigateTo({
 			url: '../../friend/friend'
+		})
+	},
+
+	toSaleAfter() {
+		wx.navigateTo({
+			url: '../../sale-after/sale-after'
 		})
 	},
 

@@ -1,17 +1,20 @@
-<view>
+<view class="wrap">
 	<view>
 		<view class="label">
 			<label for='im'>IMEI码 </label>
-			<input id='im' placeholder='请输入IMEI码'></input>
+			<input id='im' placeholder='请输入IMEI码' bindinput="IMEI"></input>
 		</view>
 
 		<view class="label">
 			<label for='ima'>校验码 </label>
 			<input id='ima' placeholder='请输入校验码'></input>
-      <image class='code' src='https://ss0.bdstatic.com/-0U0b8Sm1A5BphGlnYG/kmarketingadslogo/45537e2e3b55008529b362d20bdae26d_250_250.jpg'></image>
+			<image class='code' src='https://ss0.bdstatic.com/-0U0b8Sm1A5BphGlnYG/kmarketingadslogo/45537e2e3b55008529b362d20bdae26d_250_250.jpg'></image>
 		</view>
 	</view>
 
 
-  <i-button bind:click="handleClick" type="primary">提交查询</i-button>
+	<view class="button">
+
+		<i-button bind:click="getAfterQuery" class="button" type="primary">提交查询</i-button>
+	</view>
 </view>
