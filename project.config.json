@@ -6,7 +6,7 @@
 	"miniprogramRoot": "miniprogram/",
 	"compileType": "miniprogram",
 	"libVersion": "2.7.0",
-	"projectname": "%E4%B8%80%E5%93%81%E6%89%8B%E6%9C%BA",
+	"projectname": "yipin",
 	"scripts": {
 		"beforeCompile": "npm run compile",
 		"beforePreview": "npm run tsc",
@@ -22,7 +22,7 @@
 		"autoAudits": false,
 		"checkInvalidKey": true
 	},
-	"appid": "wx75ab016ad8205007",
+	"appid": "wx073570268a16430c",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"condition": {

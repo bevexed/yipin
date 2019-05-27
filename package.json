@@ -2,11 +2,11 @@
   "name": "demo",
   "version": "1.0.1",
   "scripts": {
-    "compile": "./node_modules/typescript/bin/tsc -w --pretty",
+    "compile": "node ./node_modules/typescript/bin/tsc -w --pretty",
     "tsc": "node ./node_modules/typescript/lib/tsc.js"
   },
   "devDependencies": {
-    "typescript": "^3.3.3333"
+    "typescript": "^3.4.5"
   },
   "dependencies": {
     "iview-weapp": "^2.0.0"
