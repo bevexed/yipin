@@ -1,1 +1,5 @@
 /* miniprogram/pages/order/order.wxss */
+.outLogin {
+  margin-top: 162rpx;
+  padding: 0 30rpx;
+}

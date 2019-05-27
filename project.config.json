@@ -42,7 +42,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 7,
+			"current": 6,
 			"list": [
 				{
 					"id": 0,
@@ -81,22 +81,15 @@
 				},
 				{
 					"id": -1,
-					"name": "身份信息",
-					"pathName": "newpart/shenfenInfo/shenfenInfo",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": 6,
-					"name": "收款信息",
-					"pathName": "newpart/shoukuan/index",
+					"name": "我的订单",
+					"pathName": "pages/order/order",
 					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
-					"name": "收货地址",
-					"pathName": "newpart/shouhuodizhi/index",
+					"name": "我卖出的",
+					"pathName": "sold-out/sold-out",
 					"query": "",
 					"scene": null
 				}

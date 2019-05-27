@@ -5,13 +5,9 @@ Page({
 
 	login() {
 		let data = {
-			openid: 1123123122, phone: 123123123123, password: 123123123, code: 123213123
+			openid: 123456789, phone: 123123123123, password: 123123123, code: 123213123
 		};
 
-		wx.setStorage({
-			key: 'token',
-			data: 'eyJpdiI6IlwvQUJrbWtaa2RQNklhdmJldHIrQ2V3PT0iLCJ2YWx1ZSI6IkVBNGdQT3NFNllFMm9zWEZLcVwvOUlRPT0iLCJtYWMiOiI3ODA1MjVkMzUzM2Y3ZTVlZTA1ZGY3MzQ0Y2IzMTkwMzQxZTc4MDA4ZTJkN2NiNGNlNWE3MTI0ZGViMWNhOTM0In0'
-		})
 
 		reqRegister(data).then(
 			res => {
@@ -22,9 +18,15 @@ Page({
 			}
 		);
 
-		reqLogin({type: 1, openid: '123'}).then(
+		reqLogin({type: 1, openid: '123456789'}).then(
 			res => {
-				console.log(res);
+				console.log('token',res);
+				if (res.code === 1) {
+					wx.setStorageSync(
+						'token',
+						 res.data
+					)
+				}
 			}
 		);
 

@@ -1,39 +1,79 @@
 <view class='friend'>
-  <image class='head-img' src='../asset/img/2.png'></image>
+	<image class='head-img' src='http://admin.tianyue0571.cn/imgsss/2.png'></image>
 
-<i-tabs current="{{ current }}" bindchange="handleChange">
-    <i-tab key="tab1" title="供应商加盟"></i-tab>
-    <i-tab key="tab2" title="品牌店加盟"></i-tab>
-    <i-tab key="tab3" title="代理商加盟"></i-tab>
-</i-tabs>
+	<i-tabs bindchange="handleChange" current="{{ current }}">
+		<i-tab key="1" title="供应商加盟"></i-tab>
+		<i-tab key="2" title="品牌店加盟"></i-tab>
+		<i-tab key="3" title="代理商加盟"></i-tab>
+	</i-tabs>
 
-  <view wx:if="{{current === 'tab1'}}">
-  
-  <i-input value="{{ value1 }}" title="姓名" autofocus placeholder="名字" />
-  <i-input value="{{ value2 }}" type="number" title="联系方式" placeholder="请输入手机号" />
-  <i-input value="{{ value2 }}" type="" title="选择地区" placeholder="点击选择地址" />
-  <i-input value="{{ value2 }}" title="身份证号" placeholder="请输入身份证号" />
-  <i-input value="{{ value2 }}" title="身份证照片" disabled />
+	<view wx:if="{{current === '1'}}">
 
-  <i-button bind:click="handleClick" type="primary">提交</i-button>
-  </view>
+		<i-input placeholder="名字" title="姓名" value="{{ name }}"/>
+		<i-input placeholder="请输入手机号" title="联系方式" type="number" value="{{ phone }}"/>
 
-  <view wx:if="{{current === 'tab2'}}">
-  
-  <i-input value="{{ value1 }}" title="姓名" autofocus placeholder="名字" />
-  <i-input value="{{ value2 }}" type="number" title="联系方式" placeholder="请输入手机号" />
-  <i-input value="{{ value2 }}" type="" title="选择地区" placeholder="点击选择地址" />
- 
+		<view class="section">
+			<view class="sections">选择地址</view>
+			<picker
+				bindchange="bindRegionChange"
+				custom-item="{{customItem}}"
+				mode="region"
+				value="{{region}}"
+			>
+				<view class="picker">
+					{{region[0]}}，{{region[1]}}，{{region[2]}}
+				</view>
+			</picker>
+		</view>
 
-  <i-button bind:click="handleClick" type="primary">提交</i-button>
-  </view>
+		<i-input placeholder="请输入身份证号" title="身份证号" value="{{ id_card }}"/>
+		<i-input disabled title="身份证照片" value="{{ value2 }}"/>
 
-  <view wx:if="{{current === 'tab3'}}">
 
-  <i-input value="{{ value1 }}" title="姓名" autofocus placeholder="名字" />
-  <i-input value="{{ value2 }}" type="number" title="联系方式" placeholder="请输入手机号" />
-  <i-input value="{{ value2 }}" type="" title="选择地区" placeholder="点击选择地址" />
+	</view>
 
-  <i-button bind:click="handleClick" type="primary">提交</i-button>
-  </view>
+	<view wx:if="{{current === '2'}}">
+
+		<i-input placeholder="名字" title="姓名" value="{{ value1 }}"/>
+		<i-input placeholder="请输入手机号" title="联系方式" type="number" value="{{ value2 }}"/>
+		<view class="section">
+			<view class="sections">选择地址</view>
+			<picker
+				bindchange="bindRegionChange"
+				custom-item="{{customItem}}"
+				mode="region"
+				value="{{region}}"
+			>
+				<view class="picker">
+					{{region[0]}}，{{region[1]}}，{{region[2]}}
+				</view>
+			</picker>
+		</view>
+
+
+	</view>
+
+	<view wx:if="{{current === '3'}}">
+
+		<i-input placeholder="名字" title="姓名" value="{{ value1 }}"/>
+		<i-input placeholder="请输入手机号" title="联系方式" type="number" value="{{ value2 }}"/>
+		<view class="section">
+			<view class="sections">选择地址</view>
+			<picker
+				bindchange="bindRegionChange"
+				custom-item="{{customItem}}"
+				mode="region"
+				value="{{region}}"
+			>
+				<view class="picker">
+					{{region[0]}}，{{region[1]}}，{{region[2]}}
+				</view>
+			</picker>
+		</view>
+
+	</view>
+
+	<view class="button">
+		<i-button bind:click="getPartner" type="primary">提交</i-button>
+	</view>
 </view>
