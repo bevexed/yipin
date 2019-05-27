@@ -11,6 +11,7 @@
 <i-input value="{{ value4 }}" title="银行卡号" placeholder="请输入银行卡号" />
 <i-input value="{{ value5 }}" title="银行卡类型" placeholder="请选择银行卡类型" />
 <i-input value="{{ value6 }}" title="开户行" placeholder="请选择开户行" />
+<view class='zhanwei'></view>
 <view class='viewBottom'>
     <i-button bind:click="handleClick" type="primary">提交</i-button>
 </view>

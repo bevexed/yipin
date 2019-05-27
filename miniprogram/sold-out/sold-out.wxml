@@ -16,25 +16,26 @@
 	<!-- 待机出 -->
 	<!-- 待机出 -->
 	<!-- 待机出 -->
-	<view class="detail">
+	<view class="detail" wx:for='{{orderList}}' wx:key='unquie'>
 		<view class="header">
-			<view class="time">2019-06-21 19:00:23</view>
+			<view class="time">{{item.create_at
+}}</view>
 			<view class="state">
 				待寄出
 			</view>
 
 		</view>
 
-		<view bindtap='toWaitPost' class="content">
+		<view bindtap='toWaitPost' data-id='{{item.id}}' class="content">
 
-			<image src='https://i.loli.net/2017/08/21/599a521472424.jpg'></image>
+			<image src='{{imageUrl + item.picture}}'></image>
 
 			<view class="right">
 				<view class="title">
-					苹果、华为、小米、vivo等24台
+					{{item.information}}
 				</view>
 				<view class="bottom">
-					IMEI：待完善…
+					IMEI：{{item.imei}}
 				</view>
 			</view>
 		</view>

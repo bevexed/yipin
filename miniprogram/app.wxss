@@ -11,3 +11,13 @@
 .font {
   font-size: 13px;
 } 
+.viewBottom {
+  position: fixed;
+  width: 690rpx;
+  left: 30rpx;
+  bottom: 30rpx;
+}
+.zhanwei {
+  width: 100%;
+  height: 90rpx;
+}

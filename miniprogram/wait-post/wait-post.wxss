@@ -67,4 +67,6 @@
 .add{
 	width: 210rpx;
 	height: 210rpx;
+  margin-right: 32rpx;
+  margin-bottom: 32rpx;
 }

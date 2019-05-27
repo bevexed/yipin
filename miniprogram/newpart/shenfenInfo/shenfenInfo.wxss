@@ -52,9 +52,3 @@
   width: 38rpx;
   height: 38rpx;
 }
-.viewBottom {
-  position: absolute;
-  width: 690rpx;
-  left: 30rpx;
-  bottom: 30rpx;
-}
