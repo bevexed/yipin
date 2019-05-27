@@ -13,6 +13,25 @@ export const reqAfterQuery = (imei: string) => ajax('/api/after_query', {imei});
 // 用户注册API
 export const reqRegister = ({openid, phone, password, code}: any) => ajax('/api/register', {openid, phone, password, code})
 
+// 成为合作商
+interface Partnet {
+	token: string,
+	phone: number,
+	name: string,
+	address: string,
+	identity: string,
+	id_card?: number,
+	id_card_positive?: any,
+	id_card_contrary?: any,
+}
+
+export const reqPartner = ({token, phone, name, address, identity, id_card, id_card_contrary, id_card_positive}: Partnet) => ajax('/api/partner', {token, phone, name, address, identity, id_card, id_card_contrary, id_card_positive});
+
+
+// 省市列表
+export const reqAddressList = () => ajax('/api/address_list')
+
+
 // 发送 信息
 export const sendMsg = ({mobile, type}: any) => ajax('/api/send_message', {mobile, type});
 

@@ -2,4 +2,9 @@
 <view class='today'>
 
 <image src='http://admin.tianyue0571.cn/imgsss/bg-1.svg'></image>
+<image src='http://admin.tianyue0571.cn/imgsss/bg-2.svg'></image>
+<image src='http://admin.tianyue0571.cn/imgsss/bg-3.svg'></image>
+<image src='http://admin.tianyue0571.cn/imgsss/bg-4.svg'></image>
+<image src='http://admin.tianyue0571.cn/imgsss/bg-5.svg'></image>
+<image src='http://admin.tianyue0571.cn/imgsss/bg-6.svg'></image>
 </view>
