@@ -45,9 +45,9 @@
 			"current": 6,
 			"list": [
 				{
-					"id": 0,
+					"id": -1,
 					"name": "friend",
-					"pathName": "friend/friend",
+					"pathName": "pages/index/index",
 					"query": "",
 					"scene": null
 				},
@@ -59,7 +59,7 @@
 					"scene": null
 				},
 				{
-					"id": 2,
+					"id": -1,
 					"name": "index",
 					"pathName": "pages/index/index",
 					"query": "",
