@@ -14,13 +14,13 @@ export const reqAfterQuery = (imei: string) => ajax('/api/after_query', {imei});
 export const reqRegister = ({openid, phone, password, code}: any) => ajax('/api/register', {openid, phone, password, code})
 
 // 成为合作商
-interface Partnet {
+export interface Partnet {
 	token: string,
-	phone: number,
+	phone: number | string,
 	name: string,
 	address: string,
-	identity: string,
-	id_card?: number,
+	identity?: string,
+	id_card?: number | string,
 	id_card_positive?: any,
 	id_card_contrary?: any,
 }

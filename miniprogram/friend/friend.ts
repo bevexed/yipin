@@ -1,10 +1,9 @@
-import {reqAddressList, reqPartner} from "../api/index";
+import {Partnet, reqAddressList, reqPartner} from "../api/index";
 
 Page({
 
 	data: {
 		current: '1',
-		current_scroll: '1',
 
 		token: '',
 
@@ -17,10 +16,8 @@ Page({
 		address: '',
 		identity: '',
 		id_card: '',
-		value4: '输入框已禁用',
-		value5: '',
-		value6: '',
-		value7: ''
+		id_card_positive: '',
+		id_card_contrary: '',
 	},
 
 	onLoad() {
@@ -34,7 +31,7 @@ Page({
 					token: res.data
 				})
 			}
-		})
+		});
 
 		//
 		this.getAddress()
@@ -67,19 +64,74 @@ Page({
 		});
 	},
 
-	handleChangeScroll({detail}: any) {
+	input(e: any) {
+		console.log(e);
+		const label = e.target.dataset.type;
+		const value = e.detail.detail.value;
+		console.log(value);
 		this.setData!({
-			current_scroll: detail.key
+			[label]: value
+		})
 
-		});
+		console.log(label, value);
+	},
+
+	chooseTop() {
+		let _this = this;
+		wx.chooseImage({
+			count: 1,
+			sizeType: ['original', 'compressed'],
+			sourceType: ['album', 'camera'],
+			success(res) {
+				// tempFilePath可以作为img标签的src属性显示图片
+				const tempFilePaths = res.tempFilePaths;
+				_this.setData!({
+					id_card_positive: tempFilePaths
+				});
+				console.log(tempFilePaths);
+			}
+		})
+	},
+
+	chooseBottom() {
+		let _this = this;
+		wx.chooseImage({
+			count: 1,
+			sizeType: ['original', 'compressed'],
+			sourceType: ['album', 'camera'],
+			success(res) {
+				// tempFilePath可以作为img标签的src属性显示图片
+				const tempFilePaths = res.tempFilePaths;
+				_this.setData!({
+					id_card_contrary: tempFilePaths
+				});
+				console.log(tempFilePaths);
+			}
+		})
 	},
 
 	getPartner() {
 
-		reqPartner({}).then(
+		let {token, phone, name, address, region, identity, id_card, id_card_positive, id_card_contrary, current} = this.data;
+
+		identity = current;
+		address = region.join('');
+
+		let data: Partnet;
+		if (identity === '1') {
+			data = {
+				token, phone, name, address, id_card, identity, id_card_positive, id_card_contrary
+			}
+		} else {
+			data = {
+				token, phone, name, address,identity
+			}
+		}
+
+		reqPartner(data).then(
 			(res: any) => {
 				console.log(res);
 			}
 		)
 	}
-})
+});

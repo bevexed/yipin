@@ -47,6 +47,12 @@
 	justify-content: space-between;
 	align-items: center;
 }
+
+.set{
+	width: 330rpx;
+	height: 330rpx;
+}
+
 .uploadCd>view>view {
 	width:330rpx;
 	height:208rpx;
