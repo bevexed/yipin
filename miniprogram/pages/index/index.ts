@@ -90,5 +90,11 @@ Page({
 		})
 	},
 
+	toFree() {
+		wx.navigateTo({
+			url: '../../free/free'
+		})
+	}
+
 
 })

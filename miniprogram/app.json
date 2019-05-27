@@ -112,6 +112,13 @@
       "pages": [
         "first-trial"
       ]
+		},
+		{
+			"root": "free",
+			"name": "free",
+			"pages": [
+				"free"
+			]
     }
   ],
   "window": {

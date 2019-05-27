@@ -1,0 +1,23 @@
+<!--free/free.wxml-->
+<view class='friend'>
+	<image class='head-img' src='http://admin.tianyue0571.cn/imgsss/2.png'></image>
+
+	<view class="section">
+		<view class="sections">手机型号</view>
+		<picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+			<view class="picker">
+				{{array[index]}}
+			</view>
+		</picker>
+	</view>
+	<i-input bind:change="input" data-type="name" maxlength="100" placeholder="请选择机型" title="手机型号" value="{{ name }}" disable/>
+	<i-input bind:change="input" data-type="phone" maxlength="11" placeholder="请输入商家编号" title="商家编号" type="number" value="{{ phone }}"/>
+	<i-input bind:change="input" data-type="phone" maxlength="11" placeholder="请输入手机号" title="商家编号" type="number" value="{{ phone }}"/>
+
+
+
+	<view class="button">
+		<i-button bind:click="getPartner" type="primary">提交</i-button>
+	</view>
+</view>
+

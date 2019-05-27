@@ -29,8 +29,11 @@ export const reqPartner = ({token, phone, name, address, identity, id_card, id_c
 
 
 // 省市列表
-export const reqAddressList = () => ajax('/api/address_list')
+export const reqAddressList = () => ajax('/api/address_list');
 
+
+// 手机型号
+export const reqPhoneModels = () => ajax('/api/phone_models');
 
 // 发送 信息
 export const sendMsg = ({mobile, type}: any) => ajax('/api/send_message', {mobile, type});
@@ -44,3 +47,4 @@ interface Login {
 }
 
 export const reqLogin = ({type, openid, phone, password}: Login) => ajax('/api/login', {type, openid, phone, password});
+

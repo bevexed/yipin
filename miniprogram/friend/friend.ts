@@ -120,7 +120,7 @@ Page({
 		let data: Partnet;
 		if (identity === '1') {
 			data = {
-				token, phone, name, address, id_card, identity, id_card_positive, id_card_contrary
+				token, phone, name, address, id_card, identity, id_card_positive: id_card_positive[0], id_card_contrary: id_card_contrary[0]
 			}
 		} else {
 			data = {
