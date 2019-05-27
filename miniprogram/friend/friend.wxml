@@ -29,6 +29,27 @@
 		<i-input placeholder="请输入身份证号" title="身份证号" value="{{ id_card }}"/>
 		<i-input disabled title="身份证照片" value="{{ value2 }}"/>
 
+		<view class='uploadCd'>
+			<view>
+				<view>
+					<view class='circleWhite'>
+						<image src='./add.png'></image>
+					</view>
+				</view>
+				<text>身份证正面</text>
+			</view>
+
+			<view>
+				<view>
+					<view class='circleWhite'>
+						<image src='./add.png'></image>
+					</view>
+				</view>
+				<text>身份证反面</text>
+			</view>
+
+		</view>
+
 
 	</view>
 
