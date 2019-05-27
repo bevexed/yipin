@@ -10,15 +10,9 @@
 
 
   <swiper autoplay='true' duration='3000' class='swiper'>
-    <swiper-item>
-      <image src='http://img5.imgtn.bdimg.com/it/u=2816594131,1587566918&fm=26&gp=0.jpg'></image>
-    </swiper-item>
-    <swiper-item>
-      <image src='http://img5.imgtn.bdimg.com/it/u=2816594131,1587566918&fm=26&gp=0.jpg'></image>
-    </swiper-item>
-    <swiper-item>
-      <image src='http://img3.imgtn.bdimg.com/it/u=3368338280,1878411773&fm=26&gp=0.jpg'></image>
-    </swiper-item>
+    <swiper-item wx:for="{{bannerList}}" wx:key="{{item.id}}">
+			<image src='{{item.picture}}'></image>
+		</swiper-item>
   </swiper>
 
   <!-- 公告 -->
@@ -29,8 +23,8 @@
   <!-- 公告 -->
 
 
-  <i-notice-bar icon="systemprompt" loop>
-    2018年世界杯,将于6月14日至7月15日举行;2018年世界杯,将于6月14日至7月15日举行;
+  <i-notice-bar icon="systemprompt" loop background-color="#fff">
+		{{consult.content}}
   </i-notice-bar>
 
   <view style='height:20rpx;background:#f7f7f7'></view>

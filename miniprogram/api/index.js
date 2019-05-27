@@ -1,5 +1,7 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var ajax_1 = require("./ajax");
-exports.reqBanner = function () { return ajax_1.ajax('/api/banners'); };
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJpbmRleC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLCtCQUE2QjtBQU9oQixRQUFBLFNBQVMsR0FBRyxjQUFNLE9BQUEsV0FBSSxDQUFDLGNBQWMsQ0FBQyxFQUFwQixDQUFvQixDQUFBIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgYWpheCB9IGZyb20gJy4vYWpheCdcblxuXG4vLyDpppbpobViYW5uZXLlm77mlbDmja7lkozlkqjor6LmlbDmja5cbi8vIOmmlumhtWJhbm5lcuWbvuaVsOaNruWSjOWSqOivouaVsOaNrlxuLy8g6aaW6aG1YmFubmVy5Zu+5pWw5o2u5ZKM5ZKo6K+i5pWw5o2uXG5cbmV4cG9ydCBjb25zdCByZXFCYW5uZXIgPSAoKSA9PiBhamF4KCcvYXBpL2Jhbm5lcnMnKSJdfQ==
+import { ajax } from './ajax'
+
+
+// 首页 banner 图数据和咨询数据
+// 首页 banner 图数据和咨询数据
+// 首页 banner 图数据和咨询数据
+export const reqBanner = () => ajax('/api/banners',{},'POST');
