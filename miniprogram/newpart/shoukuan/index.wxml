@@ -1,0 +1,16 @@
+<view class='shoukuanType'>
+  支付宝收款
+</view>
+<i-input value="{{ value1 }}" title="支付宝账号" autofocus placeholder="请输入支付宝账号" />
+<i-input value="{{ value2 }}" title="支付宝姓名" placeholder="请输入真实姓名" />
+<view class='borderHr'></view>
+<view class='shoukuanType'>
+  银行卡收款
+</view>
+<i-input value="{{ value3 }}" title="账户名" autofocus placeholder="请输入账户名" />
+<i-input value="{{ value4 }}" title="银行卡号" placeholder="请输入银行卡号" />
+<i-input value="{{ value5 }}" title="银行卡类型" placeholder="请选择银行卡类型" />
+<i-input value="{{ value6 }}" title="开户行" placeholder="请选择开户行" />
+<view class='viewBottom'>
+    <i-button bind:click="handleClick" type="primary">提交</i-button>
+</view>

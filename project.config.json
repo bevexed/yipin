@@ -42,12 +42,12 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 4,
+			"current": 7,
 			"list": [
 				{
-					"id": -1,
+					"id": 0,
 					"name": "friend",
-					"pathName": "pages/index/index",
+					"pathName": "friend/friend",
 					"query": "",
 					"scene": null
 				},
@@ -59,7 +59,7 @@
 					"scene": null
 				},
 				{
-					"id": -1,
+					"id": 2,
 					"name": "index",
 					"pathName": "pages/index/index",
 					"query": "",
@@ -76,6 +76,28 @@
 					"id": -1,
 					"name": "sale-after/sale-after",
 					"pathName": "sale-after/sale-after",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "身份信息",
+					"pathName": "newpart/shenfenInfo/shenfenInfo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 6,
+					"name": "收款信息",
+					"pathName": "newpart/shoukuan/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "收货地址",
+					"pathName": "newpart/shouhuodizhi/index",
+					"query": "",
 					"scene": null
 				}
 			]

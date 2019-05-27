@@ -1,0 +1,38 @@
+<view class='font'>
+  <view class='shenfenFirst'>
+    <text class='shenfenText'>身份信息</text>
+    <text class='shenfenTi'>（确认后无法修改）</text>
+  </view>
+  <view class='shenfenFirst'>
+    <text class='shenfenWord'>身份</text>
+    <text>普通用户</text>
+  </view>
+  <i-input value="{{ value1 }}" title="姓名" autofocus placeholder="请输入真实姓名" />
+  <i-input value="{{ value2 }}" title="身份证号" placeholder="请输入身份证号" />
+  <i-input value="{{ value2 }}" title="身份证照片" disabled />
+
+  <view class='uploadCd'>
+    <view>
+        <view>
+          <view class='circleWhite'>
+            <image src='../add.png'></image>
+          </view>
+        </view>
+        <text>身份证正面</text>
+    </view>
+
+    <view>
+        <view>
+          <view class='circleWhite'>
+            <image src='../add.png'></image>
+          </view>
+        </view>
+        <text>身份证反面</text>
+    </view>
+
+  </view>
+  
+  <view class='viewBottom'>
+    <i-button bind:click="handleClick" type="primary">提交</i-button>
+  </view>
+</view>

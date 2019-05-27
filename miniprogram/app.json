@@ -2,7 +2,10 @@
   "pages": [
     "pages/login/login",
     "pages/index/index",
-    "pages/order/order"
+    "pages/order/order",
+    "newpart/shenfenInfo/shenfenInfo",
+    "newpart/shoukuan/index",
+    "newpart/shouhuodizhi/index"
   ],
   "subpackages": [
     {

@@ -1,0 +1,20 @@
+/* miniprogram/newpart/shoukuan/index.wxss */
+.shoukuanType {
+  font-size: 32rpx;
+  color: #182231;
+  padding: 0 30rpx;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px #f5f5f6 solid;
+}
+.borderHr {
+  height: 20rpx;
+  background: #F7F7F7;
+}
+.viewBottom {
+  position: absolute;
+  width: 690rpx;
+  left: 30rpx;
+  bottom: 30rpx;
+}

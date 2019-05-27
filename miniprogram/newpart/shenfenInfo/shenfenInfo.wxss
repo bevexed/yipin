@@ -1,0 +1,60 @@
+/* miniprogram/newpart/shenfenInfo/shenfenInfo.wxss */
+.shenfenFirst {
+  height: 55px;
+  border-bottom: 1px #f5f5f6 solid;
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+}
+.shenfenText {
+  font-size: 16px;
+  color: #182231;
+  font-weight: bold;
+}
+.shenfenTi {
+  font-size: 12px;
+  color: #9FA7B0;
+}
+.shenfenWord {
+  font-size: 15px;
+  margin-right: 18px
+}
+.uploadCd {
+  padding: 24px 15px 137px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.uploadCd>view>view {
+  width:330rpx;
+  height:208rpx;
+  background:rgba(239,241,244,1);
+  border-radius:2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+.uploadCd>view {
+  text-align: center;
+  color: #4E565F
+}
+.circleWhite {
+  width: 86rpx;
+  height: 86rpx;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+.circleWhite>image {
+  width: 38rpx;
+  height: 38rpx;
+}
+.viewBottom {
+  position: absolute;
+  width: 690rpx;
+  left: 30rpx;
+  bottom: 30rpx;
+}
