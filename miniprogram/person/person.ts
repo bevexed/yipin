@@ -131,6 +131,19 @@ Page({
 		reqUpdateBasicInformation(data).then(
 			res => {
 				console.log(res);
+				if (res.code === 1) {
+					wx.showToast({
+						title: '修改成功',
+						mask: true,
+						duration: 2000,
+						success() {
+							wx.navigateBack({
+								delta: 1
+							})
+						}
+					})
+
+				}
 			}
 		)
 	},
