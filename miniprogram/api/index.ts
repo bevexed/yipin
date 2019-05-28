@@ -11,7 +11,7 @@ export const reqBanner = () => ajax('/api/banners', {});
 export const reqAfterQuery = (imei: string) => ajax('/api/after_query', {imei});
 
 // 用户注册API
-export const reqRegister = ({openid, phone, password, code}: any) => ajax('/api/register', {openid, phone, password, code})
+export const reqRegister = ({openid, phone, password, code}: any) => ajax('/api/register', {openid, phone, password, code});
 
 // 成为合作商
 export interface Partnet {
@@ -71,7 +71,7 @@ interface BasicInformation {
 	id_card_contrary?: any;
 }
 
-export const reqUpdateBasicInformation = (data:BasicInformation)=>ajax('/api/update_basic_information',data);
+export const reqUpdateBasicInformation = (data: BasicInformation) => ajax('/api/update_basic_information', data);
 
 // 修改用户收款信息
 interface GatheringInformation {
@@ -90,4 +90,4 @@ export const requpdate_gathering_information = (data: GatheringInformation) => a
 export const reqUserInformation = (token: object) => ajax('/api/user_information', token);
 
 // openid
-export const reqOpenid = (code:string)=>ajax('api/mini_program',{code});
+export const reqOpenid = (code: string) => ajax('api/mini_program', {code});
