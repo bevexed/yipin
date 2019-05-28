@@ -22,7 +22,7 @@
 		"autoAudits": false,
 		"checkInvalidKey": true
 	},
-	"appid": "wx61d01b26e0dc5888",
+	"appid": "wx75ab016ad8205007",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"condition": {
@@ -42,7 +42,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 15,
+			"current": 16,
 			"list": [
 				{
 					"id": -1,
@@ -153,6 +153,13 @@
 					"id": -1,
 					"name": "login",
 					"pathName": "pages/login/login",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "today",
+					"pathName": "today/today",
 					"scene": null
 				}
 			]

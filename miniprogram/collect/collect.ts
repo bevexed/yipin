@@ -1,4 +1,4 @@
-import {requpdate_gathering_information} from "../api/index";
+import {requpdate_gathering_information, reqUserInformation} from "../api/index";
 
 Page({
 	data: {
@@ -9,7 +9,7 @@ Page({
 		bank_number: '',
 		bank_type: '',
 		opening_bank: '',
-
+		disabled: false
 	},
 	onLoad() {
 		// 读取token
@@ -20,9 +20,11 @@ Page({
 				console.log(res);
 				_this.setData!({
 					token: res.data
-				})
+				}, () => _this.getInfor())
 			}
 		});
+
+
 	},
 
 	input(e: any) {
@@ -73,13 +75,83 @@ Page({
 	},
 
 	doUpdateBasicInformation() {
+		const {
+			token,
+			alipay_account,
+			alipay_name,
+			bank_name,
+			bank_number,
+			bank_type,
+			opening_bank
+		} = this.data;
+
+		if (
+			!token ||
+			!alipay_account ||
+			!alipay_name ||
+			!bank_name ||
+			!bank_number ||
+			!bank_type ||
+			!opening_bank
+		) {
+			wx.showToast({
+				title: '请检查表单',
+				icon: "none",
+				mask: true,
+				duration: 2000,
+			});
+			return
+
+		}
+
 		requpdate_gathering_information(this.data).then(res => {
 			if (res.code === 1) {
-				console.log(res);
-				wx.navigateBack({
-					delta: 1
+				wx.showToast({
+					title: '修改成功',
+					mask: true,
+					duration: 2000,
+					success() {
+						wx.navigateBack({
+							delta: 1
+						})
+					}
 				})
+
 			}
 		})
+	},
+
+	getInfor() {
+		wx.showLoading({
+			title: '',
+			mask: true
+		})
+		const {token} = this.data;
+		reqUserInformation({token}).then(
+			(res: any) => {
+				if (res.code === 1) {
+					wx.hideLoading();
+					console.log(res);
+					const {
+						alipay_account,
+						alipay_name,
+						bank_name,
+						bank_number,
+						bank_type,
+						opening_bank
+					} = res.data;
+					this.setData!({
+						disabled: true,
+						alipay_account,
+						alipay_name,
+						bank_name,
+						bank_number,
+						bank_type,
+						opening_bank
+					})
+
+				}
+			}
+		)
 	}
 })

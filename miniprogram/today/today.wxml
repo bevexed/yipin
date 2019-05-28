@@ -1,7 +1,7 @@
 
 <view class='today'>
 
-<image src='http://admin.tianyue0571.cn/imgsss/bg-1.svg'></image>
+<image bindtap="to" data-type="1" src='http://admin.tianyue0571.cn/imgsss/bg-1.svg'></image>
 <image src='http://admin.tianyue0571.cn/imgsss/bg-2.svg'></image>
 <image src='http://admin.tianyue0571.cn/imgsss/bg-3.svg'></image>
 <image src='http://admin.tianyue0571.cn/imgsss/bg-4.svg'></image>

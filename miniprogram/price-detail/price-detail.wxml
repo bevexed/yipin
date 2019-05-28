@@ -1,4 +1,4 @@
 <!--miniprogram/pages/price-detail/price-detail.wxml-->
 <view class='detail'>
-  <image src='../../asset/img/1.png'></image>
+  <image src='http://admin.tianyue0571.cn/imgsss/1.png'></image>
 </view>
