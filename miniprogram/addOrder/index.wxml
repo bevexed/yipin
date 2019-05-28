@@ -1,0 +1,56 @@
+<!--wait-post/wait-post.wxml-->
+<view class="header-warp">
+
+	<view class="header">
+		<view class="title">
+			填写商品信息
+		</view>
+
+
+	</view>
+
+	<view class='info_vc font'>
+    <text>商品信息</text>
+    <textarea class='info_txt' placeholder='请填写商品标题如：苹果手机10台、安卓手机10台…' value='{{information}}' bindinput='write'></textarea>
+  </view>
+  <view class='info_vc font noneBorder'>
+    <text>下单数量</text>
+    <textarea class='info_txt' placeholder='请输入下单数量' value='{{amount}}' bindinput='amount'></textarea>
+  </view>
+
+</view>
+
+<view class="hr"></view>
+
+<view class="bottom">
+
+	<view class="title">
+		备注信息
+	</view>
+
+	<textarea class='textarea' placeholder='还有其他需要注意的吗？请填写在这里吧~' value='{{note}}' bindinput='noteText'></textarea>
+
+	<view class="pic">
+		图片（最多上传3张）
+	</view>
+
+</view>
+
+ <view class='paddLeft'>
+  <view class='uploadBtn add' bindtap='uploadImage' wx:if='{{pics.length<3}}'>
+    <image src='./add.png'></image>
+  </view>
+  <image class='add' wx:for='{{pics}}' src='{{item}}' wx:key='unquie'></image>
+ </view>
+<view class='hr'></view>
+
+<view class='orderBottom font'>
+  <view class='shouhuoText'>收货地址</view>  
+  <view>收件人：{{address.consignee}}</view>
+  <view>联系电话：{{address.contact_phone}}</view>
+  <view>收货地址：{{address.shipping_address}}</view>
+  <view class='btnSubmit'>
+    <i-button bind:click="tijiao" type="primary">提交订单</i-button>
+  </view>
+</view>
+

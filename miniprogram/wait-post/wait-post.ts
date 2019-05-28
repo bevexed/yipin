@@ -35,29 +35,16 @@ Page({
     }
   )
   },
-  // 上传图片
-  // uploadImage(){
-  //   const that = this;
-  //   const pics = this.data.pics;
-  //   console.log(pics);
-  //   wx.chooseImage({
-  //     count: 3 - pics.length,
-  //     sizeType: ['original', 'compressed'],
-  //     sourceType: ['album', 'camera'],
-  //     success(res) {
-  //       // tempFilePath可以作为img标签的src属性显示图片
-  //       const tempFilePaths = res.tempFilePaths
-  //       const picAll = pics.concat(tempFilePaths);
-  //       console.log(picAll);
-  //       that.setData!({
-  //         pics: picAll
-  //       })
-  //     }
-  //   })
-  // },
+  // 发货
   faHuo(){
     wx.navigateTo({
       url:'../post/post?id=' + this.data.id
+    })
+  },
+  // 子订单
+  goChild(e:any){
+    wx.navigateTo({
+      url: '../childOrder/childOrder?title=' + e.currentTarget.dataset.title + '&note=' + e.currentTarget.dataset.note + '&imei=' + e.currentTarget.dataset.imei + '&level=' + e.currentTarget.dataset.level + '&code=' + e.currentTarget.dataset.code + '&price=' + e.currentTarget.dataset.price
     })
   }
 })

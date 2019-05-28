@@ -12,8 +12,8 @@
 .title{
 	font-size:32rpx;
 	font-family:PingFangSC-Medium;
-	font-weight:500;
-	color:rgba(24,34,49,1);
+	font-weight:600;
+	color:#182231;
 }
 
 .state{
@@ -29,6 +29,19 @@
 	font-family:PingFangSC-Regular;
 	font-weight:400;
 	color:rgba(78,86,95,1);
+}
+.info_vc {
+  padding: 30rpx 30rpx 84rpx;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px #D1D5DA solid
+}
+.info_txt {
+  width: 550rpx;
+  height: 88rpx;
+}
+.noneBorder {
+  border: none!important;
 }
 
 .num{
@@ -70,8 +83,18 @@
   margin-right: 32rpx;
   margin-bottom: 32rpx;
 }
+.uploadBtn {
+  border: 1px dashed #9FA7B0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .add:nth-child(3n){
   margin-right: 0;
+}
+.uploadBtn>image {
+  width: 46rpx;
+  height: 46rpx;
 }
 
 .phone {
@@ -82,7 +105,12 @@
   display: flex;
   justify-content: space-between;
 }
-
+.paddLeft {
+  padding-left: 30rpx;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap
+}
 .phone-title {
   font-size: 30rpx;
   font-family: PingFangSC-Medium;
@@ -146,4 +174,17 @@
   color: rgba(255, 255, 255, 1);
   margin: 20rpx;
   text-align: center;
+}
+.orderBottom {
+  padding: 30rpx;
+  line-height:36px;
+}
+.shouhuoText {
+  color: #182231;
+  font-size: 32rpx;
+  font-family:PingFangSC-Medium;
+  font-weight: 600
+}
+.btnSubmit {
+  margin-top: 32rpx;
 }

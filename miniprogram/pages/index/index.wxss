@@ -45,3 +45,12 @@
   width: 49%;
   height: 260rpx;
 }
+
+.addBtn {
+  width: 136rpx;
+  height: 136rpx;
+  position: fixed;
+  right: 10rpx;
+  bottom: 10rpx;
+  z-index: 1000
+}

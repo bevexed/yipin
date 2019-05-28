@@ -1,0 +1,45 @@
+/* miniprogram/childOrder/childOrder.wxss */
+.view_cont {
+  height: 110rpx;
+  line-height: 110rpx;
+  padding: 0 30rpx;
+  color: #182231;
+  font-size: 32rpx;
+  border-bottom: 1px #D1D5DA solid
+}
+.phone {
+  padding: 24rpx 30rpx;
+}
+
+.phone-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.phone-title {
+  font-size: 30rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  color: rgba(24, 34, 49, 1);
+  margin-bottom: 12rpx;
+}
+
+.phone-price, .phone-state {
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(68, 142, 246, 1);
+}
+
+.phone-price {
+  font-size: 26rpx;
+  margin-bottom: 12rpx;
+}
+
+.phone-class, .phone-imei {
+  font-size: 26rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(78, 86, 95, 1);
+  margin-bottom: 12rpx;
+}

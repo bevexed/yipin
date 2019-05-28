@@ -9,7 +9,7 @@
   box-sizing: border-box;
 }
 .font {
-  font-size: 13px;
+  font-size: 26rpx;
 } 
 .viewBottom {
   position: fixed;

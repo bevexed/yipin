@@ -39,5 +39,6 @@
 
 	</view>
 
+  <image bindtap='goAdd' class='addBtn' src='../addOrder.png'></image>
 
 </view>
