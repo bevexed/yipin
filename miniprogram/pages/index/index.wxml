@@ -33,7 +33,7 @@
 
 		<image bindtap='toSaleAfter' src='http://admin.tianyue0571.cn/imgsss/bg1.svg'></image>
 		<image bindtap="toToday" src='http://admin.tianyue0571.cn/imgsss/bg2.svg'></image>
-		<image src='http://admin.tianyue0571.cn/imgsss/bg3.svg'></image>
+		<image bindtap="toFree" src='http://admin.tianyue0571.cn/imgsss/bg3.svg'></image>
 
 		<image bindtap="toFriend" src='http://admin.tianyue0571.cn/imgsss/bg4.svg'></image>
 

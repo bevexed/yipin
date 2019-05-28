@@ -9,8 +9,8 @@
 
 	<view wx:if="{{current === '1'}}">
 
-		<i-input placeholder="名字" title="姓名" value="{{ name }}"/>
-		<i-input placeholder="请输入手机号" title="联系方式" type="number" value="{{ phone }}"/>
+		<i-input placeholder="名字" title="姓名" value="{{ name }}" auto-focus123213 bind:change="input" data-type="name" maxlength="100" />
+		<i-input placeholder="请输入手机号" title="联系方式" type="number" value="{{ phone }}"  bind:change="input" data-type="phone" maxlength="11"/>
 
 		<view class="section">
 			<view class="sections">选择地址</view>
@@ -26,16 +26,42 @@
 			</picker>
 		</view>
 
-		<i-input placeholder="请输入身份证号" title="身份证号" value="{{ id_card }}"/>
-		<i-input disabled title="身份证照片" value="{{ value2 }}"/>
+		<i-input placeholder="请输入身份证号" title="身份证号" value="{{ id_card }}" bind:change="input" data-type="id_card" maxlength="23"/>
+		<i-input disabled title="身份证照片"/>
+
+		<view class='uploadCd'>
+			<view bindtap="chooseTop">
+				<view wx:if="{{!id_card_positive}}">
+					<view class='circleWhite'>
+						<image src='./add.png'></image>
+					</view>
+				</view>
+
+				<image class="set" src='{{id_card_positive}}' wx:else></image>
+
+				<text>身份证正面</text>
+			</view>
+
+			<view bindtap="chooseBottom">
+				<view wx:if="{{!id_card_contrary}}">
+					<view class='circleWhite'>
+						<image src='./add.png'></image>
+					</view>
+				</view>
+
+				<image class="set" src='{{id_card_contrary}}' wx:else></image>
+				<text>身份证反面</text>
+			</view>
+
+		</view>
 
 
 	</view>
 
 	<view wx:if="{{current === '2'}}">
 
-		<i-input placeholder="名字" title="姓名" value="{{ value1 }}"/>
-		<i-input placeholder="请输入手机号" title="联系方式" type="number" value="{{ value2 }}"/>
+		<i-input placeholder="名字" title="姓名" value="{{ name }}" auto-focus123213 bind:change="input" data-type="name" maxlength="100" />
+		<i-input placeholder="请输入手机号" title="联系方式" type="number" value="{{ phone }}"  bind:change="input" data-type="phone" maxlength="11"/>
 		<view class="section">
 			<view class="sections">选择地址</view>
 			<picker
@@ -54,9 +80,8 @@
 	</view>
 
 	<view wx:if="{{current === '3'}}">
-
-		<i-input placeholder="名字" title="姓名" value="{{ value1 }}"/>
-		<i-input placeholder="请输入手机号" title="联系方式" type="number" value="{{ value2 }}"/>
+		<i-input placeholder="名字" title="姓名" value="{{ name }}" auto-focus123213 bind:change="input" data-type="name" maxlength="100" />
+		<i-input placeholder="请输入手机号" title="联系方式" type="number" value="{{ phone }}"  bind:change="input" data-type="phone" maxlength="11"/>
 		<view class="section">
 			<view class="sections">选择地址</view>
 			<picker

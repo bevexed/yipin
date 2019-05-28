@@ -42,7 +42,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 6,
+			"current": 15,
 			"list": [
 				{
 					"id": -1,
@@ -91,6 +91,68 @@
 					"name": "我卖出的",
 					"pathName": "sold-out/sold-out",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "f",
+					"pathName": "friend/friend",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "sf",
+					"pathName": "newpart/shenfenInfo/shenfenInfo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "free",
+					"pathName": "free/free",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "free",
+					"pathName": "free/free",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "sale-a",
+					"pathName": "sale-after/sale-after",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "order",
+					"pathName": "pages/order/order",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "person",
+					"pathName": "person/person",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "person",
+					"pathName": "collect/collect",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "login",
+					"pathName": "pages/login/login",
 					"scene": null
 				}
 			]

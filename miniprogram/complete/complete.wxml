@@ -7,7 +7,7 @@
   <view class="label code">
     <input placeholder='请输入短信验证码' value='' bindinput="changeCode" placeholder-class="placeholder"></input>
 
-    <button class="code-button {{active}}"  bindtap='sendMsg'>{{msgData}}</button>
+    <button class="code-button {{active}}"  bindtap='doSendMsg'>{{msgData}}</button>
   </view>
 
   <button class="sure" bindtap='toIndex'>确认</button>

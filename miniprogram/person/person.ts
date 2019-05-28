@@ -1,25 +1,18 @@
-import {Partnet, reqAddressList, reqPartner} from "../api/index";
+import {reqUpdateBasicInformation, reqUserInformation} from "../api/index";
 
 Page({
-
 	data: {
-		current: '1',
-
 		token: '',
-
-		addressList:[],
-
-		region: ['广东省', '广州市', '海珠区'],
-
 		name: '',
-		phone: '',
-		address: '',
-		identity: '',
 		id_card: '',
 		id_card_positive: '',
 		id_card_contrary: '',
-	},
 
+		identity:'',
+		disabled: false,
+		state: ['供货商', '加盟店', '区域代理']
+		// 1：供货商；2：加盟店；3：区域代理
+	},
 	onLoad() {
 		// 读取token
 		let _this = this;
@@ -29,38 +22,9 @@ Page({
 				console.log(res);
 				_this.setData!({
 					token: res.data
-				})
+					}, () => _this.getInfor()
+				)
 			}
-		});
-
-		//
-		this.getAddress()
-	},
-
-	bindRegionChange(e:any) {
-		console.log('picker发送选择改变，携带值为', e.detail.value);
-		this.setData!({
-			region: e.detail.value
-		})
-	},
-
-	getAddress() {
-		reqAddressList().then(
-			res => {
-				if (res.code === 1) {
-					console.log('地址',res);
-					this.setData!({
-						addressList: res.data
-					})
-				}
-			}
-		)
-	},
-
-
-	handleChange({detail}: any) {
-		this.setData!({
-			current: detail.key
 		});
 	},
 
@@ -77,6 +41,9 @@ Page({
 	},
 
 	chooseTop() {
+		if (this.data.disabled) {
+			return
+		}
 		let _this = this;
 		wx.chooseImage({
 			count: 1,
@@ -97,10 +64,10 @@ Page({
 					// formData: {
 					// 	'user': 'test'
 					// },
-					success(res) {
+					success (res){
 						const data = JSON.parse(res.data);
 						console.log(data);
-						if (data.code === 1) {
+						if (data.code ===1){
 							_this.setData!({
 								id_card_positive: data.data
 							});
@@ -113,6 +80,9 @@ Page({
 	},
 
 	chooseBottom() {
+		if (this.data.disabled) {
+			return
+		}
 		let _this = this;
 		wx.chooseImage({
 			count: 1,
@@ -132,10 +102,10 @@ Page({
 					// formData: {
 					// 	'user': 'test'
 					// },
-					success(res) {
+					success (res){
 						const data = JSON.parse(res.data);
 						console.log(data);
-						if (data.code === 1) {
+						if (data.code ===1){
 							_this.setData!({
 								id_card_contrary: data.data
 							});
@@ -146,47 +116,51 @@ Page({
 			}
 		})
 	},
-
-	getPartner() {
-
-		let {token, phone, name, address, region, identity, id_card, id_card_positive, id_card_contrary, current} = this.data;
-
-		identity = current;
-		address = region.join('');
-
-		let data: Partnet;
-		if (identity === '1') {
-			data = {
-				token, phone, name, address, id_card, identity, id_card_positive, id_card_contrary
-			};
-			if (!name || !token || !id_card_positive || !id_card_contrary || !id_card || !phone || !address || !identity) {
-				wx.showToast({
-					title: '请检查表单填写是否完整',
-					mask: true,
-					duration: 2000,
-					icon: "none"
-				});
-				return;
-			}
-		} else {
-			data = {
-				token, phone, name, address,identity
-			};
-			if (!name || !token || !phone || !address || !identity) {
-				wx.showToast({
-					title: '请检查表单填写是否完整',
-					mask: true,
-					duration: 2000,
-					icon: "none"
-				});
-				return;
-			}
+	doUpdateBasicInformation() {
+		const {name,token,id_card,id_card_contrary,id_card_positive} = this.data;
+		if (!name || !token || !id_card_positive || !id_card_contrary || !id_card) {
+			wx.showToast({
+				title: '请检查表单填写是否完整',
+				mask: true,
+				duration: 2000,
+				icon: "none"
+			});
+			return;
 		}
-
-		reqPartner(data).then(
-			(res: any) => {
+		const data = {name,token,id_card,id_card_contrary,id_card_positive};
+		reqUpdateBasicInformation(data).then(
+			res => {
 				console.log(res);
 			}
 		)
+	},
+
+	getInfor() {
+		wx.showLoading({
+			title: '',
+			mask: true
+		})
+		const {token,state} = this.data;
+		reqUserInformation({token}).then(
+			(res: any) => {
+				if (res.code === 1) {
+					wx.hideLoading();
+
+					const {name, id_card, id_card_contrary, id_card_positive,identity} = res.data;
+					console.log(name, id_card, id_card_contrary, id_card_positive);
+					if (name || id_card || id_card_contrary || id_card_positive) {
+						this.setData!({
+							disabled: true,
+							name,
+							id_card,
+							id_card_contrary,
+							id_card_positive,
+							identity : state[identity]
+						})
+					}
+
+				}
+			}
+		)
 	}
-});
+})
