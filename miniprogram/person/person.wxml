@@ -1,7 +1,34 @@
- <i-input disabled title="身份信息" autofocus placeholder="(确认后无法修改)" />
-  <i-input disabled title="身份" autofocus placeholder="普通用户" />
-  <i-input value="{{ value1 }}" title="姓名" autofocus placeholder="名字" />
-  <i-input value="{{ value2 }}" title="身份证号" placeholder="请输入身份证号" />
-  <i-input value="{{ value2 }}" title="身份证照片" disabled />
+<i-input disabled maxlength="100" placeholder="(确认后无法修改)" title="身份信息"/>
+<i-input bind:change="input" disabled maxlength="100" placeholder="普通用户" title="身份"/>
+<i-input bind:change="input" data-type="name" maxlength="100" placeholder="名字" title="姓名"/>
+<i-input bind:change="input" data-type="id_card" maxlength="100" placeholder="请输入身份证号" title="身份证号"/>
+<i-input disabled title="身份证照片"/>
+<view class='uploadCd'>
+	<view bindtap="chooseTop">
+		<view wx:if="{{!id_card_positive}}">
+			<view class='circleWhite'>
+				<image src='./add.png'></image>
+			</view>
+		</view>
 
-  <i-button bind:click="handleClick" type="primary">提交</i-button>
+		<image class="set" src='{{id_card_positive}}' wx:else></image>
+
+		<text>身份证正面</text>
+	</view>
+
+	<view bindtap="chooseBottom">
+		<view wx:if="{{!id_card_contrary}}">
+			<view class='circleWhite'>
+				<image src='./add.png'></image>
+			</view>
+		</view>
+
+		<image class="set" src='{{id_card_contrary}}' wx:else></image>
+		<text>身份证反面</text>
+	</view>
+
+</view>
+
+<view class="button">
+	<i-button bind:click="doUpdateBasicInformation" type="primary">提交</i-button>
+</view>

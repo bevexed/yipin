@@ -25,7 +25,7 @@ export interface Partnet {
 	id_card_contrary?: any,
 }
 
-export const reqPartner = ({token, phone, name, address, identity, id_card, id_card_contrary, id_card_positive}: Partnet) => ajax('/api/partner', {token, phone, name, address, identity, id_card, id_card_contrary, id_card_positive});
+export const reqPartner = (data: Partnet) => ajax('/api/partner', data);
 
 
 // 省市列表
@@ -61,3 +61,14 @@ export const reqGetFreeFilm = (data: FreeFile) => ajax('/api/get_free_film', dat
 
 // 客服点话
 export const reqService = () => ajax('/api/service')
+
+// 修改用户基本信息
+interface BasicInformation {
+	token: string,
+	name?: string,
+	id_card?: number | string,
+	id_card_positive?: any,
+	id_card_contrary?: any,
+}
+
+export const reqUpdateBasicInformation = (data:BasicInformation)=>ajax('/api/update_basic_information',data);
