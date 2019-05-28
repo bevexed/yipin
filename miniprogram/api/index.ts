@@ -88,3 +88,6 @@ export const requpdate_gathering_information = (data: GatheringInformation) => a
 
 // 获取用户信息
 export const reqUserInformation = (token: object) => ajax('/api/user_information', token);
+
+// openid
+export const reqOpenid = (code:string)=>ajax('api/mini_program',{code});

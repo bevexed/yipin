@@ -1,3 +1,5 @@
+import {reqOpenid} from "./api/index";
+
 //app.ts
 export interface IMyApp {
 	globalData: {
@@ -16,11 +18,17 @@ App<IMyApp>({
 
 		// 登录
 		wx.login({
-			success(_res) {
-				// console.log(_res.code)
+			success(res) {
+				console.log(res.code);
+				reqOpenid(res.code).then(
+					(res: any) => {
+						console.log(res);
+					}
+				)
 				// 发送 _res.code 到后台换取 openId, sessionKey, unionId
 			}
 		});
+
 		// 获取用户信息
 		wx.getSetting({
 			success: (res) => {
