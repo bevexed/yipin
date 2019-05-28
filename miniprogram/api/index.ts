@@ -48,3 +48,13 @@ interface Login {
 
 export const reqLogin = ({type, openid, phone, password}: Login) => ajax('/api/login', {type, openid, phone, password});
 
+// 手机贴膜
+interface FreeFile {
+	token: string,
+	phone_model: string | null,
+	serial_number: string,
+	phone: number | string | undefined,
+	code: string | number
+}
+
+export const reqGetFreeFilm = (data: FreeFile) => ajax('/api/get_free_film', data);

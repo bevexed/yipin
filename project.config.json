@@ -42,7 +42,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 9,
+			"current": 10,
 			"list": [
 				{
 					"id": -1,
@@ -104,6 +104,13 @@
 					"id": -1,
 					"name": "sf",
 					"pathName": "newpart/shenfenInfo/shenfenInfo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "free",
+					"pathName": "free/free",
 					"query": "",
 					"scene": null
 				},

@@ -38,7 +38,7 @@ Page({
 	},
 
 	bindRegionChange(e:any) {
-		console.log('picker发送选择改变，携带值为', e.detail.value)
+		console.log('picker发送选择改变，携带值为', e.detail.value);
 		this.setData!({
 			region: e.detail.value
 		})
@@ -71,7 +71,7 @@ Page({
 		console.log(value);
 		this.setData!({
 			[label]: value
-		})
+		});
 
 		console.log(label, value);
 	},

@@ -2,22 +2,33 @@
 <view class='friend'>
 	<image class='head-img' src='http://admin.tianyue0571.cn/imgsss/2.png'></image>
 
+	<!--	<view class="section">-->
+	<!--		<view class="sections">手机型号</view>-->
+	<!--		<picker bindchange="multiSelector" value="{{index}}" range="{{array}}">-->
+	<!--			<view class="picker">-->
+	<!--				{{array[index]}}-->
+	<!--			</view>-->
+	<!--		</picker>-->
+	<!--	</view>-->
+
 	<view class="section">
 		<view class="sections">手机型号</view>
-		<picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+		<picker bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" mode="multiSelector" range="{{multiArray}}" value="{{multiIndex}}">
 			<view class="picker">
-				{{array[index]}}
+				{{multiArray[0][multiIndex[0]]}} {{multiArray[1][multiIndex[1]]}}
 			</view>
 		</picker>
 	</view>
-	<i-input bind:change="input" data-type="name" maxlength="100" placeholder="请选择机型" title="手机型号" value="{{ name }}" disable/>
-	<i-input bind:change="input" data-type="phone" maxlength="11" placeholder="请输入商家编号" title="商家编号" type="number" value="{{ phone }}"/>
-	<i-input bind:change="input" data-type="phone" maxlength="11" placeholder="请输入手机号" title="商家编号" type="number" value="{{ phone }}"/>
+
+
+	<i-input bind:change="input" data-type="serial_number" maxlength="11" placeholder="请输入商家编号" title="商家编号" type="" value="{{ serial_number }}"/>
+	<i-input bind:change="input" data-type="phone" maxlength="11" placeholder="手机号" title="手机号码" type="number" value="{{ phone }}"/>
+	<i-input bind:change="input" data-type="code" maxlength="11" placeholder="手机号" title="手机号码" type="number" value="{{ code }}"/>
 
 
 
 	<view class="button">
-		<i-button bind:click="getPartner" type="primary">提交</i-button>
+		<i-button bind:click="getFreeFilm" type="primary">提交</i-button>
 	</view>
 </view>
 
