@@ -65,6 +65,11 @@
 
 
 .add{
-	width: 210rpx;
-	height: 210rpx;
+	width: 206rpx;
+	height: 206rpx;
+  margin-right: 32rpx;
+  margin-bottom: 32rpx;
+}
+.add:nth-child(3n){
+  margin-right: 0;
 }

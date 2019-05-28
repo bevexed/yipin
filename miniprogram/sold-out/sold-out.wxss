@@ -73,3 +73,7 @@
   clear: both;
   border-bottom: 20rpx solid #f2f2f2;
 }
+.right {
+  width: 544rpx;
+  overflow: hidden
+}
