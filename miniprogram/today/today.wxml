@@ -1,10 +1,10 @@
 
 <view class='today'>
 
-<image bindtap="to" data-type="1" src='http://admin.tianyue0571.cn/imgsss/bg-1.svg'></image>
-<image src='http://admin.tianyue0571.cn/imgsss/bg-2.svg'></image>
-<image src='http://admin.tianyue0571.cn/imgsss/bg-3.svg'></image>
-<image src='http://admin.tianyue0571.cn/imgsss/bg-4.svg'></image>
-<image src='http://admin.tianyue0571.cn/imgsss/bg-5.svg'></image>
-<image src='http://admin.tianyue0571.cn/imgsss/bg-6.svg'></image>
+<image bindtap="to" data-id="2" src='http://admin.tianyue0571.cn/imgsss/bg-1.svg'></image>
+<image bindtap="to" data-id="3"  src='http://admin.tianyue0571.cn/imgsss/bg-2.svg'></image>
+<image bindtap="to" data-id="4"  src='http://admin.tianyue0571.cn/imgsss/bg-3.svg'></image>
+<image bindtap="to" data-id="5"  src='http://admin.tianyue0571.cn/imgsss/bg-4.svg'></image>
+<image bindtap="to" data-id="6"  src='http://admin.tianyue0571.cn/imgsss/bg-5.svg'></image>
+<image bindtap="to" data-id="7"  src='http://admin.tianyue0571.cn/imgsss/bg-6.svg'></image>
 </view>

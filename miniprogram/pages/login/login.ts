@@ -16,10 +16,6 @@ Page({
 		// 		}, () => _this.doCheck());
 		// 	}
 		// })
-
-		this.login();
-		this.login();
-
 	},
 
 	doCheck() {
@@ -33,11 +29,18 @@ Page({
 				wx.hideLoading();
 				this.setData!({
 					exist: res
-				})
+				},()=>this.check())
 			}
 		)
 	},
 
+  getUserInfo(e){
+    if(e.detail.errMsg.includes('ok')){
+      this.login();
+    }else{
+      
+    }
+  },
 	login() {
 
 		const _this = this;
@@ -50,46 +53,55 @@ Page({
 				}, () => _this.doCheck());
 			}
 		});
-
-		if (!this.data.openid){
-			return
-		}
-
-		const {exist} = this.data;
-
-		if (exist === 0) {
-			wx.navigateTo({
-				url: '/complete/complete'
-			});
-		} else {
-			wx.switchTab({
-				url: '/pages/index/index'
-			})
-		}
-
-		reqLogin({type: 1, openid: this.data.openid}).then(
-			res => {
-				console.log('token',res);
-				if (res.code === 1) {
-					wx.setStorage({
-						key: 'token',
-						data: res.data,
-						success() {
-							if (exist === 0) {
-								wx.navigateTo({
-									url: '/complete/complete'
-								});
-							} else {
-								wx.switchTab({
-									url: '/pages/index/index'
-								})
-							}
-						}
-					})
-				}
-			}
-		);
+    // const openid = wx.getStorage('openid');
+    //   this.setData!({
+    //     openid: openid
+    //   })
+ 
 
 	},
+
+  check(){
+    console.log(this.data.openid)
+    if (!this.data.openid) {
+      return
+    }
+
+    const { exist } = this.data;
+
+    if (exist === 0) {
+      wx.navigateTo({
+        url: '/complete/complete'
+      });
+      return;
+    } else {
+      wx.switchTab({
+        url: '/pages/index/index'
+      })
+    }
+
+    reqLogin({ type: 1, openid: this.data.openid }).then(
+      res => {
+        console.log('token', res);
+        if (res.code === 1) {
+          wx.setStorage({
+            key: 'token',
+            data: res.data,
+            success() {
+              if (exist === 0) {
+                wx.navigateTo({
+                  url: '/complete/complete'
+                });
+              } else {
+                wx.switchTab({
+                  url: '/pages/index/index'
+                })
+              }
+            }
+          })
+        }
+      }
+    );
+  }
 
 });

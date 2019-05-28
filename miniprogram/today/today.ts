@@ -1,9 +1,11 @@
+import { sheet } from '../api/index' 
 Page({
 	data: {},
 	onHide(): void {
 	},
 	to(e:any){
-		console.log(e);
-
+		wx.navigateTo({
+      url: '../price-detail/price-detail?id=' + e.currentTarget.dataset.id
+    })
 	}
 });

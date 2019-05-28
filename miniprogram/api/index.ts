@@ -94,3 +94,6 @@ export const reqOpenid = (code: string) => ajax('/api/mini_program', {code});
 
 // 校验用户是否存在
 export const reqCheckUser = (openid: string) => ajax('/api/check_user', {openid});
+
+// 报价列表
+export const sheet = (id: string) => ajax('/api/sheet_list',{id});
