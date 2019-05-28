@@ -5,7 +5,9 @@
     "pages/order/order",
     "newpart/shenfenInfo/shenfenInfo",
     "newpart/shoukuan/index",
-    "newpart/shouhuodizhi/index"
+    "newpart/shouhuodizhi/index",
+    "childOrder/childOrder",
+    "addOrder/index"
   ],
   "subpackages": [
     {
@@ -112,13 +114,13 @@
       "pages": [
         "first-trial"
       ]
-		},
-		{
-			"root": "free",
-			"name": "free",
-			"pages": [
-				"free"
-			]
+    },
+    {
+      "root": "free",
+      "name": "free",
+      "pages": [
+        "free"
+      ]
     }
   ],
   "window": {

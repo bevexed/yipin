@@ -1,0 +1,34 @@
+<view class="phone-warp">
+
+  <view class='view_cont'>子订单详情</view>
+  <view class='phone'>
+
+    <view class="phone-header">
+      <view class="phone-title">
+        {{title}}
+      </view>
+
+    </view>
+
+    <view class="phone-class">
+     备注：{{note}}
+    </view>
+
+    <view class="phone-imei">
+      IMEI：{{imei}}
+    </view>
+
+    <view class="phone-class">
+      等级：{{level}}
+    </view>
+
+    <view class="phone-imei">
+      机器标码：{{code}}
+    </view>
+
+    <view class="phone-price">
+      报价：{{price}}
+    </view>
+
+  </view>
+</view>

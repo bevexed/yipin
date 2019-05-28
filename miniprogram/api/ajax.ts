@@ -1,4 +1,5 @@
-const base = 'http://admin.tianyue0571.cn/';
+// const base = 'http://admin.tianyue0571.cn';
+const base = 'http://47.97.251.196';
 
 let ajax: (url: string, data?: object, method?: ("POST" | "GET")) => Promise<any>;
 

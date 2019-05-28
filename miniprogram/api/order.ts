@@ -14,3 +14,9 @@ export const confirmFahuo = (token: string, id :string, logistics_company :strin
 
 // 用户确认/取消订单 (type值1：确认；2取消）
 export const confirmOrder = (token: string, op_id: string, type: string) => ajax('/api/order_offer',{token,op_id,type});
+
+// 平台收货地址
+export const address = () => ajax('/api/address',{});
+
+// 添加订单
+export const addOrder = (token: string, information: string, amount: string, note: string, picture: string) => ajax('/api/add_order', { token, information, amount, note, picture});
