@@ -1,7 +1,8 @@
+
 <i-input disabled maxlength="100" placeholder="(确认后无法修改)" title="身份信息"/>
-<i-input bind:change="input" disabled maxlength="100" placeholder="普通用户" title="身份"/>
-<i-input bind:change="input" data-type="name" maxlength="100" placeholder="名字" title="姓名"/>
-<i-input bind:change="input" data-type="id_card" maxlength="100" placeholder="请输入身份证号" title="身份证号"/>
+<i-input bind:change="input" disabled="{{disabled}}" disabled maxlength="100" placeholder="{{identity}}" title="身份"/>
+<i-input bind:change="input" data-type="name" disabled="{{disabled}}" maxlength="100" placeholder="名字" title="姓名" value="{{name}}"/>
+<i-input bind:change="input" data-type="id_card" disabled="{{disabled}}" maxlength="100" placeholder="请输入身份证号" title="身份证号" value="{{id_card}}"/>
 <i-input disabled title="身份证照片"/>
 <view class='uploadCd'>
 	<view bindtap="chooseTop">
@@ -29,6 +30,6 @@
 
 </view>
 
-<view class="button">
+<view class="button" wx:if="{{!disabled}}">
 	<i-button bind:click="doUpdateBasicInformation" type="primary">提交</i-button>
 </view>

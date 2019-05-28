@@ -1,7 +1,9 @@
 {
+
   "usingComponents": {
       "i-input": "../../dist/input/index",
-     
       "i-button": "../../dist/button/index"
-  }
+  },
+	"navigationBarTitleText": "身份信息"
+
 }

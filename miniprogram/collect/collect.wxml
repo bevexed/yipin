@@ -1,2 +1,15 @@
-<!--collect/collect.wxml-->
-<text>collect/collect.wxml</text>
+<view class="h1">支付宝收款</view>
+<i-input bind:change="input" data-type="alipay_account" maxlength="100" placeholder="请输入支付宝账号" title="支付宝账号"/>
+<i-input bind:change="input" data-type="alipay_name" maxlength="100" placeholder="请输入真实姓名" title="支付宝姓名"/>
+
+<view style="background: #f7f7f7;height: 20rpx"></view>
+<view class="h1">银行卡收款</view>
+<i-input bind:change="input" data-type="bank_name" maxlength="100" placeholder="请输入账户名" title="账户名"/>
+<i-input bind:change="input" data-type="bank_number" maxlength="100" placeholder="请输入银行卡号" title="银行卡号"/>
+<i-input bind:change="input" data-type="bank_type" maxlength="100" placeholder="输入银行卡类型" title="银行卡类型"/>
+<i-input bind:change="input" data-type="opening_bank" maxlength="100" placeholder="请输入开户行" title="开户行"/>
+
+<view class="button">
+	<i-button bind:click="doUpdateBasicInformation" type="primary">提交</i-button>
+</view>
+
