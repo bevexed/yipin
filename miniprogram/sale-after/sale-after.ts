@@ -49,6 +49,17 @@ Page({
 		reqAfterQuery(imei).then(
 			res => {
 				console.log(res);
+				if (res.code === 1) {
+					wx.setStorage({
+						key: 'query',
+						data: res.data,
+						success() {
+							wx.navigateTo({
+								url: '/sale-after-detail/sale-after-detail'
+							})
+						}
+					})
+				}
 			}
 		)
 	}

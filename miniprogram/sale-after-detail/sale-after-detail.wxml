@@ -1,6 +1,6 @@
 <!--miniprogram/sale-after-detai/sale-after-detai.wxml-->
 <view class='wrap'>
-  <view>手机型号：荣耀8</view>
-  <view>保修时间：2019-22-22</view>
-  <view>售后服务商：杭州闪电侠</view>
+	<view>手机型号：{{phone_model}}</view>
+	<view>保修时间：{{warranty_time}}</view>
+	<view>售后服务商：{{name}}</view>
 </view>
