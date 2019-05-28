@@ -7,8 +7,11 @@
 
 		<view class="label">
 			<label for='ima'>校验码 </label>
-			<input id='ima' placeholder='请输入校验码'></input>
-			<image class='code' src='https://ss0.bdstatic.com/-0U0b8Sm1A5BphGlnYG/kmarketingadslogo/45537e2e3b55008529b362d20bdae26d_250_250.jpg'></image>
+			<input id='ima' bindinput="icode"  placeholder='请输入校验码'></input>
+
+
+			<view class='code' bindtap="getCode">{{code}}</view>
+<!--			<image class='code' src='https://ss0.bdstatic.com/-0U0b8Sm1A5BphGlnYG/kmarketingadslogo/45537e2e3b55008529b362d20bdae26d_250_250.jpg'></image>-->
 		</view>
 	</view>
 
