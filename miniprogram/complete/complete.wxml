@@ -10,5 +10,5 @@
     <button class="code-button {{active}}"  bindtap='doSendMsg'>{{msgData}}</button>
   </view>
 
-  <button class="sure" bindtap='toIndex'>确认</button>
+  <button class="sure" bindtap='doLogin'>确认</button>
 </view>

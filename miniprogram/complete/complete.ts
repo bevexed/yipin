@@ -1,4 +1,4 @@
-import {sendMsg,reqRegister} from "../api/index";
+import {reqRegister, sendMsg} from "../api/index";
 
 Page({
 	data: {
@@ -7,20 +7,52 @@ Page({
 		msgData: '获取验证码',
 		time: 60,
 		timer: 0,
-		active: ''
+		active: '',
+		openid: ''
 	},
+
+	onLoad() {
+		const _this = this;
+		wx.getStorage({
+			key: 'openid',
+			success(res) {
+				console.log(res);
+				_this.setData!({
+					openid: res.data
+				})
+			}
+		})
+	},
+
 	doLogin(){
+		const {openid, phone, code} = this.data;
+
+		if (!openid || !phone || !code) {
+			wx.showToast({
+				title: '请检查表单',
+				icon: "none"
+			})
+		}
+
 		let data = {
-			openid: 123456789, phone: 123123123123, password: 123123123, code: 123213123
+			openid, phone, password: 123456, code
 		};
 
 
 		reqRegister(data).then(
 			res => {
 				console.log(res);
-				wx.switchTab({
-					url: '/pages/index/index'
-				})
+				if (res.code === 1) {
+					wx.switchTab({
+						url: '/pages/index/index'
+					})
+				} else {
+					wx.showToast({
+						title: res.message
+					})
+				}
+
+
 			}
 		);
 	},
@@ -46,6 +78,15 @@ Page({
 
 		const mobile = this.data.phone;
 		const type = 'SMS_166320348';
+
+		if (!mobile) {
+			wx.showToast({
+				title: '请先填写手机号',
+				icon: "none"
+			})
+			return;
+		}
+
 		sendMsg({type, mobile}).then(
 			(res: any) => {
 				if (res.code === 1) {
@@ -71,12 +112,5 @@ Page({
 				}
 			}
 		);
-
-
 	},
-	toIndex: function () {
-		wx.navigateTo({
-			url: '/pages/index/index'
-		});
-	}
 });
