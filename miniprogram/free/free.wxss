@@ -67,3 +67,59 @@
 .picker{
 	width: 400rpx;
 }
+
+/* miniprogram/pages/complete.wxss */
+
+.complete {
+	margin: 124rpx 70rpx;
+}
+
+.label {
+	border-bottom: 1rpx dashed #eee;
+	padding-bottom: 30rpx;
+}
+
+.placeholder {
+	font-style: 26rpx;
+}
+
+.code {
+	margin-top: 60rpx;
+	display: flex;
+	justify-content: space-between;
+}
+
+.code input {
+	width: 300rpx;
+}
+
+.code-button {
+	margin: 0;
+	width: 200rpx;
+	height: 56rpx;
+	line-height: 52rpx;
+	padding: 0 10rpx;
+	font-size: 26rpx;
+	background: transparent;
+	color: #448ff6;
+	border: 2rpx solid rgba(68, 142, 246, 1);
+}
+
+.sure {
+	margin-top: 126rpx;
+	width: 610rpx;
+	height: 88rpx;
+	background: rgba(68, 142, 246, 1);
+	border-radius: 4rpx;
+	color: white;
+}
+
+.active {
+	color: #999;
+	border-color: #999;
+}
+
+input{
+	flex:1
+}
+
