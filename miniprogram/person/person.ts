@@ -127,7 +127,7 @@ Page({
 			});
 			return;
 		}
-		const data = {name,token,id_card,id_card_contrary:id_card_contrary[0],id_card_positive:id_card_positive[0]};
+		const data = {name,token,id_card,id_card_contrary,id_card_positive};
 		reqUpdateBasicInformation(data).then(
 			res => {
 				console.log(res);

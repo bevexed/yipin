@@ -76,6 +76,9 @@ Page({
 		requpdate_gathering_information(this.data).then(res => {
 			if (res.code === 1) {
 				console.log(res);
+				wx.navigateBack({
+					delta: 1
+				})
 			}
 		})
 	}

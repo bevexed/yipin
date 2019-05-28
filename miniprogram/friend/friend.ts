@@ -157,11 +157,29 @@ Page({
 		let data: Partnet;
 		if (identity === '1') {
 			data = {
-				token, phone, name, address, id_card, identity, id_card_positive: id_card_positive[0], id_card_contrary: id_card_contrary[0]
+				token, phone, name, address, id_card, identity, id_card_positive, id_card_contrary
+			};
+			if (!name || !token || !id_card_positive || !id_card_contrary || !id_card || !phone || !address || !identity) {
+				wx.showToast({
+					title: '请检查表单填写是否完整',
+					mask: true,
+					duration: 2000,
+					icon: "none"
+				});
+				return;
 			}
 		} else {
 			data = {
 				token, phone, name, address,identity
+			};
+			if (!name || !token || !phone || !address || !identity) {
+				wx.showToast({
+					title: '请检查表单填写是否完整',
+					mask: true,
+					duration: 2000,
+					icon: "none"
+				});
+				return;
 			}
 		}
 
