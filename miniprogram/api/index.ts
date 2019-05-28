@@ -58,3 +58,6 @@ interface FreeFile {
 }
 
 export const reqGetFreeFilm = (data: FreeFile) => ajax('/api/get_free_film', data);
+
+// 客服点话
+export const reqService = () => ajax('/api/service')

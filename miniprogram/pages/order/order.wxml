@@ -2,7 +2,7 @@
   <i-cell title="我卖出的" is-link url="../../sold-out/sold-out"></i-cell>
   <i-cell title="身份信息" is-link url="../../person/person"></i-cell>
   <i-cell title="收款信息" is-link url="../../collect/collect"></i-cell>
-  <i-cell title="联系客服" is-link url="../../cust/cust"></i-cell>
+  <i-cell title="联系客服" is-link bind:click="showPhone"></i-cell>
 </i-cell-group>
 
 <view class='outLogin'>
