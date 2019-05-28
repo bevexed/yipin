@@ -1,4 +1,4 @@
-import {sendMsg} from "../api/index";
+import {sendMsg,reqRegister} from "../api/index";
 
 Page({
 	data: {
@@ -8,6 +8,21 @@ Page({
 		time: 60,
 		timer: 0,
 		active: ''
+	},
+	doLogin(){
+		let data = {
+			openid: 123456789, phone: 123123123123, password: 123123123, code: 123213123
+		};
+
+
+		reqRegister(data).then(
+			res => {
+				console.log(res);
+				wx.switchTab({
+					url: '/pages/index/index'
+				})
+			}
+		);
 	},
 	changePhone: function (e:any) {
 		console.log(e);

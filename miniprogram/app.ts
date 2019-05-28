@@ -11,11 +11,6 @@ export interface IMyApp {
 
 App<IMyApp>({
 	onLaunch() {
-		// 展示本地存储能力
-		var logs: number[] = wx.getStorageSync('logs') || [];
-		logs.unshift(Date.now());
-		wx.setStorageSync('logs', logs);
-
 		// 登录
 		wx.login({
 			success(res) {
@@ -23,6 +18,10 @@ App<IMyApp>({
 				reqOpenid(res.code).then(
 					(res: any) => {
 						console.log(res);
+						wx.setStorage({
+							key: 'openid',
+							data: res.data.openid
+						})
 					}
 				)
 				// 发送 _res.code 到后台换取 openId, sessionKey, unionId

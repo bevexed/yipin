@@ -91,3 +91,6 @@ export const reqUserInformation = (token: object) => ajax('/api/user_information
 
 // openid
 export const reqOpenid = (code: string) => ajax('api/mini_program', {code});
+
+// 校验用户是否存在
+export const reqCheckUser = (openid: string) => ajax('/api/check_user', {openid});
