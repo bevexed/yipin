@@ -56,6 +56,24 @@ Page({
 				_this.setData!({
 					id_card_positive: tempFilePaths
 				});
+
+				wx.uploadFile({
+					url: 'http://47.97.251.196/api/upload_img', //仅为示例，非真实的接口地址
+					filePath: tempFilePaths[0],
+					name: 'image',
+					// formData: {
+					// 	'user': 'test'
+					// },
+					success (res){
+						const data = JSON.parse(res.data);
+						console.log(data);
+						if (data.code ===1){
+							_this.setData!({
+								id_card_positive: data.data
+							});
+						}
+					}
+				})
 				console.log(tempFilePaths);
 			}
 		})
@@ -75,6 +93,24 @@ Page({
 				const tempFilePaths = res.tempFilePaths;
 				_this.setData!({
 					id_card_contrary: tempFilePaths
+				});
+
+				wx.uploadFile({
+					url: 'http://47.97.251.196/api/upload_img', //仅为示例，非真实的接口地址
+					filePath: tempFilePaths[0],
+					name: 'image',
+					// formData: {
+					// 	'user': 'test'
+					// },
+					success (res){
+						const data = JSON.parse(res.data);
+						console.log(data);
+						if (data.code ===1){
+							_this.setData!({
+								id_card_contrary: data.data
+							});
+						}
+					}
 				});
 				console.log(tempFilePaths);
 			}
