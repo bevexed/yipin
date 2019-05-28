@@ -7,16 +7,16 @@
 		</view>
 
 		<view class="state">
-			待寄出
+				{{status==1?'待寄出':status==2?'待收货':status==3?'初审':status==4?'复审':status==5?'已打款':'取消'}}
 		</view>
 
 
 	</view>
 
 	<view class="detail">
-		<view class="num">订单号：839029392939293</view>
-		<view class="num">订单信息：839029392939293</view>
-		<view class="num">数量：839029392939293</view>
+		<view class="num">订单号：{{info.order_no}}</view>
+		<view class="num">订单信息：{{info.information}}</view>
+		<view class="num">数量：{{info.amount}}</view>
 	</view>
 </view>
 
@@ -28,14 +28,18 @@
 		备注信息
 	</view>
 
-	<textarea class='textarea' placeholder='还有其他需要注意的吗？请填写在这里吧~'></textarea>
+	<textarea class='textarea' placeholder='还有其他需要注意的吗？请填写在这里吧~' value='{{info.note}}' disabled></textarea>
 
 	<view class="pic">
 		图片（最多上传3张）
 	</view>
 
-	<image src="../asset/img/add.jpg" class="add"></image>
+	<!-- <image src="../asset/img/add.jpg" class="add" bindtap='uploadImage' wx:if='{{pics.length<3}}'></image> -->
+  <image class='add' wx:for='{{pics}}' src='{{item}}' wx:key='unquie'></image>
 
-  <i-button bind:click="handleClick" type="primary">发货</i-button>
+  <view class='zhanwei'></view>
+  <view class='viewBottom'>
+    <i-button bind:click="faHuo" type="primary">发货</i-button>
+  </view>
 </view>
 

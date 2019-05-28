@@ -6,7 +6,7 @@ export interface IMyApp {
 		userInfo?: wx.UserInfo
 	}
 
-	userInfoReadyCallback?(res: wx.UserInfo): void
+  userInfoReadyCallback?(res: wx.UserInfo): void
 }
 
 App<IMyApp>({

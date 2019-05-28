@@ -31,7 +31,7 @@
     </view>
 
   </view>
-  
+  <view class='zhanwei'></view>
   <view class='viewBottom'>
     <i-button bind:click="handleClick" type="primary">提交</i-button>
   </view>

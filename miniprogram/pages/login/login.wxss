@@ -18,4 +18,5 @@
   background:rgba(68,142,246,1);
   border-radius:4rpx;
   color: white;
+  line-height:88rpx;
 }

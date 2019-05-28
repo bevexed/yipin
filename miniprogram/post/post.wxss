@@ -21,3 +21,8 @@ label {
   width: 188rpx;
   height: 80rpx;
 }
+.submitBtn {
+  height: 88rpx;
+  padding: 0 30rpx;
+  margin-top: 162rpx;
+}

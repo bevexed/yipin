@@ -12,9 +12,3 @@
   height: 20rpx;
   background: #F7F7F7;
 }
-.viewBottom {
-  position: absolute;
-  width: 690rpx;
-  left: 30rpx;
-  bottom: 30rpx;
-}
