@@ -1,10 +1,11 @@
 <i-tabs bindchange="handleChangeScroll" current="{{ current_scroll }}" scroll>
-	<i-tab key="tab1" title="全部"></i-tab>
-	<i-tab key="tab2" title="待寄出"></i-tab>
-	<i-tab key="tab3" title="待收货"></i-tab>
-	<i-tab key="tab4" title="初审"></i-tab>
-	<i-tab key="tab5" title="复审"></i-tab>
-	<i-tab key="tab6" title="已审核"></i-tab>
+	<i-tab key="7" title="全部"></i-tab>
+	<i-tab key="1" title="待寄出"></i-tab>
+	<i-tab key="2" title="待收货"></i-tab>
+	<i-tab key="3" title="初审"></i-tab>
+	<i-tab key="4" title="复审"></i-tab>
+	<i-tab key="5" title="已打款"></i-tab>
+  <i-tab key="6" title="已取消"></i-tab>
 </i-tabs>
 
 <view>
@@ -21,14 +22,14 @@
 			<view class="time">{{item.create_at
 }}</view>
 			<view class="state">
-				待寄出
+				{{item.status==1?'待寄出':item.status==2?'待收货':item.status==3?'初审':item.status==4?'复审':item.status==5?'已打款':'取消'}}
 			</view>
 
 		</view>
 
-		<view bindtap='toWaitPost' data-id='{{item.id}}' class="content">
+		<view bindtap='toWaitPost' data-id='{{item.id}}' data-status='{{item.status}}' class="content">
 
-			<image src='{{imageUrl + item.picture}}'></image>
+			<image src='{{item.picture}}'></image>
 
 			<view class="right">
 				<view class="title">
@@ -42,8 +43,12 @@
 
 		<view class="to-left">
 
-			<view bindtap='toFahuo' class="button">
+			<view bindtap='toFahuo' data-id='{{item.id}}' class="button" wx:if='{{item.status==1}}'>
 				发货
+			</view>
+
+      <view wx:if='{{item.is_confirm==1}}' bindtap='toFirstTrial' data-id='{{item.id}}' class="button">
+				去确认
 			</view>
 		</view>
 
@@ -57,7 +62,7 @@
 	<!--	待收货-->
 	<!--	待收货-->
 	<!--	待收货-->
-	<view class="detail">
+	<!-- <view class="detail">
 		<view class="header">
 			<view class="time">2019-06-21 19:00:23</view>
 			<view class="state">
@@ -83,7 +88,7 @@
 
 		<view class="hr"></view>
 
-	</view>
+	</view> -->
 
 
 	<!--	初审-->
@@ -92,7 +97,7 @@
 	<!--	初审-->
 	<!--	初审-->
 	<!--	初审-->
-	<view class="detail">
+	<!-- <view class="detail">
 		<view>
 
 			<view class="header">
@@ -153,5 +158,5 @@
 		</view>
 
 		<view class="hr"></view>
-	</view>
+	</view> -->
 </view>

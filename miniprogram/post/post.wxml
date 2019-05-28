@@ -1,17 +1,19 @@
 <!--post/post.wxml-->
 <view>
 	<view>
-		<view class="label">
+		<view class="label" bindtap='choosePost'>
 			<label for='im'>物流公司</label>
-			<input id='im' placeholder='请选择物流公司' disabled></input>
+			<input id='im' placeholder='请选择物流公司' disabled value='{{company}}'></input>
 		</view>
 
 		<view class="label">
 			<label for='ima'>物流单号 </label>
-			<input id='ima' placeholder='请输入物流单号'></input>
+			<input id='ima' placeholder='请输入物流单号' value='{{track_number}}'></input>
 		</view>
 	</view>
 
 
-  <i-button bind:click="handleClick" type="primary">提交</i-button>
+  <view class='submitBtn'>
+    <i-button bind:click="faHuo" type="primary">提交</i-button>
+  </view>
 </view>
