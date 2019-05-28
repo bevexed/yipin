@@ -56,6 +56,17 @@ Page({
 		}
 
 		const {exist} = this.data;
+
+		if (exist === 0) {
+			wx.navigateTo({
+				url: '/complete/complete'
+			});
+		} else {
+			wx.switchTab({
+				url: '/pages/index/index'
+			})
+		}
+
 		reqLogin({type: 1, openid: this.data.openid}).then(
 			res => {
 				console.log('token',res);
