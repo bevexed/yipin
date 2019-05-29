@@ -2,7 +2,18 @@
 //获取应用实例
 import { orderDetail} from '../api/order'
 
-const token = wx.getStorageSync('token');
+let token;
+try {
+  token = wx.getStorageSync('token');
+  if (token) {
+    // Do something with return value
+  }
+} catch (e) {
+  // Do something when catch error
+  wx.getStorage({key:'token',success(res){
+    token = res.data
+  }});
+}
 
 Page({
 	data: {

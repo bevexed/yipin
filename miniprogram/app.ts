@@ -22,17 +22,17 @@ App<IMyApp>({
 							key: 'openid',
 							data: res.data.openid,
 							success() {
-								wx.getStorage(
-									{
-										key: 'token',
-										fail(err){
-											console.log('token-fail', err);
-											wx.navigateTo({
-												url:'/pages/login/login'
-											})
-										}
-									}
-								)
+								// wx.getStorage(
+								// 	{
+								// 		key: 'token',
+								// 		fail(err){
+								// 			console.log('token-fail', err);
+								// 			wx.navigateTo({
+								// 				url:'/pages/index/index'
+								// 			})
+								// 		}
+								// 	}
+								// )
 							}
 						})
 					}

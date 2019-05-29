@@ -2,7 +2,20 @@ import { orderAll, confirmOrder} from '../api/order'
 import { IMyApp } from '../app'
 
 const app = getApp<IMyApp>();
-const token = wx.getStorageSync('token');
+let token;
+try {
+  token = wx.getStorageSync('token');
+  if (token) {
+    // Do something with return value
+  }
+} catch (e) {
+  // Do something when catch error
+  wx.getStorage({
+    key: 'token', success(res) {
+      token = res.data
+    }
+  });
+}
 Page({
   data: {
     motto: '点击 “编译” 以构建',
@@ -15,7 +28,8 @@ Page({
     orderList:[],
     current_scroll: 7,
     type:7,
-    page:1
+    page:1,
+    token:''
   },
   //事件处理函数
   bindViewTap() {
@@ -50,7 +64,18 @@ Page({
         }
       })
     }
-    this.getOrderList(token,this.data.type,this.data.page);
+    const that = this;
+    wx.getStorage({
+      key: 'token',
+      success(res){
+        that.setData!({
+          token:res.data
+        },() => {
+          that.getOrderList(that.data.token, that.data.type, that.data.page);
+        })
+      }
+    });
+    
 
   },
   getOrderList(token:any, type:any, page:any){
@@ -72,7 +97,7 @@ Page({
       type:key
     });
     this.data.orderList = [];
-    this.getOrderList(token,key,this.data.page)
+    this.getOrderList(this.data.token,key,this.data.page)
   },
   // 上拉加载更多
   onReachBottom: function () {
@@ -81,7 +106,7 @@ Page({
     })
     // 页数+1
     this.data.page = this.data.page + 1;
-    this.getOrderList(token, this.data.type, this.data.page);
+    this.getOrderList(this.data.token, this.data.type, this.data.page);
     wx.hideLoading();
   },
   getUserInfo(e: any) {
@@ -106,7 +131,7 @@ Page({
   },
   // 去确认
   toFirstTrial(e:any){
-    confirmOrder(token, e.currentTarget.dataset.id,'2').then(res => {
+    confirmOrder(this.data.token, e.currentTarget.dataset.id,'2').then(res => {
       if(res.code == 1){
         wx.showToast({
           title:res.message
