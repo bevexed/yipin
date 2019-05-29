@@ -78,6 +78,18 @@ Page({
 			}
 		})
 	},
+  yulan(){
+    wx.previewImage({
+      current: this.data.id_card_positive, // 当前显示图片的http链接
+      urls: [this.data.id_card_positive] // 需要预览的图片http链接列表
+    })
+  },
+  yulanF(){
+    wx.previewImage({
+      current: this.data.id_card_contrary, // 当前显示图片的http链接
+      urls: [this.data.id_card_contrary] // 需要预览的图片http链接列表
+    })
+  },
 
 	chooseBottom() {
 		if (this.data.disabled) {
@@ -94,7 +106,6 @@ Page({
 				_this.setData!({
 					id_card_contrary: tempFilePaths
 				});
-
 				wx.uploadFile({
 					url: 'http://47.97.251.196/api/upload_img', //仅为示例，非真实的接口地址
 					filePath: tempFilePaths[0],

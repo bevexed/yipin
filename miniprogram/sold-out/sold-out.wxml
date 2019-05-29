@@ -17,10 +17,9 @@
 	<!-- 待机出 -->
 	<!-- 待机出 -->
 	<!-- 待机出 -->
-	<view class="detail" wx:for='{{orderList}}' wx:key='unquie'>
+	<view class="detail" wx:if='{{orderList.length>0}}' wx:for='{{orderList}}' wx:key='unquie'>
 		<view class="header">
-			<view class="time">{{item.create_at
-}}</view>
+			<view class="time">{{item.create_at}}</view>
 			<view class="state">
 				{{item.status==1?'待寄出':item.status==2?'待收货':item.status==3?'初审':item.status==4?'复审':item.status==5?'已打款':'取消'}}
 			</view>
@@ -55,6 +54,10 @@
 		<view class="hr"></view>
 	</view>
 
+  <view wx:if='{{orderList.length==0}}' class='detailNone'>
+    <image src='./no.png'></image>
+    <view>暂无数据..</view>
+  </view>
 
 	<!--	待收货-->
 	<!--	待收货-->

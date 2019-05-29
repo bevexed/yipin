@@ -1,19 +1,6 @@
 //index.js
 //获取应用实例
-import { orderDetail} from '../api/order'
-
-let token;
-try {
-  token = wx.getStorageSync('token');
-  if (token) {
-    // Do something with return value
-  }
-} catch (e) {
-  // Do something when catch error
-  wx.getStorage({key:'token',success(res){
-    token = res.data
-  }});
-}
+import { orderDetail, confirmOrder} from '../api/order'
 
 Page({
 	data: {
@@ -24,10 +11,21 @@ Page({
     info:{},
     pics:[],
     status:'',
-    id:''
+    id:'',
+    token: ''
 	},
 	onLoad(options:any) {
-    this.getDetail(token,options.id);
+    const that = this;
+    wx.getStorage({
+      key: 'token',
+      success(res) {
+        that.setData!({
+          token: res.data
+        },() =>{
+          that.getDetail(that.data.token, options.id);
+        })
+      }
+    });
     this.setData!({
       status:options.status,
       id:options.id
@@ -36,7 +34,6 @@ Page({
   getDetail(token:any,id:string){
     orderDetail(token, id).then(
     res => {
-      console.log(res);
       this.setData!({
         info:res.data,
         pics: res.data.picture
@@ -54,6 +51,25 @@ Page({
   goChild(e:any){
     wx.navigateTo({
       url: '../childOrder/childOrder?title=' + e.currentTarget.dataset.title + '&note=' + e.currentTarget.dataset.note + '&imei=' + e.currentTarget.dataset.imei + '&level=' + e.currentTarget.dataset.level + '&code=' + e.currentTarget.dataset.code + '&price=' + e.currentTarget.dataset.price
+    })
+  },
+  // 接受报价
+  jieshou(e:any){
+    confirmOrder(this.data.token, e.currentTarget.dataset.id, '1').then(res =>{
+      if(res.code==1){
+        wx.navigateBack({
+          delta: 1
+        })
+      }
+    })
+  },
+  fouren(e:any){
+    confirmOrder(this.data.token, e.currentTarget.dataset.id, '2').then(res => {
+      if (res.code == 1) {
+        wx.navigateBack({
+          delta: 1
+        })
+      }
     })
   }
 })

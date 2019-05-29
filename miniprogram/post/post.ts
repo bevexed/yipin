@@ -50,15 +50,14 @@ Page({
   },
   faHuo(){
     confirmFahuo(token, this.data.id, this.data.company, this.data.track_number).then(res => {
-      if(res.code == 0){
-        wx.showToast({
+      if(res.code == 1){
+        wx.showModal({
           title:res.message,
-          icon: 'success',
-          duration: 3000,
-          mask:true,
+          content:'',
+          showCancel:false,
           success(){
-            wx.redirectTo({
-              url: '../sold-out/sold-out'
+            wx.navigateBack({
+              delta: 1
             })
           }
         });

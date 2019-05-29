@@ -12,7 +12,7 @@
 			</view>
 		</view>
 
-		<image class="set" src='{{id_card_positive}}' wx:else></image>
+		<image bindtap='yulan' class="set" src='{{id_card_positive}}' wx:else></image>
 
 		<text>身份证正面</text>
 	</view>
@@ -24,7 +24,7 @@
 			</view>
 		</view>
 
-		<image class="set" src='{{id_card_contrary}}' wx:else></image>
+		<image bindtap='yulanF' class="set" src='{{id_card_contrary}}' wx:else></image>
 		<text>身份证反面</text>
 	</view>
 

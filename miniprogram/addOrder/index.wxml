@@ -40,7 +40,7 @@
   <view class='uploadBtn add' bindtap='uploadImage' wx:if='{{pics.length<3}}'>
     <image src='./add.png'></image>
   </view>
-  <image class='add' wx:for='{{pics}}' src='{{item}}' wx:key='unquie'></image>
+  <image class='add' bindtap='yulan' wx:for='{{pics}}' src='{{item}}' wx:key='unquie'></image>
  </view>
 <view class='hr'></view>
 

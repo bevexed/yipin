@@ -144,7 +144,11 @@ Page({
 		console.log(phone_model);
 		reqGetFreeFilm({token,phone_model,serial_number,phone,code}).then(
 			(res:any) => {
-				console.log('freefile', res);
+				wx.showToast({
+          title:res.message,
+          icon:'none',
+          duration:2000
+        })
 			}
 		)
 	}

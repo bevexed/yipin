@@ -2,20 +2,7 @@ import { orderAll, confirmOrder} from '../api/order'
 import { IMyApp } from '../app'
 
 const app = getApp<IMyApp>();
-let token;
-try {
-  token = wx.getStorageSync('token');
-  if (token) {
-    // Do something with return value
-  }
-} catch (e) {
-  // Do something when catch error
-  wx.getStorage({
-    key: 'token', success(res) {
-      token = res.data
-    }
-  });
-}
+// @ts-ignore
 Page({
   data: {
     motto: '点击 “编译” 以构建',
@@ -29,7 +16,8 @@ Page({
     current_scroll: 7,
     type:7,
     page:1,
-    token:''
+    token:'',
+		allPage:0
   },
   //事件处理函数
   bindViewTap() {
@@ -75,16 +63,18 @@ Page({
         })
       }
     });
-    
+
 
   },
   getOrderList(token:any, type:any, page:any){
     // 全部订单
     orderAll(token, type, page).then(
       res => {
-        console.log(res.data.list);
+        const arr = res.data.list;
         this.setData!({
-          orderList: res.data.list
+          orderList: this.data.orderList.concat(arr),
+					allPage: res.data.all_page,
+					page:res.data.page
         })
       }
     )
@@ -97,16 +87,21 @@ Page({
       type:key
     });
     this.data.orderList = [];
+    this.data.page = 1;
     this.getOrderList(this.data.token,key,this.data.page)
   },
   // 上拉加载更多
-  onReachBottom: function () {
+  onReachBottom() {
+		// @ts-ignore
+		if(this.data.page > this.data.allPage){
+			return false;
+		}
     wx.showLoading({
       title: '玩命加载中',
     })
     // 页数+1
     this.data.page = this.data.page + 1;
-    this.getOrderList(this.data.token, this.data.type, this.data.page);
+		this.getOrderList(this.data.token, this.data.type, this.data.page);
     wx.hideLoading();
   },
   getUserInfo(e: any) {
@@ -134,7 +129,9 @@ Page({
     confirmOrder(this.data.token, e.currentTarget.dataset.id,'2').then(res => {
       if(res.code == 1){
         wx.showToast({
-          title:res.message
+          title:res.message,
+          icon:'none',
+          duration:2000
         })
       }
     })

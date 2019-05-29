@@ -42,7 +42,7 @@
   </view>
 </view>
 <!-- 初审 -->
-<view class="phone-warp" wx:for='{{info.orders}}' wx:key='unquie' bindtap='goChild' data-title='{{item.title}}' data-note='{{item.note}}' data-imei='{{item.imei}}' data-level='{{item.level}}' data-code='{{item.code}}' data-price='{{item.price}}'>
+<view class="phone-warp" wx:for='{{info.orders}}' wx:key='unquie'>
 
 
   <view class="hr"></view>
@@ -52,7 +52,8 @@
 
     </view>
 
-    <view class="phone-header">
+    <view bindtap='goChild' data-title='{{item.title}}' data-note='{{item.note}}' data-imei='{{item.imei}}' data-level='{{item.level}}' data-code='{{item.code}}' data-price='{{item.price}}'>
+      <view class="phone-header">
       <view class="phone-title">
         {{item.title}}
       </view>
@@ -75,12 +76,13 @@
     <view class="phone-imei">
       IMEI：{{item.imei}}
     </view>
+  </view>
 
-    <view class='view_b' wx:if='{{status==4}}'>
-      <view bindtap='toFirstTrial' data-id='{{item.id}}' class="button1">
+    <view class='view_b' wx:if="{{item.status=='报价待确认'}}">
+      <view bindtap='fouren' data-id='{{item.op_id}}' class="button1">
           否认报价
       </view>
-      <view bindtap='toFirstTrial' data-id='{{item.id}}' class="button2">
+      <view bindtap='jieshou' data-id='{{item.op_id}}' class="button2">
           接受报价
       </view>
     </view>

@@ -21,7 +21,7 @@
 	</view>
 
 
-	<i-input bind:change="input" data-type="serial_number" maxlength="11" placeholder="请输入商家编号" title="商家编号" type="" value="{{ serial_number }}"/>
+	<i-input bind:change="input" data-type="serial_number" maxlength="100" placeholder="请输入商家编号" title="商家编号" type="" value="{{ serial_number }}"/>
 	<i-input bind:change="input" data-type="phone" maxlength="11" placeholder="手机号" title="手机号码" type="number" value="{{ phone }}"/>
 	<view class="section">
 		<view class="sections">验证码</view>

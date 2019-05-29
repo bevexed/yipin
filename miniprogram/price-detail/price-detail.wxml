@@ -1,4 +1,4 @@
 <!--miniprogram/pages/price-detail/price-detail.wxml-->
 <view class='detail'>
-  <image src='{{arr}}'></image>
+  <image bindtap='yulan' src='{{arr}}'></image>
 </view>
