@@ -1,7 +1,5 @@
-import { IMyApp } from '../app'
 import { tradeCompany, confirmFahuo } from '../api/order';
 
-const app = getApp<IMyApp>();
 const token = wx.getStorageSync('token');
 Page({
   data: {
@@ -16,9 +14,9 @@ Page({
     id:''
 
   },
-  onLoad(e) {
+  onLoad(e:any) {
     this.getCompanyList();
-    this.setData({
+    this.setData!({
       id:e.id
     })
   },
@@ -32,9 +30,10 @@ Page({
   },
   // 选择物流公司
   choosePost(){
-    const arr = [];
+    const arr: any[] | never[] | string[] | any[] = [];
     this.data.itemList.map((ref) => {
-      arr.push(ref.name)
+      // @ts-ignore
+			arr.push(ref.name)
     })
     var that = this;
     wx.showActionSheet({

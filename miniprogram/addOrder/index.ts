@@ -1,9 +1,7 @@
 //index.js
 //获取应用实例
-import { IMyApp } from '../app'
 import { address, addOrder } from '../api/order'
 
-const app = getApp<IMyApp>();
 const token = wx.getStorageSync('token');
 
 Page({
@@ -14,21 +12,21 @@ Page({
     note:'',
     pics:[]
   },
-  onLoad(options: any) {
+  onLoad() {
     this.getAddress();
   },
-  write(e){
-   this.setData({
+  write(e:any){
+   this.setData!({
      information:e.detail.value
    })
   },
-  amount(e){
-    this.setData({
+  amount(e:any){
+    this.setData!({
       amount: e.detail.value
     })
   },
-  noteText(e){
-    this.setData({
+  noteText(e:any){
+    this.setData!({
       note: e.detail.value
     })
   },
@@ -51,7 +49,8 @@ Page({
       success(res) {
         // tempFilePath可以作为img标签的src属性显示图片
         const tempFilePaths = res.tempFilePaths
-        const picAll = pics.concat(tempFilePaths);
+        // @ts-ignore
+				const picAll = pics.concat(tempFilePaths);
         that.setData!({
           pics: picAll
         })
@@ -63,7 +62,7 @@ Page({
     let picture = '';
     this.data.pics.map((res) =>{
       picture += res + ',';
-    }) 
+    })
 
     if (this.data.information == '' || this.data.amount == '' || this.data.note == '') {
       wx.showToast({
@@ -83,7 +82,7 @@ Page({
       })
       return;
     }
-  
+
     addOrder(token, this.data.information, this.data.amount, this.data.note, picture).then(res => {
       if(res.code == 1){
         wx.navigateTo({

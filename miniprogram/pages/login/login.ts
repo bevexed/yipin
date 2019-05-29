@@ -34,11 +34,11 @@ Page({
 		)
 	},
 
-  getUserInfo(e){
+  getUserInfo(e:any){
     if(e.detail.errMsg.includes('ok')){
       this.login();
     }else{
-      
+
     }
   },
 	login() {
@@ -57,7 +57,7 @@ Page({
     //   this.setData!({
     //     openid: openid
     //   })
- 
+
 
 	},
 

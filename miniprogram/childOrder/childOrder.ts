@@ -1,6 +1,4 @@
-import { IMyApp } from '../app'
 
-const app = getApp<IMyApp>();
 
 Page({
   data: {
@@ -13,7 +11,7 @@ Page({
     price:''
   },
 
-  onLoad(options) {
+  onLoad(options:any) {
     console.log(options);
     this.setData!({
       title: options.title,

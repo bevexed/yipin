@@ -1,9 +1,7 @@
 //index.js
 //获取应用实例
-import {IMyApp} from '../app'
-import { orderDetail, confirmFahuo} from '../api/order'
+import { orderDetail} from '../api/order'
 
-const app = getApp<IMyApp>();
 const token = wx.getStorageSync('token');
 
 Page({

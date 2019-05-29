@@ -23,6 +23,7 @@ ajax = (url: string, data: object = {}, method: 'POST' | 'GET' = 'POST') => {
 				}
 
 
+				// @ts-ignore
 				if (res.data.code === 2) {
 					wx.showToast({
 						// @ts-ignore

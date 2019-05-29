@@ -53,7 +53,7 @@ Page({
     this.getOrderList(token,this.data.type,this.data.page);
 
   },
-  getOrderList(token, type, page){
+  getOrderList(token:any, type:any, page:any){
     // 全部订单
     orderAll(token, type, page).then(
       res => {
@@ -65,7 +65,7 @@ Page({
     )
   },
   // tab切换
-  handleChangeScroll({detail}) {
+  handleChangeScroll({detail}:any) {
     const key = detail.key;
     this.setData!({
       current_scroll: key,

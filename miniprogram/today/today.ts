@@ -1,4 +1,3 @@
-import { sheet } from '../api/index' 
 Page({
 	data: {},
 	onHide(): void {
