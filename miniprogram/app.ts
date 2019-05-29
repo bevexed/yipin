@@ -20,7 +20,20 @@ App<IMyApp>({
 						console.log(res);
 						wx.setStorage({
 							key: 'openid',
-							data: res.data.openid
+							data: res.data.openid,
+							success() {
+								wx.getStorage(
+									{
+										key: 'token',
+										fail(err){
+											console.log('token-fail', err);
+											wx.navigateTo({
+												url:'/pages/login/login'
+											})
+										}
+									}
+								)
+							}
 						})
 					}
 				)

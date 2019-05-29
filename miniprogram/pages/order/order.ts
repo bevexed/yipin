@@ -30,23 +30,24 @@ Page({
 		})
 	},
 	handleClick() {
-		wx.clearStorage(
-			{
-				success(res) {
-					console.log(res);
+		// wx.clearStorage(
+		// 	{
+		// 		success(res) {
+		// 			console.log(res);
 					wx.showToast({
 						title: '退出成功',
 						duration: 2000,
 						mask: true,
 						complete() {
-							wx.switchTab({
-								url: '/pages/index/index'
+							wx.navigateTo({
+								url: '/pages/login/login'
 							})
 						}
 					})
+			//
+			// 	}
+			// }
 
-				}
-			}
-		)
+		// )
 	}
 })
