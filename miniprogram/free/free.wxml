@@ -1,6 +1,6 @@
 <!--free/free.wxml-->
 <view class='friend'>
-	<image class='head-img' src='http://admin.tianyue0571.cn/imgsss/2.png'></image>
+	<image class='head-img' src='https://hupanxueyuan.tianyue0571.cn/imgs/2.png'></image>
 
 	<!--	<view class="section">-->
 	<!--		<view class="sections">手机型号</view>-->

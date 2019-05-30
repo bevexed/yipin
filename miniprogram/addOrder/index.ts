@@ -1,7 +1,7 @@
 //index.js
 //获取应用实例
-import { address, addOrder } from '../api/order'
-import { base } from '../api/ajax'
+import {addOrder, address} from '../api/order'
+import {base} from '../api/ajax'
 
 Page({
   data: {
@@ -116,6 +116,7 @@ Page({
   // 预览图片
   yulan(){
     wx.previewImage({
+			//@ts-ignore
       current: this.data.pics, // 当前显示图片的http链接
       urls: this.data.pics // 需要预览的图片http链接列表
     })
@@ -128,7 +129,7 @@ Page({
       picture += res + ',';
     });
 		picture = picture.substring(0,picture.length - 1);
-    if (this.data.information == '' || this.data.amount == '' || this.data.note == '') {
+		if (this.data.information == '' || this.data.amount == '') {
       wx.showToast({
         title: '请输入必填信息',
         icon: 'none',
@@ -148,16 +149,22 @@ Page({
     }
     addOrder(this.data.token, this.data.information, this.data.amount, this.data.note, picture).then(res => {
       if(res.code == 1){
-        wx.showModal({
-          title:res.message,
-					content:'',
-          showCancel:false,
-          success(){
-            wx.switchTab({
-              url: '../pages/index/index'
-            })
-          }
-        })
+
+				console.log(res);
+				console.log(res.data);
+
+				wx.navigateTo({
+					url: '../post/post?id=' + res.data
+				})
+
+        // wx.showModal({
+        //   title:res.message,
+				// 	content:'',
+        //   showCancel:false,
+        //   success(){
+				//
+        //   }
+        // })
       }
     })
   }

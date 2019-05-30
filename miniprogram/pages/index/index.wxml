@@ -31,11 +31,11 @@
 
 	<view class='menus'>
 
-		<image bindtap='toSaleAfter' src='http://admin.tianyue0571.cn/imgsss/bg1.svg'></image>
-		<image bindtap="toToday" src='http://admin.tianyue0571.cn/imgsss/bg2.svg'></image>
-		<image bindtap="toFree" src='http://admin.tianyue0571.cn/imgsss/bg3.svg'></image>
+		<image bindtap='toSaleAfter' src='https://hupanxueyuan.tianyue0571.cn/imgs/bg1.svg'></image>
+		<image bindtap="toToday" src='https://hupanxueyuan.tianyue0571.cn/imgs/bg2.svg'></image>
+		<image bindtap="toFree" src='https://hupanxueyuan.tianyue0571.cn/imgs/bg3.svg'></image>
 
-		<image bindtap="toFriend" src='http://admin.tianyue0571.cn/imgsss/bg4.svg'></image>
+		<image bindtap="toFriend" src='https://hupanxueyuan.tianyue0571.cn/imgs/bg4.svg'></image>
 
 	</view>
 

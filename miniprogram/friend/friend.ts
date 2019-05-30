@@ -1,4 +1,5 @@
 import {Partnet, reqAddressList, reqPartner} from "../api/index";
+import {base} from "../api/ajax";
 
 Page({
 
@@ -91,7 +92,7 @@ Page({
 				});
 
 				wx.uploadFile({
-					url: 'http://47.97.251.196/api/upload_img', //仅为示例，非真实的接口地址
+					url: base+ '/api/upload_img', //仅为示例，非真实的接口地址
 					filePath: tempFilePaths[0],
 					name: 'image',
 					// formData: {
@@ -126,7 +127,7 @@ Page({
 				});
 
 				wx.uploadFile({
-					url: 'http://47.97.251.196/api/upload_img', //仅为示例，非真实的接口地址
+					url: base+ '/api/upload_img', //仅为示例，非真实的接口地址
 					filePath: tempFilePaths[0],
 					name: 'image',
 					// formData: {

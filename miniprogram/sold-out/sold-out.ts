@@ -91,6 +91,7 @@ Page({
     this.getOrderList(this.data.token,key,this.data.page)
   },
   // 上拉加载更多
+	//@ts-ignore
   onReachBottom() {
 		// @ts-ignore
 		if(this.data.page > this.data.allPage){

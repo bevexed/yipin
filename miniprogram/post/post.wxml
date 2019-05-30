@@ -8,7 +8,7 @@
 
 		<view class="label">
 			<label for='ima'>物流单号 </label>
-			<input id='ima' placeholder='请输入物流单号' value='{{track_number}}'></input>
+			<input id='ima' placeholder='请输入物流单号' value='{{track_number}}' bindinput="change"></input>
 		</view>
 	</view>
 

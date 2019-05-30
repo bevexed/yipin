@@ -1,4 +1,4 @@
-import { tradeCompany, confirmFahuo } from '../api/order';
+import {confirmFahuo, tradeCompany} from '../api/order';
 
 const token = wx.getStorageSync('token');
 Page({
@@ -16,11 +16,20 @@ Page({
   },
   onLoad(e:any) {
     this.getCompanyList();
-    this.setData!({
+		console.log(e);
+		this.setData!({
       id:e.id
     })
   },
-  // 获取快递公司列表
+
+	change(e: any) {
+		console.log(e);
+		this.setData!({
+			track_number: e.detail.value
+		})
+	},
+
+	// 获取快递公司列表
   getCompanyList(){
     tradeCompany().then(res => {
       this.setData!({
@@ -49,23 +58,31 @@ Page({
     })
   },
   faHuo(){
-    confirmFahuo(token, this.data.id, this.data.company, this.data.track_number).then(res => {
+		console.log(this.data.id, this.data.company, this.data.track_number);
+		confirmFahuo(token, this.data.id, this.data.company, this.data.track_number).then(res => {
       if(res.code == 1){
-        wx.showModal({
-          title:res.message,
-          content:'',
-          showCancel:false,
-          success(){
-            wx.navigateBack({
-              delta: 1
-            })
-          }
-        });
+				wx.showToast({
+					title: res.message,
+					duration: 3000,
+					mask: true,
+					success() {
+						setTimeout(() => {
+							wx.switchTab({
+								url: '/pages/index/index'
+							})
+						}, 3000)
+					}
+				})
       }else{
         wx.showToast({
-          title:res.message
+					title: res.message,
+					duration: 3000,
+					mask: true,
+					icon: "none"
         })
-      }
+
+
+			}
     })
   }
 })
