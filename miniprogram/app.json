@@ -7,7 +7,8 @@
     "newpart/shoukuan/index",
     "newpart/shouhuodizhi/index",
     "childOrder/childOrder",
-    "addOrder/index"
+    "addOrder/index",
+    "pages/notice/notice"
   ],
   "subpackages": [
     {
