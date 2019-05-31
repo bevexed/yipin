@@ -2,6 +2,7 @@
 //获取应用实例
 import {IMyApp} from '../../app'
 import {reqBanner} from '../../api/index'
+import {jiaoyan} from '../../api/order'
 
 const app = getApp<IMyApp>()
 
@@ -14,7 +15,8 @@ Page({
 
 		bannerList: [],
 		consult: '',
-    isModal:true
+    isModal:true,
+    token: ''
 
 	},
 	//事件处理函数
@@ -64,7 +66,7 @@ Page({
 		)
 	},
   // 添加订单
-  goAdd(){
+  showModal(){
     this.setData!({
       isModal:false
     })
@@ -74,13 +76,35 @@ Page({
       isModal: true
     })
   },
-  hideModal(){
-    this.setData!({
+  getAdd(){
+    const that = this;
+    that.setData!({
       isModal: true
     },() =>{
-      wx.navigateTo({
-        url: '../../addOrder/index'
-      })
+      wx.getStorage({
+        key: 'token',
+        success(res) {
+          that.setData!({
+            token: res.data
+          }, () => {
+            jiaoyan(that.data.token).then(res => {
+              if(res.code ==1){
+                wx.navigateTo({
+                  url: '../../addOrder/index'
+                })
+              }else{
+                wx.showToast({
+                  title:res.message,
+                  icon:'none',
+                  duration:2000
+                })
+              }
+            })
+          })
+        }
+      });
+      
+      
     })
   },
 

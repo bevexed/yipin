@@ -20,3 +20,6 @@ export const address = () => ajax('/api/address',{});
 
 // 添加订单
 export const addOrder = (token: string, information: string, amount: string, note: string, picture: string) => ajax('/api/add_order', { token, information, amount, note, picture});
+
+// 用户校验
+export const jiaoyan = (token: string) => ajax('/api/check_user_aptitude',{token});
