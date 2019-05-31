@@ -64,9 +64,9 @@ Page({
 	},
   // 添加订单
   goAdd(){
-    wx.navigateTo({
-      url:'../../addOrder/index'
-    })
+    // wx.navigateTo({
+    //   url:'../../addOrder/index'
+    // })
   },
 
 	getUserInfo(e: any) {

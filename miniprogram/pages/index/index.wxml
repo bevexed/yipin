@@ -42,3 +42,48 @@
   <image bindtap='goAdd' class='addBtn' src='../addOrder.png'></image>
 
 </view>
+
+<!-- 弹窗 -->
+<view class='view_modal font'>
+  <view class='whiteBox'>
+    <view class='whiteTitle'>#发布手机须知</view>
+    <view class='whiteContent'>
+      <view>
+        <i-icon class='colorB' size='20' type="close" />
+        <text>有锁机/密码机/ID机/案例机</text>
+      </view>
+      <view>
+        <i-icon class='colorB' size='20' type="close" />
+        <text>开不了机/黑屏机/坏屏机/屏幕失灵</text>
+      </view>
+      <view>
+        <i-icon class='colorB' size='20' type="close" />
+        <text>无基带/无法通话</text>
+      </view>
+      <view>
+        <i-icon class='colorB' size='20' type="close" />
+        <text>脏机/丢失模式机</text>
+      </view>
+      <view>
+        <i-icon class='colorB' size='20' type="close" />
+        <text>特别破损机/山寨机</text>
+      </view>
+      <view>
+        <i-icon class='colorB' size='20' type="close" />
+        <text>无法正常拆装机/拼装机/改版机</text>
+      </view>
+      <view>
+        <i-icon class='colorB' size='20' type="close" />
+        <text>IMEI在平台重复交易</text>
+      </view>
+      <view>
+        <i-icon class='colorB' size='20' type="close" />
+        <text>存在安全隐患机（电池鼓包，进液腐蚀非常严重等）</text>
+      </view>
+    </view>
+
+    <view class='anquan'>上述类型的手机，不属于拍闲品的交易范围内，邮寄到拍闲品后，后续产生的质检退货等
+    一切费用全由卖家承担</view>
+    <button>我知道啦，去发布</button>
+  </view>
+</view>

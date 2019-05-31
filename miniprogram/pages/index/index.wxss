@@ -54,3 +54,51 @@
   bottom: 10rpx;
   z-index: 1000
 }
+
+/* 弹框 */
+.view_modal {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, .2);
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+.whiteBox {
+  width: 600rpx;
+  background: #fff;
+  padding: 40rpx 0;
+  border-radius: 40rpx;
+}
+.whiteTitle {
+  height: 80rpx;
+  background: #448EF6;
+  line-height: 80rpx;
+  text-align: center;
+  color: #fff
+}
+.whiteContent {
+  padding: 40rpx 0 40rpx 80rpx;
+  border-bottom: 1px #f2f2f2 solid
+}
+.whiteContent>view {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 60rpx;
+}
+.colorB {
+  color: #448EF6;
+}
+.whiteContent>view>text {
+  margin-left: 20rpx;
+}
+.anquan {
+  color: #fb3838;
+  padding:30rpx 40rpx;
+  text-indent: 20rpx;
+}
