@@ -100,6 +100,15 @@ Page({
 		wx.navigateTo({
 			url: '../../free/free'
 		})
+	},
+
+	toNotice(e: any) {
+		console.log(e);
+		const content = e.currentTarget.dataset.content;
+		console.log(content);
+		wx.navigateTo({
+			url: '../notice/notice?content=' + content
+		})
 	}
 
 

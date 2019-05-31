@@ -106,6 +106,8 @@ Page({
 			return;
 		}
 
+		// todo: 添加实时监控
+
 		const mobile = this.data.phone;
 		const type = 'SMS_166320348';
 		sendMsg({type, mobile}).then(

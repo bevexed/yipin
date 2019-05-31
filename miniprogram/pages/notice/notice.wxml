@@ -1,2 +1,3 @@
-<!--miniprogram/pages/notice.wxml-->
-<text>miniprogram/pages/notice.wxml</text>
+<view>
+	{{content}}
+</view>
