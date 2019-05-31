@@ -121,3 +121,13 @@
   border-radius: 20rpx;
   color: #448EF6
 }
+
+.notice {
+	width: 700rpx;
+	height: 100rpx;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	font-size: 28rpx;
+}
+

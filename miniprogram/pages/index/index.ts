@@ -59,7 +59,7 @@ Page({
 				if (res.code === 1) {
 					this.setData!({
 						bannerList: res.data.banner,
-						consult: res.data.consult[0]
+						consult: res.data.consult
 					})
 				}
 			}
@@ -103,8 +103,8 @@ Page({
           })
         }
       });
-      
-      
+
+
     })
   },
 

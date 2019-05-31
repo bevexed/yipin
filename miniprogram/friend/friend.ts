@@ -203,6 +203,26 @@ Page({
 		reqPartner(data).then(
 			(res: any) => {
 				console.log(res);
+				if (res.code === 1) {
+					wx.showToast({
+						title: '提交完成',
+						mask: true,
+						duration: 3000,
+						success() {
+							setTimeout(() => {
+								wx.navigateBack({
+									delta: 1
+								})
+							}, 3000)
+						}
+					})
+				} else {
+					wx.showToast({
+						mask: true,
+						duration: 3000,
+						title: res['0']
+					})
+				}
 			}
 		)
 	}

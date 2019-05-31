@@ -23,9 +23,17 @@
 	<!-- 公告 -->
 
 
-	<i-notice-bar wx:if="{{consult}}" icon="systemprompt" loop>
-		{{consult.content}}
-	</i-notice-bar>
+	<!--	<i-notice-bar wx:if="{{consult}}" icon="systemprompt" loop >-->
+	<!--		{{consult.content}}-->
+	<!--	</i-notice-bar>-->
+
+	<swiper autoplay='true' class='swiper' duration='3000'
+					class="notice" vertical>
+		<swiper-item bindtap="toNotice" data-content="{{item.content}}" wx:for="{{consult}}" wx:key="{{item.id}}">
+			<i-icon color="#80848f" size="28" type="systemprompt"/>
+			{{item.content}}
+		</swiper-item>
+	</swiper>
 
 	<view style='height:20rpx;background:#f7f7f7'></view>
 
