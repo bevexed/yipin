@@ -31,17 +31,29 @@
 	color:rgba(78,86,95,1);
 }
 .info_vc {
-  padding: 30rpx 30rpx 84rpx;
+  padding: 30rpx 30rpx;
   display: flex;
   /*justify-content: space-between;*/
   border-bottom: 1px #D1D5DA solid;
 	align-items: first;
+	font-size: 26rpx;
+	height: 88rpx;
 
 }
+
+
+.info_vc text{
+	margin: 0;
+	padding: 0;
+}
+
 .info_txt {
   width: 550rpx;
   height: 88rpx;
 	margin-left: 30rpx;
+	color: #9FA7B0;
+	margin-top: 4rpx;
+
 }
 .noneBorder {
   border: none!important;
@@ -62,6 +74,7 @@
 
 .textarea{
 	width:640rpx;
+	height: 200rpx;
 	background:rgba(247,247,247,1);
 	border-radius:4rpx;
 	font-size:26rpx;
