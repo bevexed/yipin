@@ -1,6 +1,6 @@
 //index.js
 //获取应用实例
-import { orderDetail, confirmOrder} from '../api/order'
+import {confirmOrder, orderDetail} from '../api/order'
 
 Page({
 	data: {
@@ -57,10 +57,23 @@ Page({
   jieshou(e:any){
     confirmOrder(this.data.token, e.currentTarget.dataset.id, '1').then(res =>{
       if(res.code==1){
-        wx.navigateBack({
-          delta: 1
-        })
-      }
+				wx.showToast({
+					title: res.message,
+					mask: true,
+					duration: 3000,
+					success() {
+						setTimeout(() => {
+							wx.navigateBack({
+								delta: 1
+							})
+						}, 3000)
+					}
+				})
+			}else {
+      	wx.showToast({
+					title:'操作失败'
+				})
+			}
     })
   },
   fouren(e:any){
