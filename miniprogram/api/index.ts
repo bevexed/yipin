@@ -100,3 +100,7 @@ export const sheet = (id: string) => ajax('/api/sheet_list',{id});
 
 // 判断商家是否存在
 export const reqMerchantExist = (id: string) => ajax('/api/merchant_exist', {id});
+
+
+// 活动图片
+export const reqActivityShow = (type: number) => ajax('/api/activity_show', {type});

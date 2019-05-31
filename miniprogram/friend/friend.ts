@@ -1,4 +1,4 @@
-import {Partnet, reqAddressList, reqPartner} from "../api/index";
+import {Partnet, reqActivityShow, reqAddressList, reqPartner} from "../api/index";
 import {base} from "../api/ajax";
 
 Page({
@@ -19,6 +19,8 @@ Page({
 		id_card: '',
 		id_card_positive: '',
 		id_card_contrary: '',
+
+		img:''
 	},
 
 	onLoad() {
@@ -36,6 +38,19 @@ Page({
 
 		//
 		this.getAddress()
+		this.getImg()
+	},
+
+	getImg() {
+		reqActivityShow(2).then(
+			(res: any) => {
+				if (res.code === 1) {
+					this.setData!({
+						img: res.data
+					})
+				}
+			}
+		)
 	},
 
 	bindRegionChange(e:any) {
@@ -112,6 +127,7 @@ Page({
 			}
 		})
 	},
+
 
 	chooseBottom() {
 		let _this = this;

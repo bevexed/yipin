@@ -1,4 +1,4 @@
-import {reqGetFreeFilm, reqMerchantExist, reqPhoneModels, sendMsg} from "../api/index";
+import {reqActivityShow, reqGetFreeFilm, reqMerchantExist, reqPhoneModels, sendMsg} from "../api/index";
 
 Page({
 
@@ -22,7 +22,9 @@ Page({
 		msgData: '获取验证码',
 		time: 60,
 		timer: 0,
-		active: ''
+		active: '',
+
+		img: ''
 
 	},
 
@@ -40,6 +42,19 @@ Page({
 		});
 
 		this.getPhoneModels();
+		this.getImg()
+	},
+
+	getImg() {
+		reqActivityShow(1).then(
+			(res: any) => {
+				if (res.code === 1) {
+					this.setData!({
+						img: res.data
+					})
+				}
+			}
+		)
 	},
 
 	bindMultiPickerChange: function (e: any) {
