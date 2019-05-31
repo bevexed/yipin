@@ -33,12 +33,15 @@
 .info_vc {
   padding: 30rpx 30rpx 84rpx;
   display: flex;
-  justify-content: space-between;
-  border-bottom: 1px #D1D5DA solid
+  /*justify-content: space-between;*/
+  border-bottom: 1px #D1D5DA solid;
+	align-items: first;
+
 }
 .info_txt {
   width: 550rpx;
   height: 88rpx;
+	margin-left: 30rpx;
 }
 .noneBorder {
   border: none!important;

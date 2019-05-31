@@ -47,7 +47,7 @@
 
 	</view>
 
-  <image bindtap='showModal' class='addBtn' src='../addOrder.png'></image>
+  <image bindtap='showModal' class='addBtn' src='../ico_add_h.png'></image>
 
 </view>
 

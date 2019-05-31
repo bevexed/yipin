@@ -111,9 +111,11 @@ Page({
 					mask: true,
 					duration: 2000,
 					success() {
-						wx.navigateBack({
-							delta: 1
-						})
+						setTimeout(() => {
+							wx.navigateBack({
+								delta: 1
+							})
+						}, 2000)
 					}
 				})
 

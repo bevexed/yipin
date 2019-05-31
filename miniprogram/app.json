@@ -131,17 +131,19 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
+		"color": "#D1D5DA",
+		"selectedColor": "#448EF6",
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "",
+				"text": "首 页",
         "iconPath": "./asset/img/tab_home_s@2x.png",
-        "selectedIconPath": "./asset/img/tab_home_s_s@2x.png"
-      },
+				"selectedIconPath": "./asset/img/tab_home_s_s@2x.png"
+			},
       {
         "pagePath": "pages/order/order",
-        "text": "",
-        "iconPath": "./asset/img/tab_order_n@2x.png",
+				"text": "订 单",
+				"iconPath": "./asset/img/tab_order_n@2x.png",
         "selectedIconPath": "./asset/img/tab_order_n_s@2x.png"
       }
     ]
