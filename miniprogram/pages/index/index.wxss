@@ -122,12 +122,14 @@
   color: #448EF6
 }
 
-.notice {
+.li-notice {
 	width: 700rpx;
-	height: 100rpx;
+	height: 2em;
 	overflow: hidden;
+	word-break: break-word;
 	white-space: nowrap;
 	text-overflow: ellipsis;
 	font-size: 28rpx;
+	margin: 0 auto;
 }
 

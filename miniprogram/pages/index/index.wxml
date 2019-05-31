@@ -27,8 +27,8 @@
 	<!--		{{consult.content}}-->
 	<!--	</i-notice-bar>-->
 
-	<swiper autoplay='true' class='swiper' duration='3000'
-					class="notice" vertical>
+	<swiper autoplay='true' duration='1000'
+					class="li-notice" vertical>
 		<swiper-item bindtap="toNotice" data-content="{{item.content}}" wx:for="{{consult}}" wx:key="{{item.id}}">
 			<i-icon color="#80848f" size="28" type="systemprompt"/>
 			{{item.content}}

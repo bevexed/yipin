@@ -1,1 +1,6 @@
 /* miniprogram/pages/notice.wxss */
+
+.section{
+	margin: 20rpx;
+	text-indent: 2em;
+}
