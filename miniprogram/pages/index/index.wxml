@@ -44,7 +44,8 @@
 </view>
 
 <!-- 弹窗 -->
-<view class='view_modal font'>
+<view class='view_modal font' hidden='{{isModal}}'>
+  <view class='modalView' bindtap='hideTankuang'></view>
   <view class='whiteBox'>
     <view class='whiteTitle'>#发布手机须知</view>
     <view class='whiteContent'>
@@ -84,6 +85,8 @@
 
     <view class='anquan'>上述类型的手机，不属于拍闲品的交易范围内，邮寄到拍闲品后，后续产生的质检退货等
     一切费用全由卖家承担</view>
-    <button>我知道啦，去发布</button>
+    <view class='fabuBox'>
+      <view bindtap='hideModal'>我知道啦，去发布</view>
+    </view>
   </view>
 </view>

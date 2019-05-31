@@ -13,7 +13,8 @@ Page({
 		canIUse: wx.canIUse('button.open-type.getUserInfo'),
 
 		bannerList: [],
-		consult: ''
+		consult: '',
+    isModal:true
 
 	},
 	//事件处理函数
@@ -64,9 +65,23 @@ Page({
 	},
   // 添加订单
   goAdd(){
-    // wx.navigateTo({
-    //   url:'../../addOrder/index'
-    // })
+    this.setData!({
+      isModal:false
+    })
+  },
+  hideTankuang(){
+    this.setData!({
+      isModal: true
+    })
+  },
+  hideModal(){
+    this.setData!({
+      isModal: true
+    },() =>{
+      wx.navigateTo({
+        url: '../../addOrder/index'
+      })
+    })
   },
 
 	getUserInfo(e: any) {
