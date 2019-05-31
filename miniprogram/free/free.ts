@@ -1,4 +1,4 @@
-import {reqGetFreeFilm, reqPhoneModels, sendMsg} from "../api/index";
+import {reqGetFreeFilm, reqMerchantExist, reqPhoneModels, sendMsg} from "../api/index";
 
 Page({
 
@@ -69,11 +69,25 @@ Page({
 		console.log(value);
 		this.setData!({
 			[label]: value
-		});
+		}, () => this.doMerchantExist());
 
 		console.log(label, value);
 	},
 
+	doMerchantExist() {
+		if (this.data.serial_number.length < 5) {
+			return
+		}
+		reqMerchantExist(this.data.serial_number).then(
+			(res: any) => {
+				console.log(res);
+				wx.showToast({
+					icon: "none",
+					title: res === 0 ? '商家编号不存在' : '商家存在'
+				})
+			}
+		)
+	},
 
 	getPhoneModels() {
 		reqPhoneModels().then(

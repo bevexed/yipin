@@ -97,3 +97,6 @@ export const reqCheckUser = (openid: string) => ajax('/api/check_user', {openid}
 
 // 报价列表
 export const sheet = (id: string) => ajax('/api/sheet_list',{id});
+
+// 判断商家是否存在
+export const reqMerchantExist = (id: string) => ajax('/api/merchant_exist', {id});
