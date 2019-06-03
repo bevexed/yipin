@@ -8,6 +8,7 @@ Page({
 		serial_number:'',
 		phone:'',
 		code:'',
+		phone_model:'',
 
 		list:[],
 		array: [],
@@ -169,9 +170,9 @@ Page({
 	},
 
 	getFreeFilm() {
-		const {token,multiArray,multiIndex,serial_number,phone,code} = this.data;
+		const {token,multiArray,multiIndex,serial_number,phone,code,phone_model} = this.data;
 
-		let phone_model = multiArray[1][multiIndex[1]];
+		// let phone_model = multiArray[1][multiIndex[1]];
 		console.log(phone_model);
 		reqGetFreeFilm({token,phone_model,serial_number,phone,code}).then(
 			(res:any) => {

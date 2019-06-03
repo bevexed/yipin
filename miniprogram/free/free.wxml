@@ -11,16 +11,16 @@
 	<!--		</picker>-->
 	<!--	</view>-->
 
-	<view class="section">
-		<view class="sections">手机型号</view>
-		<picker bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" mode="multiSelector" range="{{multiArray}}" value="{{multiIndex}}">
-			<view class="picker">
-				{{multiArray[0][multiIndex[0]]}} {{multiArray[1][multiIndex[1]]}}
-			</view>
-		</picker>
-	</view>
+<!--	<view class="section">-->
+<!--		<view class="sections">手机型号</view>-->
+<!--		<picker bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" mode="multiSelector" range="{{multiArray}}" value="{{multiIndex}}">-->
+<!--			<view class="picker">-->
+<!--				{{multiArray[0][multiIndex[0]]}} {{multiArray[1][multiIndex[1]]}}-->
+<!--			</view>-->
+<!--		</picker>-->
+<!--	</view>-->
 
-
+	<i-input bind:change="input" data-type="phone_model" maxlength="100" placeholder="手机型号" title="手机型号" type="" value="{{ phone_model }}"/>
 	<i-input bind:change="input" data-type="serial_number" maxlength="5" placeholder="请输入商家编号" title="商家编号" type="" value="{{ serial_number }}"/>
 	<i-input bind:change="input" data-type="phone" maxlength="11" placeholder="手机号" title="手机号码" type="number" value="{{ phone }}"/>
 	<view class="section">
