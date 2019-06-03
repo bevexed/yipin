@@ -1,4 +1,4 @@
-import {reqUpdateShippingAddress} from "../../api/index";
+import {reqUpdateShippingAddress, reqUserInformation} from "../../api/index";
 
 Page({
 	data: {
@@ -12,6 +12,17 @@ Page({
 			success(res) {
 				that.setData!({
 					token: res.data
+				}, () => {
+					reqUserInformation({token: res.data}).then(
+						(res: any) => {
+							console.log(res);
+							that.setData!({
+								partner_name: res.data.partner_name,
+								partner_phone: res.data.partner_phone,
+								partner_address: res.data.partner_address
+							})
+						}
+					)
 				})
 			}
 		})

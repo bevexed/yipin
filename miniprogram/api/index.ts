@@ -103,7 +103,7 @@ export const reqMerchantExist = (id: string) => ajax('/api/merchant_exist', {id}
 export const reqActivityShow = (type: number) => ajax('/api/activity_show', {type});
 
 // 收货地址
-export const reqUpdateShippingAddress = (token: string, partner_name: string, partner_phone: string, partner_address: string) => ajax('/api/update_shipping_address', {token, partner_name, partner_phone, partner_address});
+export const reqUpdateShippingAddress = (token: string, partner_name?: string, partner_phone?: string, partner_address?: string) => ajax('/api/update_shipping_address', {token, partner_name, partner_phone, partner_address});
 
 // 报价列表
 export const reqSheetList = (id?:string) => ajax('/api/sheet_list',{id});
