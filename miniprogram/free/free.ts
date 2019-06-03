@@ -170,7 +170,9 @@ Page({
 	},
 
 	getFreeFilm() {
-		const {token,multiArray,multiIndex,serial_number,phone,code,phone_model} = this.data;
+		const {token,
+			// multiArray,multiIndex,
+			serial_number,phone,code,phone_model} = this.data;
 
 		// let phone_model = multiArray[1][multiIndex[1]];
 		console.log(phone_model);
