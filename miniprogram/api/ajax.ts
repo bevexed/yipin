@@ -7,11 +7,16 @@ let ajax: (url: string, data?: object, method?: ("POST" | "GET")) => Promise<any
 ajax = (url: string, data: object = {}, method: 'POST' | 'GET' = 'POST') => {
 	// @ts-ignore
 	return new Promise((resolve: any, reject: any): any => {
+		wx.showLoading({
+			title:'loading',
+			mask:true
+		});
 		wx.request({
 			method,
 			url: base + url,
 			data,
 			success(res) {
+				wx.hideLoading();
 				// @ts-ignore
 				if (res.data.code === 0) {
 					wx.showToast({
@@ -37,6 +42,7 @@ ajax = (url: string, data: object = {}, method: 'POST' | 'GET' = 'POST') => {
 				resolve(res.data)
 			},
 			fail(err) {
+				wx.hideLoading();
 				reject(err)
 			}
 		})
