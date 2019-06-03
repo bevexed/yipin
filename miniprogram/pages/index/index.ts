@@ -67,19 +67,9 @@ Page({
 	},
 	// 添加订单
 	showModal() {
-		this.setData!({
-			isModal: false
-		})
-	},
-	hideTankuang() {
-		this.setData!({
-			isModal: true
-		})
-	},
-	getAdd() {
 		const that = this;
-		that.setData!({
-			isModal: true
+
+		this.setData!({
 		}, () => {
 			wx.getStorage({
 				key: 'token',
@@ -89,12 +79,12 @@ Page({
 					}, () => {
 						jiaoyan(that.data.token).then(res => {
 							if (res.code == 1) {
-								wx.navigateTo({
-									url: '../../addOrder/index'
+								that.setData!({
+									isModal: false
 								})
 							} else {
 
-								let url: string;
+								let url: string = '../../friend/friend';
 								switch (res.message) {
 									case '用户收款信息为完善，请先完善收款信息':
 										url = '../../collect/collect';
@@ -122,9 +112,24 @@ Page({
 					})
 				}
 			});
-
-
 		})
+	},
+	hideTankuang() {
+		this.setData!({
+			isModal: true
+		})
+	},
+	getAdd() {
+		const that = this;
+		that.setData!({
+			isModal: true
+		}, () => {
+			wx.navigateTo({
+				url: '../../addOrder/index'
+			})
+		})
+
+
 	},
 
 	getUserInfo(e: any) {

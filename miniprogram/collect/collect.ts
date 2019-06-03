@@ -112,8 +112,8 @@ Page({
 					duration: 2000,
 					success() {
 						setTimeout(() => {
-							wx.navigateBack({
-								delta: 1
+							wx.switchTab({
+								url: '../pages/index/index'
 							})
 						}, 2000)
 					}

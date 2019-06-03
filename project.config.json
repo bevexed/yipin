@@ -50,7 +50,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 19,
+			"current": 20,
 			"list": [
 				{
 					"id": -1,
@@ -189,6 +189,13 @@
 					"id": -1,
 					"name": "阿",
 					"pathName": "addOrder/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "a阿",
+					"pathName": "newpart/shouhuodizhi/index",
 					"scene": null
 				}
 			]

@@ -91,7 +91,7 @@
       </view>
     </view>
 
-    <view class='anquan'>上述类型的手机，不属于拍闲品的交易范围内，邮寄到拍闲品后，后续产生的质检退货等
+    <view class='anquan'>上述类型的手机，不属于一品数码会的交易范围内，邮寄到一品数码会后，后续产生的质检退货等
     一切费用全由卖家承担</view>
     <view class='fabuBox'>
       <view bindtap='getAdd'>我知道啦，去发布</view>

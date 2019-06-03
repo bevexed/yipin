@@ -210,8 +210,8 @@ Page({
 						duration: 3000,
 						success() {
 							setTimeout(() => {
-								wx.navigateBack({
-									delta: 1
+								wx.navigateTo({
+									url:'../collect/collect'
 								})
 							}, 3000)
 						}
