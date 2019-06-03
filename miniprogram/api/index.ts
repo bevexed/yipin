@@ -96,7 +96,7 @@ export const reqOpenid = (code: string) => ajax('/api/mini_program', {code});
 export const reqCheckUser = (openid: string) => ajax('/api/check_user', {openid});
 
 // 报价列表
-export const sheet = (id: string) => ajax('/api/sheet_list',{id});
+export const sheet = (id: string) => ajax('/api/sheet_list', {id});
 
 // 判断商家是否存在
 export const reqMerchantExist = (id: string) => ajax('/api/merchant_exist', {id});
@@ -104,3 +104,6 @@ export const reqMerchantExist = (id: string) => ajax('/api/merchant_exist', {id}
 
 // 活动图片
 export const reqActivityShow = (type: number) => ajax('/api/activity_show', {type});
+
+// 收货地址
+export const reqUpdateShippingAddress = (token: string, partner_name: string, partner_phone: string, partner_address: string) => ajax('/api/update_shipping_address', {token, partner_name, partner_phone, partner_address})

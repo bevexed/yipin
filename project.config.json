@@ -50,7 +50,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 20,
+			"current": 22,
 			"list": [
 				{
 					"id": -1,
@@ -196,6 +196,21 @@
 					"id": -1,
 					"name": "a阿",
 					"pathName": "newpart/shouhuodizhi/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 21,
+					"name": "notice",
+					"pathName": "pages/notice/notice",
+					"query": "content=1232132",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "address",
+					"pathName": "newpart/shouhuodizhi/index",
+					"query": "content=1232132",
 					"scene": null
 				}
 			]

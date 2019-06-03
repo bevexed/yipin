@@ -1,5 +1,5 @@
 /* miniprogram/pages/notice.wxss */
-
+@import "../../dist/wxParse/wxParse.wxss";
 .section{
 	margin: 20rpx;
 	text-indent: 2em;

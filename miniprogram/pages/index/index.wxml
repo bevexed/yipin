@@ -31,7 +31,7 @@
 					class="li-notice" vertical>
 		<swiper-item bindtap="toNotice" data-content="{{item.content}}" wx:for="{{consult}}" wx:key="{{item.id}}">
 			<i-icon color="#80848f" size="28" type="systemprompt"/>
-			{{item.content}}
+			{{item.name}}
 		</swiper-item>
 	</swiper>
 
