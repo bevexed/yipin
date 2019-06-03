@@ -45,7 +45,7 @@
 <view class='hr'></view>
 
 <view class='orderBottom font'>
-  <view class='shouhuoText'>收货地址</view>  
+  <view class='shouhuoText'>收货地址</view>
   <view>收件人：{{address.consignee}}</view>
   <view>联系电话：{{address.contact_phone}}</view>
   <view>收货地址：{{address.shipping_address}}</view>

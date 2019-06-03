@@ -4,7 +4,7 @@ import {IMyApp} from '../../app'
 import {reqBanner} from '../../api/index'
 import {jiaoyan} from '../../api/order'
 
-const app = getApp<IMyApp>()
+const app = getApp<IMyApp>();
 
 Page({
 	data: {
@@ -15,8 +15,8 @@ Page({
 
 		bannerList: [],
 		consult: '',
-    isModal:true,
-    token: ''
+		isModal: true,
+		token: ''
 
 	},
 	//事件处理函数
@@ -44,7 +44,7 @@ Page({
 			// 在没有 open-type=getUserInfo 版本的兼容处理
 			wx.getUserInfo({
 				success: res => {
-					app.globalData.userInfo = res.userInfo
+					app.globalData.userInfo = res.userInfo;
 					this.setData!({
 						userInfo: res.userInfo,
 						hasUserInfo: true
@@ -65,52 +65,71 @@ Page({
 			}
 		)
 	},
-  // 添加订单
-  showModal(){
-    this.setData!({
-      isModal:false
-    })
-  },
-  hideTankuang(){
-    this.setData!({
-      isModal: true
-    })
-  },
-  getAdd(){
-    const that = this;
-    that.setData!({
-      isModal: true
-    },() =>{
-      wx.getStorage({
-        key: 'token',
-        success(res) {
-          that.setData!({
-            token: res.data
-          }, () => {
-            jiaoyan(that.data.token).then(res => {
-              if(res.code ==1){
-                wx.navigateTo({
-                  url: '../../addOrder/index'
-                })
-              }else{
-                wx.showToast({
-                  title:res.message,
-                  icon:'none',
-                  duration:2000
-                })
-              }
-            })
-          })
-        }
-      });
+	// 添加订单
+	showModal() {
+		this.setData!({
+			isModal: false
+		})
+	},
+	hideTankuang() {
+		this.setData!({
+			isModal: true
+		})
+	},
+	getAdd() {
+		const that = this;
+		that.setData!({
+			isModal: true
+		}, () => {
+			wx.getStorage({
+				key: 'token',
+				success(res) {
+					that.setData!({
+						token: res.data
+					}, () => {
+						jiaoyan(that.data.token).then(res => {
+							if (res.code == 1) {
+								wx.navigateTo({
+									url: '../../addOrder/index'
+								})
+							} else {
+
+								let url: string;
+								switch (res.message) {
+									case '用户收款信息为完善，请先完善收款信息':
+										url = '../../collect/collect';
+										break;
+									case '用户未申请成为合作商或正在审核，不能发布订单':
+										url = '../../friend/friend';
+										break
+								}
+
+								wx.showToast({
+									title: res.message,
+									icon: 'none',
+									duration: 2000,
+									mask: true,
+									success() {
+										setTimeout(() => {
+											wx.navigateTo({
+												url
+											})
+										}, 2000)
+									}
+								})
+							}
+						})
+					})
+				}
+			});
 
 
-    })
-  },
+		})
+	},
 
 	getUserInfo(e: any) {
 		console.log(e);
-		app.globalData.userInfo = e.detail.userInfo
+		app.globalData.userInfo = e.detail.userInfo;
 		this.setData!({
 			userInfo: e.detail.userInfo,
 			hasUserInfo: true
@@ -151,4 +170,4 @@ Page({
 	}
 
 
-})
+});

@@ -50,7 +50,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 18,
+			"current": 19,
 			"list": [
 				{
 					"id": -1,
@@ -183,6 +183,12 @@
 					"name": "o",
 					"pathName": "addOrder/index",
 					"query": "id=10",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "阿",
+					"pathName": "addOrder/index",
 					"scene": null
 				}
 			]
