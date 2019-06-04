@@ -78,11 +78,14 @@ Page({
 	},
 
 	fouren(e: any) {
+		let that = this;
+
 		confirmOrder(this.data.token, e.currentTarget.dataset.id, '2').then(res => {
 			if (res.code == 1) {
-				wx.navigateBack({
-					delta: 1
-				})
+				that.getDetail(that.data.token, that.data.id);
+			// 	wx.navigateBack({
+			// 		delta: 1
+			// 	})
 			}
 		})
 	},

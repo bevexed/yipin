@@ -46,7 +46,7 @@
 				发货
 			</view>
 
-      <view wx:if='{{item.is_confirm==1}}' bindtap='toFirstTrial' data-id='{{item.id}}' class="button">
+      <view wx:if='{{item.is_confirm==1}}' bindtap='toWaitPost' data-id='{{item.id}}' class="button">
 				去确认
 			</view>
 		</view>

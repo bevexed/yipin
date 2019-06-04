@@ -1,4 +1,6 @@
-import { orderAll, confirmOrder} from '../api/order'
+import { orderAll,
+	// confirmOrder
+} from '../api/order'
 import { IMyApp } from '../app'
 
 const app = getApp<IMyApp>();
@@ -126,17 +128,18 @@ Page({
     })
   },
   // 去确认
-  toFirstTrial(e:any){
-    confirmOrder(this.data.token, e.currentTarget.dataset.id,'2').then(res => {
-      if(res.code == 1){
-        wx.showToast({
-          title:res.message,
-          icon:'none',
-          duration:2000
-        })
-      }
-    })
-  },
+  // toFirstTrial(e:any){
+    // confirmOrder(this.data.token, e.currentTarget.dataset.id,'2').then(res => {
+    //   if(res.code == 1){
+    //     wx.showToast({
+    //       title:res.message,
+    //       icon:'none',
+    //       duration:2000
+    //     })
+    //   }
+    // })
+
+  // },
   toToday() {
     wx.navigateTo({
       url: '../../today/today'
