@@ -147,3 +147,10 @@
   margin: 20rpx;
   text-align: center;
 }
+
+.ex{
+	font-size:24rpx;
+	font-family:PingFangSC-Regular;
+	font-weight:400;
+	color:rgba(159,167,176,1);
+}

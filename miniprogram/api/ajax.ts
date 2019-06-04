@@ -36,7 +36,8 @@ ajax = (url: string, data: object = {}, method: 'POST' | 'GET' = 'POST') => {
 						title: res.data.message,
 						icon: 'none',
 						duration: 2000,
-						mask: true
+						mask: true,
+
 					});
 				}
 				resolve(res.data)

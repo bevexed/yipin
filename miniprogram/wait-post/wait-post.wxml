@@ -7,7 +7,7 @@
 		</view>
 
 		<view class="state" wx:if='{{status!=3||add!=100}}'>
-				{{status==1?'待寄出':status==2?'待收货':status==3?'初审':status==4?'复审':status==5?'已打款':'取消'}}
+			{{status==1?'待寄出':status==2?'待收货':status==3?'初审':status==4?'复审':status==5?'已打款':'取消'}}
 		</view>
 
 
@@ -28,65 +28,72 @@
 		备注信息
 	</view>
 
-	<textarea class='textarea' placeholder='还有其他需要注意的吗？请填写在这里吧~' value='{{info.note}}' disabled></textarea>
+	<textarea class='textarea' disabled placeholder='还有其他需要注意的吗？请填写在这里吧~' value='{{info.note}}'></textarea>
 
 	<view class="pic">
 		图片（最多上传3张）
 	</view>
 
-  <image class='add' wx:for='{{pics}}' src='{{item}}' wx:key='unquie'></image>
+	<image class='add' src='{{item}}' wx:for='{{pics}}' wx:key='unquie'></image>
 
-  <view class='zhanwei' wx:if='{{status==1}}'></view>
-  <view class='viewBottom' wx:if='{{status==1}}'>
-    <i-button bind:click="faHuo" type="primary">发货</i-button>
-  </view>
+	<view class='zhanwei' wx:if='{{status==1}}'></view>
+	<view class='viewBottom' wx:if='{{status==1}}'>
+		<i-button bind:click="faHuo" type="primary">发货</i-button>
+	</view>
 </view>
 <!-- 初审 -->
 <view class="phone-warp" wx:for='{{info.orders}}' wx:key='unquie'>
 
 
-  <view class="hr"></view>
+	<view class="hr"></view>
 
-  <view class="phone">
-    <view class="phone-photo">
+	<view class="phone">
+		<view class="phone-photo">
 
-    </view>
+		</view>
 
-    <view bindtap='goChild' data-title='{{item.title}}' data-note='{{item.note}}' data-imei='{{item.imei}}' data-level='{{item.level}}' data-code='{{item.code}}' data-price='{{item.price}}'>
-      <view class="phone-header">
-      <view class="phone-title">
-        {{item.title}}
-      </view>
+		<view bindtap='goChild' data-code='{{item.code}}' data-imei='{{item.imei}}' data-level='{{item.level}}' data-note='{{item.note}}' data-price='{{item.price}}' data-title='{{item.title}}'>
+			<view class="phone-header">
+				<view class="phone-title">
+					{{item.title}}
+				</view>
 
-      <view class="phone-state">
-        {{item.status}}
-      </view>
-
-
-    </view>
-
-    <view class="phone-price">
-      报价：{{item.price}}
-    </view>
-
-    <view class="phone-class">
-      等级：{{item.level}}
-    </view>
-
-    <view class="phone-imei">
-      IMEI：{{item.imei}}
-    </view>
-  </view>
-
-    <view class='view_b' wx:if="{{item.status=='报价待确认'}}">
-      <view bindtap='fouren' data-id='{{item.op_id}}' class="button1">
-          否认报价
-      </view>
-      <view bindtap='jieshou' data-id='{{item.op_id}}' class="button2">
-          接受报价
-      </view>
-    </view>
+				<view class="phone-state">
+					{{item.status}}
+				</view>
 
 
-  </view>
+			</view>
+
+			<view class="phone-price">
+				报价：{{item.price}}
+			</view>
+
+			<view class="phone-class">
+				等级：{{item.level}}
+			</view>
+
+			<view class="phone-imei">
+				IMEI：{{item.imei}}
+			</view>
+
+			<view class="ex" wx:if="{{item.status == '已寄回'}}">
+				物流公司： {{item.logistics_company}}
+			</view>
+			<view class="ex" wx:if="{{item.status == '已寄回'}}">
+				物流单号：{{item.tracking_number}}
+			</view>
+		</view>
+
+		<view class='view_b' wx:if="{{item.status=='报价待确认'}}">
+			<view bindtap='fouren' class="button1" data-id='{{item.op_id}}'>
+				否认报价
+			</view>
+			<view bindtap='jieshou' class="button2" data-id='{{item.op_id}}'>
+				接受报价
+			</view>
+		</view>
+
+
+	</view>
 </view>
