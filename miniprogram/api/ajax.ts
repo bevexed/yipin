@@ -4,7 +4,7 @@ export const base = 'https://hupanxueyuan.tianyue0571.cn';
 
 let ajax: (url: string, data?: object, method?: ("POST" | "GET"), showToast?: boolean) => Promise<any>;
 
-ajax = (url: string, data: object = {}, method: 'POST' | 'GET' = 'POST', showToast) => {
+ajax = (url: string, data: object = {}, method: 'POST' | 'GET' = 'POST', showToast = true) => {
 	// @ts-ignore
 	return new Promise((resolve: any, reject: any): any => {
 		wx.showLoading({

@@ -1,7 +1,7 @@
 {
-  "navigationBarTitleText": "一品数码会",
-  "usingComponents": {
-    "i-notice-bar": "../../dist/notice-bar/index",
-    "i-icon": "../../dist/icon/index"
-  }
+	"navigationBarTitleText": "一品数码会",
+	"usingComponents": {
+		"i-notice-bar": "../../dist/notice-bar/index",
+		"i-icon": "../../dist/icon/index"
+	}
 }

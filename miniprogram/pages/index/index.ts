@@ -94,6 +94,8 @@ Page({
 										break
 								}
 
+								console.log(url);
+
 								wx.showToast({
 									title: res.message,
 									icon: 'none',
