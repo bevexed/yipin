@@ -24,7 +24,11 @@
 }
 
 .detail{
-	padding: 30rpx;
+	max-height: 0;
+	overflow: hidden;
+	padding: 0;
+
+
 	font-size:26rpx;
 	font-family:PingFangSC-Regular;
 	font-weight:400;
@@ -153,4 +157,24 @@
 	font-family:PingFangSC-Regular;
 	font-weight:400;
 	color:rgba(159,167,176,1);
+}
+
+.down{
+	width: 28rpx;
+	height: 20rpx;
+}
+
+
+.up{
+	transform: rotate(180deg);
+}
+
+.hide{
+	max-height: 0;
+	overflow: hidden;
+}
+
+.open{
+	max-height: 1000000rpx;
+	padding: 30rpx;
 }

@@ -28,7 +28,7 @@
 
 		<view bindtap='toWaitPost' data-id='{{item.id}}' data-status='{{item.status}}' class="content">
 
-			<image src='{{item.picture}}'></image>
+			<image src='{{item.picture}}' wx:if="{{item.picture}}"></image>
 
 			<view class="right">
 				<view class="title">

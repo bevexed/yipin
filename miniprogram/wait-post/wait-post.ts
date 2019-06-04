@@ -4,15 +4,13 @@ import {confirmOrder, orderDetail} from '../api/order'
 
 Page({
 	data: {
-		motto: '点击 “编译” 以构建',
-		userInfo: {},
-		hasUserInfo: false,
-		canIUse: wx.canIUse('button.open-type.getUserInfo'),
-		info: {},
 		pics: [],
 		status: '',
 		id: '',
-		token: ''
+		token: '',
+
+		orderShow: 'open',
+		noteShow: 'open',
 	},
 	onLoad(options: any) {
 		const that = this;
@@ -78,6 +76,7 @@ Page({
 			}
 		})
 	},
+
 	fouren(e: any) {
 		confirmOrder(this.data.token, e.currentTarget.dataset.id, '2').then(res => {
 			if (res.code == 1) {
@@ -85,6 +84,27 @@ Page({
 					delta: 1
 				})
 			}
+		})
+	},
+	show(e: any) {
+		console.log(e);
+
+		let type = e.currentTarget.dataset.type;
+
+		console.log(type);
+		// @ts-ignore
+		if (this.data[type + 'Show'] === 'open') {
+			// @ts-ignore
+			this.setData!({
+				[type + 'Show']: ''
+			})
+			return
+		}
+		//@ts-ignore
+		console.log(this.data[type + 'Show']);
+
+		this.setData!({
+			[type + 'Show']: 'open'
 		})
 	}
 })

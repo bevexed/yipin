@@ -1,9 +1,10 @@
 <!--wait-post/wait-post.wxml-->
 <view class="header-warp">
 
-	<view class="header">
+	<view class="header" data-type="order" bindtap="show">
 		<view class="title">
 			订单信息
+			<image class="down {{orderShow === 'open'?'up':''}}" src="./ico_develop_h.svg"></image>
 		</view>
 
 		<view class="state" wx:if='{{status!=3||add!=100}}'>
@@ -13,7 +14,7 @@
 
 	</view>
 
-	<view class="detail">
+	<view bindtap="show" class="detail {{orderShow}}" data-type="order">
 		<view class="num">订单号：{{info.order_no}}</view>
 		<view class="num">订单信息：{{info.information}}</view>
 		<view class="num">数量：{{info.amount}}</view>
@@ -24,22 +25,27 @@
 
 <view class="bottom">
 
-	<view class="title">
+	<view class="title" bindtap="show" data-type="note">
 		备注信息
+		<image class="down {{noteShow === 'open'?'up':''}}" src="./ico_develop_h.svg"></image>
 	</view>
 
-	<textarea class='textarea' disabled placeholder='还有其他需要注意的吗？请填写在这里吧~' value='{{info.note}}'></textarea>
+	<view class="hide {{noteShow}}">
 
-	<view class="pic">
-		图片（最多上传3张）
+		<textarea wx:if="{{noteShow === 'open'}}" class='textarea' disabled placeholder='还有其他需要注意的吗？请填写在这里吧~' value='{{info.note}}'></textarea>
+
+		<view class="pic">
+			图片（最多上传3张）
+		</view>
+
+		<image class='add' src='{{item}}' wx:for='{{pics}}' wx:key='unquie' wx:if="{{item}}"></image>
+
+		<view class='zhanwei' wx:if='{{status==1}}'></view>
+		<view class='viewBottom' wx:if='{{status==1}}'>
+			<i-button bind:click="faHuo" type="primary">发货</i-button>
+		</view>
 	</view>
 
-	<image class='add' src='{{item}}' wx:for='{{pics}}' wx:key='unquie'></image>
-
-	<view class='zhanwei' wx:if='{{status==1}}'></view>
-	<view class='viewBottom' wx:if='{{status==1}}'>
-		<i-button bind:click="faHuo" type="primary">发货</i-button>
-	</view>
 </view>
 <!-- 初审 -->
 <view class="phone-warp" wx:for='{{info.orders}}' wx:key='unquie'>
@@ -66,7 +72,7 @@
 			</view>
 
 			<view class="phone-price">
-				报价：{{item.price}}
+				报价：{{item.price}} ({{item.note}})
 			</view>
 
 			<view class="phone-class">
