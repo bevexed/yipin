@@ -1,9 +1,10 @@
-<i-cell-group>
-	<i-cell wx:key="item.id" wx:for="{{list}}" bind:click="to" data-id="{{item.id}}" is-link title="{{item.title}}"></i-cell>
-</i-cell-group>
+<!--<i-cell-group>-->
+<!--	<i-cell wx:key="item.id" wx:for="{{list}}" bind:click="to" data-id="{{item.id}}" is-link title="{{item.title}}"></i-cell>-->
+<!--</i-cell-group>-->
 
 <view class='today'>
-	<!--<image bindtap="to" data-id="2" src='https://hupanxueyuan.tianyue0571.cn/imgs/bg-1.svg'></image>-->
+	<image  wx:key="{{item.id}}" wx:for="{{list}}" data-id="{{item.id}}" bindtap="to" src='{{item.background_image}}'></image>
+<!--	<image bindtap="to" data-id="2" src='https://hupanxueyuan.tianyue0571.cn/imgs/bg-1.svg'></image>-->
 	<!--<image bindtap="to" data-id="3"  src='https://hupanxueyuan.tianyue0571.cn/imgs/bg-2.svg'></image>-->
 	<!--<image bindtap="to" data-id="4"  src='https://hupanxueyuan.tianyue0571.cn/imgs/bg-3.svg'></image>-->
 	<!--<image bindtap="to" data-id="5"  src='https://hupanxueyuan.tianyue0571.cn/imgs/bg-4.svg'></image>-->
