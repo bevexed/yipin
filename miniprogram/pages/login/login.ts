@@ -3,10 +3,15 @@ import {reqCheckUser, reqLogin} from "../../api/index";
 Page({
 	data: {
 		openid: '',
-		exist: 0
+		exist: 0,
+
+		dian: false
 	},
 
 	onLoad() {
+		this.setData!({
+			dian: false
+		})
 		// const _this = this;
 		// wx.getStorage({
 		// 	key: 'openid',
@@ -43,6 +48,12 @@ Page({
 		}
 	},
 	login() {
+		if (this.data.dian) {
+			return
+		}
+		this.setData!({
+			dian: true
+		})
 		wx.showLoading({
 			title: 'loading',
 			mask: true,
@@ -66,6 +77,7 @@ Page({
 	},
 
 	check() {
+		let that = this;
 		console.log(this.data.openid)
 		if (!this.data.openid) {
 			return
@@ -79,12 +91,26 @@ Page({
 			success() {
 				if (exist === 0) {
 					wx.navigateTo({
-						url: '/complete/complete'
+						url: '/complete/complete',
+						success() {
+							setTimeout(() =>
+									that.setData!({
+										dian: false
+									})
+								, 1000)
+						}
 					});
 					return;
 				} else {
 					wx.switchTab({
-						url: '/pages/index/index'
+						url: '/pages/index/index',
+						success() {
+							setTimeout(() =>
+									that.setData!({
+										dian: false
+									})
+								, 1000)
+						}
 					})
 				}
 			}
