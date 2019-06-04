@@ -11,7 +11,7 @@ Page({
 
 		identity:'',
 		disabled: false,
-		state: ['供货商', '加盟店', '区域代理']
+		state: ['供货商加盟', '加盟店加盟', '区域代理加盟']
 		// 1：供货商；2：加盟店；3：区域代理
 	},
 	onLoad() {
@@ -180,7 +180,7 @@ Page({
 							id_card,
 							id_card_contrary,
 							id_card_positive,
-							identity : state[identity]
+							identity : state[identity - 1]
 						})
 					}
 

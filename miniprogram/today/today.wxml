@@ -3,7 +3,7 @@
 <!--</i-cell-group>-->
 
 <view class='today'>
-	<image bindtap="to" data-id="{{item.id}}" src='{{item.background_image}}' wx:for="{{list}}" wx:key="{{item.id}}"></image>
+	<image bindtap="to" mode="widthFix" data-id="{{item.id}}" src='{{item.background_image}}' wx:for="{{list}}" wx:key="{{item.id}}"></image>
 	<!--	<image bindtap="to" data-id="2" src='https://hupanxueyuan.tianyue0571.cn/imgs/bg-1.svg'></image>-->
 	<!--<image bindtap="to" data-id="3"  src='https://hupanxueyuan.tianyue0571.cn/imgs/bg-2.svg'></image>-->
 	<!--<image bindtap="to" data-id="4"  src='https://hupanxueyuan.tianyue0571.cn/imgs/bg-3.svg'></image>-->

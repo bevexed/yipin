@@ -24,7 +24,7 @@ Page({
 		})
 	},
 
-	doLogin(){
+	doLogin() {
 		const {openid, phone, code} = this.data;
 
 		if (!openid || !phone || !code) {
@@ -48,7 +48,8 @@ Page({
 					})
 				} else {
 					wx.showToast({
-						title: res.message
+						title: res.message,
+						icon: "none"
 					})
 				}
 
@@ -56,13 +57,13 @@ Page({
 			}
 		);
 	},
-	changePhone: function (e:any) {
+	changePhone: function (e: any) {
 		console.log(e);
 		this.setData!({
 			phone: e.detail.value
 		});
 	},
-	changeCode: function (e:any) {
+	changeCode: function (e: any) {
 		console.log(e);
 		this.setData!({
 			code: e.detail.value

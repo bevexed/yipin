@@ -6,6 +6,6 @@
 
 .today image {
   margin-top: 20rpx;
-  width: 610rpx;
-  height: 198rpx;
+  /*width: 610rpx;*/
+  /*height: 198rpx;*/
 }

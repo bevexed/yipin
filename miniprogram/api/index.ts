@@ -46,7 +46,7 @@ interface Login {
 	password?: string;
 }
 
-export const reqLogin = ({type, openid, phone, password}: Login) => ajax('/api/login', {type, openid, phone, password});
+export const reqLogin = ({type, openid, phone, password}: Login) => ajax('/api/login', {type, openid, phone, password}, 'POST', false);
 
 // 手机贴膜
 interface FreeFile {
@@ -106,4 +106,4 @@ export const reqActivityShow = (type: number) => ajax('/api/activity_show', {typ
 export const reqUpdateShippingAddress = (token: string, partner_name?: string, partner_phone?: string, partner_address?: string) => ajax('/api/update_shipping_address', {token, partner_name, partner_phone, partner_address});
 
 // 报价列表
-export const reqSheetList = (id?:string) => ajax('/api/sheet_list',{id});
+export const reqSheetList = (id?: string) => ajax('/api/sheet_list', {id});
