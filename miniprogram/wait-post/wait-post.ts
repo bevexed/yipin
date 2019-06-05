@@ -9,8 +9,8 @@ Page({
 		id: '',
 		token: '',
 
-		orderShow: 'open',
-		noteShow: 'open',
+		orderShow: '',
+		noteShow: '',
 	},
 	onLoad(options: any) {
 		const that = this;

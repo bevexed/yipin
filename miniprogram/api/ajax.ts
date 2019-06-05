@@ -25,7 +25,7 @@ ajax = (url: string, data: object = {}, method: 'POST' | 'GET' = 'POST', showToa
 					wx.showToast({
 						// @ts-ignore
 						// title: res.data.message,
-						title: '',
+						title: res.message,
 						icon: 'none',
 						duration: 2000,
 						mask: true

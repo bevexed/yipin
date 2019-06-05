@@ -218,9 +218,10 @@ Page({
 					})
 				} else {
 					wx.showToast({
+						icon:'none',
 						mask: true,
 						duration: 3000,
-						title: res['0']
+						title: res.message
 					})
 				}
 			}
