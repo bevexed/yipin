@@ -9,15 +9,15 @@
 
 
 .section{
-	font-size: 28rpx;
-	padding: 9px 18px;
+	font-size: 14px;
+	padding: 7px 15px;
 	display: flex;
   border-bottom: 1px #f2f2f2 solid
 }
 
 .sections{
+	color: #495060;
 	margin-right: 20px;
-	color: #666;
 }
 
 .uploadCd>view {

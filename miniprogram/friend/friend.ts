@@ -15,6 +15,7 @@ Page({
 		name: '',
 		phone: '',
 		address: '',
+		detail_address:'',
 		identity: '',
 		id_card: '',
 		id_card_positive: '',
@@ -166,10 +167,10 @@ Page({
 
 	getPartner() {
 
-		let {token, phone, name, address, region, identity, id_card, id_card_positive, id_card_contrary, current} = this.data;
+		let {token, phone, name, address, region, identity, id_card, id_card_positive, id_card_contrary, current,detail_address} = this.data;
 
 		identity = current;
-		address = region.join('');
+		address = region.join('') + detail_address;
 
 		let data: Partnet;
 		if (identity === '1') {

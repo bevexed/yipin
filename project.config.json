@@ -50,12 +50,12 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 25,
+			"current": 26,
 			"list": [
 				{
-					"id": -1,
+					"id": 0,
 					"name": "friend",
-					"pathName": "pages/index/index",
+					"pathName": "friend/friend",
 					"query": "",
 					"scene": null
 				},
@@ -231,6 +231,14 @@
 					"id": -1,
 					"name": "呕吐",
 					"pathName": "sold-out/sold-out",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "out",
+					"pathName": "sold-out/sold-out",
+					"query": "",
 					"scene": null
 				}
 			]

@@ -154,7 +154,7 @@
 
 .ex{
 	font-size:24rpx;
-	font-family:PingFangSC-Regular;
+	font-family: PingFangSC-Regular, serif;
 	font-weight:400;
 	color:rgba(159,167,176,1);
 }

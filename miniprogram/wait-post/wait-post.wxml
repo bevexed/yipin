@@ -80,7 +80,19 @@
 			</view>
 
 			<view class="phone-imei">
-				IMEI：{{item.imei}}
+				<view>
+					IMEI：{{item.imei}}
+				</view>
+
+
+				<view class='view_b' wx:if="{{item.status=='报价待确认'}}">
+					<view bindtap='fouren' class="button1" data-id='{{item.op_id}}'>
+						取消交易
+					</view>
+					<view bindtap='jieshou' class="button2" data-id='{{item.op_id}}'>
+						接受报价
+					</view>
+				</view>
 			</view>
 
 			<view class="ex" wx:if="{{item.status == '已寄回'}}">
@@ -88,15 +100,6 @@
 			</view>
 			<view class="ex" wx:if="{{item.status == '已寄回'}}">
 				物流单号：{{item.tracking_number}}
-			</view>
-		</view>
-
-		<view class='view_b' wx:if="{{item.status=='报价待确认'}}">
-			<view bindtap='fouren' class="button1" data-id='{{item.op_id}}'>
-				否认报价
-			</view>
-			<view bindtap='jieshou' class="button2" data-id='{{item.op_id}}'>
-				接受报价
 			</view>
 		</view>
 

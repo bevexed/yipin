@@ -43,17 +43,21 @@ Page({
 			res => {
 				console.log(res);
 				if (res.code === 1) {
-					wx.switchTab({
-						url: '/pages/index/index'
-					})
+					wx.setStorage({
+					  key:"token",
+					  data:res.data,
+						success(){
+							wx.switchTab({
+								url: '/pages/index/index'
+							})
+						}
+					});
 				} else {
 					wx.showToast({
 						title: res.message,
 						icon: "none"
 					})
 				}
-
-
 			}
 		);
 	},

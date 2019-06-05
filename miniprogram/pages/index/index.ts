@@ -73,6 +73,9 @@ Page({
 		}, () => {
 			wx.getStorage({
 				key: 'token',
+				fail(err){
+					console.log('err', err);
+				},
 				success(res) {
 					that.setData!({
 						token: res.data

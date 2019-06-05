@@ -26,6 +26,7 @@
 			</picker>
 		</view>
 
+		<i-input placeholder="请输入详细地址" title="详细地址" value="{{ detail_address }}" bind:change="input" data-type="detail_address" maxlength="23"/>
 		<i-input placeholder="请输入身份证号" title="身份证号" value="{{ id_card }}" bind:change="input" data-type="id_card" maxlength="23"/>
 		<i-input disabled title="身份证照片"/>
 
@@ -76,6 +77,8 @@
 			</picker>
 		</view>
 
+		<i-input placeholder="请输入详细地址" title="详细地址" value="{{ detail_address }}" bind:change="input" data-type="detail_address" maxlength="23"/>
+
 
 	</view>
 
@@ -95,6 +98,7 @@
 				</view>
 			</picker>
 		</view>
+		<i-input placeholder="请输入详细地址" title="详细地址" value="{{ detail_address }}" bind:change="input" data-type="detail_address" maxlength="23"/>
 
 	</view>
 
