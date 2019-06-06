@@ -2,6 +2,8 @@
 // export const base = 'http://47.97.251.196';
 export const base = 'https://hupanxueyuan.tianyue0571.cn';
 
+import {reqOpenid} from "./index";
+
 let ajax: (url: string, data?: object, method?: ("POST" | "GET"), showToast?: boolean) => Promise<any>;
 
 ajax = (url: string, data: object = {}, method: 'POST' | 'GET' = 'POST', showToast = true) => {
@@ -42,6 +44,30 @@ ajax = (url: string, data: object = {}, method: 'POST' | 'GET' = 'POST', showToa
 						duration: 2000,
 						mask: true,
 						success(){
+
+							wx.login({
+								success(res) {
+									console.log(res.code);
+									reqOpenid(res.code).then(
+										(res: any) => {
+											if (res.code === 1) {
+												wx.setStorage({
+													key: 'openid',
+													data: res.data.openid,
+													success() {
+													},
+													fail() {
+													}
+												})
+											} else {
+												console.log('reqOpenid fail',);
+											}
+										}
+									)
+									// 发送 _res.code 到后台换取 openId, sessionKey, unionId
+								}
+							});
+
 							wx.navigateTo({
 								url: '/pages/login/login'
 							})

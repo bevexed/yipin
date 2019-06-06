@@ -130,7 +130,7 @@ Page({
 	},
 	doUpdateBasicInformation() {
 		const {name,token,id_card,id_card_contrary,id_card_positive} = this.data;
-		if (!name || !token || !id_card_positive || !id_card_contrary || !id_card) {
+		if (!name || !id_card_positive || !id_card_contrary || !id_card) {
 			wx.showToast({
 				title: '请检查表单填写是否完整',
 				mask: true,

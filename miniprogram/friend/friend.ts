@@ -177,7 +177,7 @@ Page({
 			data = {
 				token, phone, name, address, id_card, identity, id_card_positive, id_card_contrary
 			};
-			if (!name || !token || !id_card_positive || !id_card_contrary || !id_card || !phone || !address || !identity) {
+			if (!name  || !id_card_positive || !id_card_contrary || !id_card || !phone || !address || !identity) {
 				wx.showToast({
 					title: '请检查表单填写是否完整',
 					mask: true,
@@ -190,7 +190,7 @@ Page({
 			data = {
 				token, phone, name, address,identity
 			};
-			if (!name || !token || !phone || !address || !identity) {
+			if (!name || !phone || !address || !identity) {
 				wx.showToast({
 					title: '请检查表单填写是否完整',
 					mask: true,
