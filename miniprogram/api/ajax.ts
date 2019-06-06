@@ -21,13 +21,14 @@ ajax = (url: string, data: object = {}, method: 'POST' | 'GET' = 'POST', showToa
 				wx.hideLoading();
 				// @ts-ignore
 				if (res.data.code === 0) {
+					console.log(1);
 					if (!showToast) {
 						return
 					}
 					wx.showToast({
 						// @ts-ignore
 						// title: res.data.message,
-						title: res.message,
+						title: res.data.message,
 						icon: 'none',
 						duration: 2000,
 						mask: true

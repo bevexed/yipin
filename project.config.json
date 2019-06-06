@@ -50,7 +50,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 26,
+			"current": 27,
 			"list": [
 				{
 					"id": 0,
@@ -239,6 +239,12 @@
 					"name": "out",
 					"pathName": "sold-out/sold-out",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "123",
+					"pathName": "addOrder/index",
 					"scene": null
 				}
 			]
