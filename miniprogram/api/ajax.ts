@@ -41,7 +41,11 @@ ajax = (url: string, data: object = {}, method: 'POST' | 'GET' = 'POST', showToa
 						icon: 'none',
 						duration: 2000,
 						mask: true,
-
+						success(){
+							wx.navigateTo({
+								url: '/pages/login/login'
+							})
+						}
 					});
 				}
 				resolve(res.data)

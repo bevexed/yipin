@@ -108,6 +108,9 @@
 }
 
 .phone-class, .phone-imei {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
   font-size: 26rpx;
   font-family: PingFangSC-Regular;
   font-weight: 400;
@@ -115,17 +118,13 @@
   margin-bottom: 12rpx;
 }
 .view_b {
-  border-top: 1px #D1D5DA solid;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  padding: 30rpx 30rpx 0;
-  height: 92rpx;
-  margin-top: 30rpx;
+  justify-content: space-between;
 }
 
 .button1 {
-  width: 152rpx;
+  width: 140rpx;
   height: 52rpx;
   line-height: 52rpx;
   background: #9FA7B0;
@@ -134,12 +133,11 @@
   font-family: PingFangSC-Medium;
   font-weight: 500;
   color: rgba(255, 255, 255, 1);
-  margin: 20rpx;
   text-align: center;
 }
 
 .button2 {
-  width: 152rpx;
+  width: 140rpx;
   height: 52rpx;
   line-height: 52rpx;
   background: rgba(68, 142, 246, 1);
@@ -148,8 +146,8 @@
   font-family: PingFangSC-Medium;
   font-weight: 500;
   color: rgba(255, 255, 255, 1);
-  margin: 20rpx;
   text-align: center;
+	margin-left: 10rpx;
 }
 
 .ex{

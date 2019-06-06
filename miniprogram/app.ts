@@ -11,7 +11,6 @@ export interface IMyApp {
 
 App<IMyApp>({
 	onLaunch() {
-
 		// 登录
 		wx.login({
 			success(res) {
