@@ -15,7 +15,7 @@ Page({
 		)
 	},
 	showPhone() {
-		let _this = this
+		let _this = this;
 		wx.showActionSheet({
 			itemList: ['拨打客服电话'],
 			success(res) {

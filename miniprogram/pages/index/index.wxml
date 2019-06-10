@@ -10,7 +10,7 @@
 
 
 	<swiper autoplay='true' class='swiper' duration='3000'>
-		<swiper-item wx:for="{{bannerList}}" wx:key="{{item.id}}" bindtap="toNotice" data-content="{{item.content}}">
+		<swiper-item wx:for="{{bannerList}}" wx:key="{{item.id}}" bindtap="toNotice" data-id="{{item.id}}" data-type="banner">
 			<image src='{{item.picture}}'></image>
 		</swiper-item>
 	</swiper>
@@ -29,7 +29,7 @@
 
 	<swiper autoplay='true' duration='1000'
 					class="li-notice" vertical>
-		<swiper-item class="asd" bindtap="toNotice" data-content="{{item.content}}" wx:for="{{consult}}" wx:key="{{item.id}}">
+		<swiper-item class="asd" bindtap="toNotice" data-id="{{item.id}}" data-type="consult" wx:for="{{consult}}" wx:key="{{item.id}}">
 			<i-icon color="#80848f" size="28" type="systemprompt"/>
 			{{item.name}}
 		</swiper-item>

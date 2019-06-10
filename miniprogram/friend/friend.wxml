@@ -1,5 +1,5 @@
 <view class='friend'>
-	<image class='head-img' src='{{img}}'></image>
+	<image mode="widthFix" class='head-img' src='{{img}}'></image>
 
 	<i-tabs bindchange="handleChange" current="{{ current }}">
 		<i-tab key="1" title="供应商加盟"></i-tab>

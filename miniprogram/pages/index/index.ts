@@ -69,11 +69,10 @@ Page({
 	showModal() {
 		const that = this;
 
-		this.setData!({
-		}, () => {
+		this.setData!({}, () => {
 			wx.getStorage({
 				key: 'token',
-				fail(err){
+				fail(err) {
 					console.log('err', err);
 				},
 				success(res) {
@@ -172,12 +171,12 @@ Page({
 
 	toNotice(e: any) {
 		console.log(e);
-		const content = e.currentTarget.dataset.content;
-		console.log(content);
+		const type = e.currentTarget.dataset.type;
+		const id = e.currentTarget.dataset.id;
+		console.log(type,id);
 		wx.navigateTo({
-			url: '../notice/notice?content=' + content
+			url: '../notice/notice?type=' + type + '&id=' + id
 		})
-	}
-
+	},
 
 });
