@@ -1,5 +1,4 @@
 /* miniprogram/pages/price-detail/price-detail.wxss */
 .detail image{
   width: 100vw;
-  height: 1202rpx;
 }

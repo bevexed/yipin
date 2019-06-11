@@ -1,7 +1,7 @@
 .i-tabs-tab {
 	flex: 1;
 	display: flex;
-	width: 150%;
+	width: 100%;
 	-webkit-box-pack: center;
 	justify-content: center;
 	-webkit-box-align: center;
@@ -25,7 +25,7 @@
 }
 
 .i-tabs-tab-title {
-	padding:10px 20px;
+	padding:10px 10px;
 	font-size: 14px;
 	text-align: center;
 	box-sizing: border-box;
@@ -38,5 +38,5 @@
 
 .i-tabs-tab-scroll {
 	display: inline-block;
-	width: 80px
+	width: 60px
 }

@@ -1,6 +1,6 @@
 <!--miniprogram/pages/price-detail/price-detail.wxml-->
 <view class='detail'>
 	<view wx:for="{{arr}}" wx:key="item">
-		<image bindtap='yulan' src='{{item}}'></image>
+		<image mode="widthFix" bindtap='yulan' src='{{item}}'></image>
 	</view>
 </view>
