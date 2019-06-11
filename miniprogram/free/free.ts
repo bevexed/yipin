@@ -5,17 +5,17 @@ Page({
 	data: {
 
 		token: '',
-		serial_number:'',
-		phone:'',
-		code:'',
-		phone_model:'',
+		serial_number: '',
+		phone: '',
+		code: '',
+		phone_model: '',
 
-		list:[],
+		list: [],
 		array: [],
 		list2: [],
 		array2: [],
 
-		multiArray: [[],[]],
+		multiArray: [[], []],
 		multiIndex: [0, 0],
 
 		index: 0,
@@ -84,8 +84,13 @@ Page({
 		const value = e.detail.detail.value;
 		console.log(value);
 		this.setData!({
-			[label]: value
-		}, () => this.doMerchantExist());
+				[label]: value
+			}, () => {
+				if (label === 'serial_number') {
+					this.doMerchantExist()
+				}
+			}
+		);
 
 		console.log(label, value);
 	},
@@ -170,19 +175,21 @@ Page({
 	},
 
 	getFreeFilm() {
-		const {token,
+		const {
+			token,
 			// multiArray,multiIndex,
-			serial_number,phone,code,phone_model} = this.data;
+			serial_number, phone, code, phone_model
+		} = this.data;
 
 		// let phone_model = multiArray[1][multiIndex[1]];
 		console.log(phone_model);
-		reqGetFreeFilm({token,phone_model,serial_number,phone,code}).then(
-			(res:any) => {
+		reqGetFreeFilm({token, phone_model, serial_number, phone, code}).then(
+			(res: any) => {
 				wx.showToast({
-          title:res.message,
-          icon:'none',
-          duration:2000
-        })
+					title: res.message,
+					icon: 'none',
+					duration: 2000
+				})
 			}
 		)
 	}

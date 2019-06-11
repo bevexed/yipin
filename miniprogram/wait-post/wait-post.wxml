@@ -72,7 +72,7 @@
 			</view>
 
 			<view class="phone-price">
-				报价：{{item.price}} ({{item.note}})
+				报价：{{item.price}} {{item.note}}
 			</view>
 
 			<view class="phone-class">

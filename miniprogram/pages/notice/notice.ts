@@ -22,7 +22,7 @@ Page({
 						content: res.data[type].filter((item:{id:string}) => item.id == id)[0].content
 					}, () => {
 						console.log(that.data.content);
-						WxParse.wxParse('content', 'html', that.data.content, that, 5);
+						WxParse.wxParse('content', 'html',res.data[type].filter((item:{id:string}) => item.id == id)[0].content, that, 5);
 					})
 				}
 			}
