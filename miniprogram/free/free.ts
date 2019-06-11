@@ -58,56 +58,40 @@ Page({
 		)
 	},
 
-	bindMultiPickerChange: function (e: any) {
-		console.log('picker发送选择改变，携带值为', e.detail.value);
-		this.setData!({
-			multiIndex: e.detail.value
-		})
-		console.log(this.data.multiIndex);
-	},
-
-	bindMultiPickerColumnChange: function (e: any) {
-		console.log('修改的列为', e.detail.column, '，值为', e.detail.value);
-		if (e.detail.column === 0) {
-			let {list, array} = this.data;
-			this.setData!({
-				// @ts-ignore
-				multiArray: [array, list[e.detail.value]["subclass"].map(item => item.name)]
-			})
-		}
-	},
-
 
 	input(e: any) {
 		console.log(e);
-		const label = e.target.dataset.type;
+		const label = e.currentTarget.dataset.type;
 		const value = e.detail.detail.value;
 		console.log(value);
 		this.setData!({
-				[label]: value
-			}, () => {
-				if (label === 'serial_number') {
-					this.doMerchantExist()
-				}
-			}
-		);
+			[label]: value
+		});
 
 		console.log(label, value);
 	},
 
-	doMerchantExist() {
-		if (this.data.serial_number.length < 5) {
-			return
-		}
-		reqMerchantExist(this.data.serial_number).then(
-			(res: any) => {
-				console.log(res);
-				wx.showToast({
-					icon: "none",
-					title: res === 0 ? '商家编号不存在' : '商家存在'
-				})
+	doMerchantExist(e: any) {
+		console.log(e);
+		const label = e.currentTarget.dataset.type;
+		const value = e.detail.detail.value;
+		console.log(value);
+		this.setData!({
+			[label]: value
+		}, () => {
+			if (this.data.serial_number.length < 5) {
+				return
 			}
-		)
+			reqMerchantExist(this.data.serial_number).then(
+				(res: any) => {
+					console.log(res);
+					wx.showToast({
+						icon: "none",
+						title: res === 0 ? '商家编号不存在' : '商家存在'
+					})
+				}
+			)
+		});
 	},
 
 	getPhoneModels() {
@@ -188,7 +172,14 @@ Page({
 				wx.showToast({
 					title: res.message,
 					icon: 'none',
-					duration: 2000
+					duration: 2000,
+					success() {
+						setTimeout(() => {
+							wx.navigateBack({
+								delta: 1
+							})
+						}, 2000)
+					}
 				})
 			}
 		)

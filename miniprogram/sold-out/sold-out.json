@@ -1,8 +1,9 @@
 {
-  "usingComponents": {
-    "i-tabs": "../../dist/tabs/index",
-    "i-tab": "../../dist/tab/index",
-      "i-card": "../../dist/card/index"
-  },
-  "navigationBarTitleText": "我卖出的"
+	"usingComponents": {
+		"i-tabs": "../../dist/tabs/index",
+		"i-tab": "../../dist/tab/index",
+		"i-card": "../../dist/card/index"
+	},
+	"enablePullDownRefresh": true,
+	"navigationBarTitleText": "我卖出的"
 }

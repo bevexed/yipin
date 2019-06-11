@@ -158,5 +158,9 @@ Page({
     })
   },
 
+	onPullDownRefresh(){
+  	this.onLoad();
+		wx.stopPullDownRefresh()
+	}
 
 })

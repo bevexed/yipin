@@ -54,13 +54,6 @@
       ]
     },
     {
-      "root": "book-detail",
-      "name": "book-detaill",
-      "pages": [
-        "book-detail"
-      ]
-    },
-    {
       "root": "sold-out",
       "name": "sold-out",
       "pages": [
